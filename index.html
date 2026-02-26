@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Lobster | 量化大屏</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(56, 139, 253, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 139, 253, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .glow {
+            position: absolute;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(56, 139, 253, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-30px) scale(1.1); opacity: 0.8; }
+        }
+        h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #58a6ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 10;
+        }
+        .subtitle {
+            color: #8b949e;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: rgba(63, 185, 80, 0.08);
+            color: #3fb950;
+            border: 1px solid rgba(63, 185, 80, 0.3);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        .live-badge::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: #3fb950;
+            border-radius: 50%;
+            animation: blink 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(63, 185, 80, 0.1); }
+            50% { box-shadow: 0 0 30px rgba(63, 185, 80, 0.25); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .msg {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #8b949e;
+            line-height: 1.8;
+            max-width: 520px;
+            position: relative;
+            z-index: 10;
+        }
+        .code-block {
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+            color: #58a6ff;
+            font-size: 0.85rem;
+            font-family: 'SF Mono', monospace;
+            text-align: left;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .code-block .log { display: block; margin: 6px 0; }
+        .code-block .timestamp { color: #484f58; margin-right: 10px; }
+        .code-block .success { color: #3fb950; }
+        .code-block .info { color: #58a6ff; }
+        .logo {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        .logo span { color: #58a6ff; }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="glow" style="top: 10%; left: 20%;"></div>
+    <div class="glow" style="bottom: 15%; right: 15%; animation-delay: -4s;"></div>
+
+    <div class="logo">
+        🦞 <span>LobsterAI</span> System
+    </div>
+
+    <h1>AI-Lobster Fund Dashboard</h1>
+    <div class="subtitle">Quantitative Trading Platform</div>
+
+    <div class="live-badge">
+        ● GitHub Pages 节点运行正常 | 全网免备案秒开
+    </div>
+
+    <div class="msg">
+        恭喜！您看到了这个极客风格的深色页面，<br>
+        说明咱们已经彻底挣脱了域名的束缚！<br>
+        网页已直连全球 CDN，全网免备案秒开！<br>
+        等待量化模型与实时数据流注入。
+    </div>
+
+    <div class="code-block">
+        <span class="log"><span class="timestamp">[2026-02-26 18:58:00]</span> <span class="success">✓</span> GitHub API connection established</span>
+        <span class="log"><span class="timestamp">[2026-02-26 18:58:01]</span> <span class="success">✓</span> Global CDN synchronized: aimoney repo</span>
+        <span class="log"><span class="timestamp">[2026-02-26 18:58:01]</span> <span class="info">→</span> Awaiting daily real-time market data injection...</span>
+    </div>
+</body>
+</html>
