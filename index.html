@@ -3,513 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Lobster 基金每日战报</title>
+    <title>AI-Lobster | Quantitative Dashboard</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%);
-            color: #e0e0e0;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Header */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #2a2a4a;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .logo h1 {
-            font-size: 28px;
-            font-weight: 700;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .logo span {
-            font-size: 14px;
-            color: #888;
-        }
-
-        .date {
-            text-align: right;
-            color: #888;
-        }
-
-        .date .time {
-            font-size: 24px;
-            font-weight: 600;
-            color: #e0e0e0;
-        }
-
-        /* Stats Cards */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #2a2a4a;
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-card .label {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-card .value {
-            font-size: 32px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .stat-card .sub {
-            font-size: 14px;
-            margin-top: 8px;
-        }
-
-        .positive {
-            color: #34C759 !important;
-        }
-
-        .negative {
-            color: #FF3B30 !important;
-        }
-
-        /* AUM Card */
-        .aum-card {
-            grid-column: span 2;
-            background: linear-gradient(135deg, #1a1a3e 0%, #2a2a5e 100%);
-            border: 1px solid #3a3a6e;
-        }
-
-        .aum-card .value {
-            font-size: 48px;
-            background: linear-gradient(90deg, #34C759, #30D158);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Holdings Table */
-        .holdings-section {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #2a2a4a;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            text-align: left;
-            padding: 12px 16px;
-            color: #888;
-            font-weight: 500;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #2a2a4a;
-        }
-
-        td {
-            padding: 16px;
-            border-bottom: 1px solid #1a1a2e;
-        }
-
-        tr:hover {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .symbol {
-            font-weight: 600;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .new-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        .market-tag {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            background: rgba(102, 126, 234, 0.2);
-            color: #667eea;
-        }
-
-        .market-tag.hk {
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
-        }
-
-        .price {
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .pnl {
-            font-weight: 600;
-        }
-
-        .position-bar {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .bar-bg {
-            flex: 1;
-            height: 8px;
-            background: #1a1a2e;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 4px;
-        }
-
-        .bar-text {
-            font-size: 13px;
-            color: #888;
-            min-width: 45px;
-            text-align: right;
-        }
-
-        /* Strategy Section */
-        .strategy-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .strategy-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #2a2a4a;
-            border-radius: 16px;
-            padding: 24px;
-        }
-
-        .strategy-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #667eea;
-        }
-
-        .strategy-card p {
-            font-size: 14px;
-            line-height: 1.8;
-            color: #aaa;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #555;
-            font-size: 13px;
-        }
-
-        .footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .stat-card {
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        .stat-card:nth-child(2) { animation-delay: 0.1s; }
-        .stat-card:nth-child(3) { animation-delay: 0.2s; }
-        .stat-card:nth-child(4) { animation-delay: 0.3s; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background-color: #0d1117; color: #c9d1d9; margin: 0; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { border-bottom: 1px solid #30363d; padding-bottom: 20px; margin-bottom: 30px; }
+        .title { color: #58a6ff; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .aum { font-size: 3.5rem; color: #ffffff; font-weight: bold; margin: 0; line-height: 1.2; }
+        .panel { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        h3 { color: #ffffff; margin-top: 0; font-size: 1.2rem; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .highlight { color: #58a6ff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-variant-numeric: tabular-nums; }
+        th, td { padding: 15px 10px; text-align: left; border-bottom: 1px solid #21262d; }
+        th { color: #8b949e; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; }
+        td { font-size: 1.05rem; }
+        .up { color: #3fb950; font-weight: bold; }
+        .down { color: #f85149; font-weight: bold; }
+        .neutral { color: #c9d1d9; }
+        .footer { text-align: center; color: #484f58; font-size: 0.85rem; margin-top: 40px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
-            <div class="logo">
-                <div class="logo-icon">🦞</div>
-                <div>
-                    <h1>AI-Lobster</h1>
-                    <span>量化对冲基金 | 全球AI产业链套利</span>
-                </div>
-            </div>
-            <div class="date">
-                <div class="time">2026-02-26</div>
-                <div>每日战报 Daily Report</div>
+            <div class="title">AI-Lobster Fund | Live Dashboard</div>
+            <div class="aum">¥ 1,003,617.48</div>
+            <div style="color: #8b949e; margin-top: 10px; font-size: 1.1rem;">
+                可用现金: ¥ 159,320.22 (15.9%) | 更新时间: 2026-02-26
             </div>
         </div>
 
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat-card aum-card">
-                <div class="label">总资产 AUM</div>
-                <div class="value">¥1,003,619</div>
-                <div class="sub positive">
-                    ↑ 3,619 (+0.36%)
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="label">可用现金</div>
-                <div class="value">¥159,320</div>
-                <div class="sub">15.9% 仓位</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">持仓市值</div>
-                <div class="value">¥844,299</div>
-                <div class="sub">84.1% 仓位</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">持仓数量</div>
-                <div class="value">5</div>
-                <div class="sub">只股票</div>
-            </div>
+        <div class="panel">
+            <h3>⚡ 今日动作与搞钱逻辑 (Action & Logic)</h3>
+            <p><strong>执行动作：</strong> <span class="highlight">HOLD 观望</span></p>
+            <p style="line-height: 1.6; color: #8b949e;"><strong>深度研判：</strong> 今日市场缺乏清晰信号触发交易，组合选择按兵不动。NVDA当前浮盈1.57%但未到止盈位，继续持有；TSM受益AI芯片需求景气，基本面逻辑稳固；CRWV和BABA均处于成本价附近，需更多催化劑；0100.HK(MiniMax)昨日暴跌后短期情绪承压，但长期AI大模型赛道逻辑仍在。组合当前现金仓位15.9%，保持适度流动性应对潜在波动。</p>
         </div>
 
-        <!-- Holdings Table -->
-        <div class="holdings-section">
-            <div class="section-title">当前持仓明细 Position Details</div>
+        <div class="panel">
+            <h3>📊 核心持仓盲盒 (Holdings)</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>标的</th>
-                        <th>市场</th>
-                        <th>数量</th>
-                        <th>成本价</th>
-                        <th>现价</th>
-                        <th>市值</th>
-                        <th>浮动盈亏</th>
-                        <th>仓位</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>
-                            <div class="symbol">
-                                0100.HK
-                                
-                            </div>
-                        </td>
-                        <td><span class="market-tag hk">港股</span></td>
-                        <td>260</td>
-                        <td>$761.00</td>
-                        <td class="price">$788.50</td>
-                        <td>¥179,162</td>
-                        <td class="pnl positive">+3.61%</td>
-                        <td>
-                            <div class="position-bar">
-                                <div class="bar-bg">
-                                    <div class="bar-fill" style="width: 17.85163064052555%"></div>
-                                </div>
-                                <span class="bar-text">17.9%</span>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="symbol">
-                                NVDA
-                                
-                            </div>
-                        </td>
-                        <td><span class="market-tag ">美股</span></td>
-                        <td>131</td>
-                        <td>$192.85</td>
-                        <td class="price">$195.88</td>
-                        <td>¥175,400</td>
-                        <td class="pnl positive">+1.57%</td>
-                        <td>
-                            <div class="position-bar">
-                                <div class="bar-bg">
-                                    <div class="bar-fill" style="width: 17.47676075061049%"></div>
-                                </div>
-                                <span class="bar-text">17.5%</span>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="symbol">
-                                TSM
-                                
-                            </div>
-                        </td>
-                        <td><span class="market-tag ">美股</span></td>
-                        <td>65</td>
-                        <td>$385.75</td>
-                        <td class="price">$387.70</td>
-                        <td>¥172,257</td>
-                        <td class="pnl positive">+0.51%</td>
-                        <td>
-                            <div class="position-bar">
-                                <div class="bar-bg">
-                                    <div class="bar-fill" style="width: 17.163612762439058%"></div>
-                                </div>
-                                <span class="bar-text">17.2%</span>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="symbol">
-                                CRWV
-                                
-                            </div>
-                        </td>
-                        <td><span class="market-tag ">美股</span></td>
-                        <td>250</td>
-                        <td>$98.07</td>
-                        <td class="price">$98.07</td>
-                        <td>¥167,589</td>
-                        <td class="pnl positive">+0.00%</td>
-                        <td>
-                            <div class="position-bar">
-                                <div class="bar-bg">
-                                    <div class="bar-fill" style="width: 16.69843359866271%"></div>
-                                </div>
-                                <span class="bar-text">16.7%</span>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="symbol">
-                                BABA
-                                <span class="new-badge">NEW</span>
-                            </div>
-                        </td>
-                        <td><span class="market-tag ">美股</span></td>
-                        <td>144</td>
-                        <td>$152.28</td>
-                        <td class="price">$152.28</td>
-                        <td>¥149,890</td>
-                        <td class="pnl positive">+0.00%</td>
-                        <td>
-                            <div class="position-bar">
-                                <div class="bar-bg">
-                                    <div class="bar-fill" style="width: 14.934989107789434%"></div>
-                                </div>
-                                <span class="bar-text">14.9%</span>
-                            </div>
-                        </td>
-                    </tr>
-
-                </tbody>
+                <tr><th>标的 (Symbol)</th><th>持仓数量</th><th>成本价</th><th>最新价</th><th>浮动盈亏</th><th>仓位占比</th></tr>
+                <tr>
+        <td><strong>NVDA</strong></td>
+        <td>131</td>
+        <td>$192.85</td>
+        <td>$195.88</td>
+        <td class="up">+1.6%</td>
+        <td>17.5%</td>
+    </tr><tr>
+        <td><strong>TSM</strong></td>
+        <td>65</td>
+        <td>$385.75</td>
+        <td>$387.70</td>
+        <td class="up">+0.5%</td>
+        <td>17.2%</td>
+    </tr><tr>
+        <td><strong>0100.HK</strong></td>
+        <td>260</td>
+        <td>HK$761</td>
+        <td>HK$788.5</td>
+        <td class="up">+3.6%</td>
+        <td>17.9%</td>
+    </tr><tr>
+        <td><strong>CRWV</strong></td>
+        <td>250</td>
+        <td>$98.07</td>
+        <td>$98.07</td>
+        <td class="up">+0.0%</td>
+        <td>16.7%</td>
+    </tr><tr>
+        <td><strong>BABA</strong></td>
+        <td>144</td>
+        <td>$152.28</td>
+        <td>$152.28</td>
+        <td class="up">+0.0%</td>
+        <td>14.9%</td>
+    </tr>
             </table>
         </div>
 
-        <!-- Strategy -->
-        <div class="strategy-section">
-            <div class="strategy-card">
-                <h3>🎯 今日交易动作</h3>
-                <p>
-                    <strong>建仓 BABA (阿里巴巴)</strong><br>
-                    买入 144 股 @ $152.28<br>
-                    <strong>决策理由:</strong> 字节AI链概念持续发酵，BABA作为中国AI互联网龙头，受益于AI应用层爆发。液冷算力产业链同样火热，但BABA更具流动性优势。
-                </p>
-            </div>
-            <div class="strategy-card">
-                <h3>🌍 行业前沿洞察</h3>
-                <p>
-                    <strong>全球AI趋势:</strong> 英伟达Rubin架构驱动算力革命，AI算力产业链全线爆发。液冷龙头业绩超预期(+24%)，智谱AI单日大涨42%。<br><br>
-                    <strong>明日剧本:</strong> 资金持续涌入AI算力赛道，建议关注美股NVDA回调机会，港股AI概念仍可持续关注。
-                </p>
-            </div>
-        </div>
-
-        <!-- Footer -->
         <div class="footer">
-            <p>AI-Lobster 量化基金 | 起始本金: ¥1,000,000 | 当前净值: ¥1,003,619</p>
-            <p>Generated by Claude AI | <a href="https://lihaiming1994-droid.github.io/aimoney/" target="_blank">在线查看</a></p>
+            Generated by AI-Lobster Quant Engine | Data may be delayed.
         </div>
     </div>
 </body>
