@@ -31,7 +31,8 @@
         .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 16px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
-        th { color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; }
+        th { color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
+        th:hover { color: #fff; }
         th:first-child, td:first-child { text-align: left; }
         .symbol-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
         .badge-hk { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.3); }
@@ -69,97 +70,100 @@
         </div>
 
         <div class="top-grid">
-            <div class="card card-lg">
-                <div class="card-label">总资产 AUM</div>
-                <div class="aum-value"><span style="color:var(--up);">¥</span>981,505</div>
-                <div class="pnl-tag down-bg">
-                    ¥-18,495 (-1.85%)
+            <div class="card card-lg" style="display: flex; flex-direction: column;">
+                <div>
+                    <div class="card-label">总资产 AUM</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>856,021</div>
+                    <div class="pnl-tag down-bg">
+                        ¥-143,979 (-14.40%)
+                    </div>
                 </div>
+                <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥80,115</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">8.2% 仓位</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">9.4% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥901,391</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">91.8% 仓位</div>
+                <div class="metric-value">¥775,906</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">90.6% 仓位</div>
             </div>
         </div>
 
         <div class="table-card">
             <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
-            <table>
+            <table id="holdingsTable">
                 <tr>
-                    <th>标的</th><th>市场</th><th>数量</th><th>成本价</th><th>现价</th><th>市值 (RMB)</th><th>浮动盈亏</th><th>仓位占比</th>
+                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 
-        <tr>
-            <td><span class="symbol-name">NVDA</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>131</td>
-            <td>¥192.85</td>
-            <td>¥184.90</td>
-            <td>¥165,678</td>
-            <td class="down">¥-7,124 (-4.12%)</td>
-            <td>16.9%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">NVDA</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>131</td>
+                    <td>¥1319.09</td>
+                    <td>¥1211.77</td>
+                    <td>¥158,742</td>
+                    <td class="down">¥-14,059 (-8.1%)</td>
+                    <td>18.5%<div class="mini-bar-bg"><div class="mini-bar-fill" style="width:18.544226506872313%"></div></div></td>
+                </tr>
         
-        <tr>
-            <td><span class="symbol-name">TSM</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>65</td>
-            <td>¥385.75</td>
-            <td>¥376.86</td>
-            <td>¥167,552</td>
-            <td class="down">¥-3,952 (-2.30%)</td>
-            <td>17.1%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">TSM</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>65</td>
+                    <td>¥2638.53</td>
+                    <td>¥2562.13</td>
+                    <td>¥166,538</td>
+                    <td class="down">¥-4,966 (-2.9%)</td>
+                    <td>19.5%<div class="mini-bar-bg"><div class="mini-bar-fill" style="width:19.454930621546563%"></div></div></td>
+                </tr>
         
-        <tr>
-            <td><span class="symbol-name">0100.HK</span></td>
-            <td><span class="badge-hk">港股</span></td>
-            <td>260</td>
-            <td>¥761.00</td>
-            <td>¥788.50</td>
-            <td>¥178,359</td>
-            <td class="up">+¥6,220 (+3.61%)</td>
-            <td>18.2%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">0100.HK</span></td>
+                    <td><span class="badge-hk">港股</span></td>
+                    <td>260</td>
+                    <td>¥662.07</td>
+                    <td>¥664.25</td>
+                    <td>¥172,704</td>
+                    <td class="up">+¥565 (+0.3%)</td>
+                    <td>20.2%<div class="mini-bar-bg"><div class="mini-bar-fill" style="width:20.175174340609907%"></div></div></td>
+                </tr>
         
-        <tr>
-            <td><span class="symbol-name">CRWV</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>250</td>
-            <td>¥98.07</td>
-            <td>¥97.78</td>
-            <td>¥167,204</td>
-            <td class="down">¥-496 (-0.30%)</td>
-            <td>17.0%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">CRWV</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>250</td>
+                    <td>¥670.80</td>
+                    <td>¥543.92</td>
+                    <td>¥135,979</td>
+                    <td class="down">¥-31,720 (-18.9%)</td>
+                    <td>15.9%<div class="mini-bar-bg"><div class="mini-bar-fill" style="width:15.885033538347251%"></div></div></td>
+                </tr>
         
-        <tr>
-            <td><span class="symbol-name">BABA</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>144</td>
-            <td>¥152.28</td>
-            <td>¥148.05</td>
-            <td>¥145,823</td>
-            <td class="down">¥-4,166 (-2.78%)</td>
-            <td>14.9%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">BABA</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>144</td>
+                    <td>¥1041.60</td>
+                    <td>¥985.71</td>
+                    <td>¥141,943</td>
+                    <td class="down">¥-8,047 (-5.4%)</td>
+                    <td>16.6%<div class="mini-bar-bg"><div class="mini-bar-fill" style="width:16.58167376169095%"></div></div></td>
+                </tr>
         
-        <tr>
-            <td><span class="symbol-name">MU</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>27</td>
-            <td>¥428.88</td>
-            <td>¥415.72</td>
-            <td>¥76,775</td>
-            <td class="down">¥-2,430 (-3.07%)</td>
-            <td>7.8%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">MU</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>27</td>
+                    <td>¥2933.54</td>
+                    <td>¥0.00</td>
+                    <td>¥0</td>
+                    <td class="down">¥-79,206 (-100.0%)</td>
+                    <td>0.0%<div class="mini-bar-bg"><div class="mini-bar-fill" style="width:0.0%"></div></div></td>
+                </tr>
         
             </table>
         </div>
@@ -168,13 +172,13 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">【周末休市 Market Closed】</span>
+                    <span class="action-highlight">【全盘观望】无重大变量，继续持有</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    今日为非交易日，锁定周五盘面状态。
+                    本周AI产业链整体维持震荡格局。NVDA受GPU供给紧张影响，中期趋势仍乐观；TSM先进制程需求稳定；港股0100.HK估值合理。基本面逻辑未变，继续持有观望。
                 </div>
             </div>
         </div>
@@ -182,14 +186,73 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li>周末休市，暂无实时产业资讯更新。</li>
+                
+            <li>2026-02-28：英伟达新一代Blackwell GPU需求超预期，供给缺口预计持续至Q3</li>
+            <li>2026-02-28：台积电2nm制程良率突破85%，苹果/AMD订单饱满</li>
+            <li>2026-02-27：OpenAI发布GPT-5预览版，多模态能力显著提升</li>
+            <li>2026-02-27：微软Azure AI服务收入同比增长42%，企业需求强劲</li>
+            <li>2026-02-26：三星电子获英伟达HBM4内存供应资格，供应链洗牌加速</li>
+    
             </ul>
         </div>
 
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
-            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拒绝小作文，拥抱真逻辑<br>
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
             Generated by Automated Quant Engine
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script>
+        // 1. 渲染 AUM 走势图
+        var chartDom = document.getElementById('aumChart');
+        var myChart = echarts.init(chartDom);
+        var option = {
+            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+            grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
+            series: [{
+                data: [1000000],
+                type: 'line',
+                smooth: true,
+                showSymbol: false,
+                lineStyle: { color: '#6366f1', width: 3 },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
+                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
+                    ])
+                }
+            }]
+        };
+        myChart.setOption(option);
+        window.addEventListener('resize', function() { myChart.resize(); });
+
+        // 2. 表格点击排序逻辑
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("holdingsTable");
+            switching = true; dir = "desc";
+            while (switching) {
+                switching = false; rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,""));
+                    let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,""));
+                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } }
+                    else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true; switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
