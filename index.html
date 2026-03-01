@@ -32,8 +32,8 @@
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 16px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
         th { color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
-        th:hover { color: #fff; }
-        th:first-child, td:first-child { text-align: left; }
+        th:hover { color: #fff:first-child, td; }
+        th:first-child { text-align: left; }
         .symbol-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
         .badge-hk { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.3); }
         .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-02-28 周六</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-01</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
@@ -71,9 +71,9 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>981,506</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>2,012,255</div>
                     <div class="pnl-tag up-bg">
-                        +¥0 (+0.00%)
+                        +¥1,030,750 (+105.02%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -81,12 +81,12 @@
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥80,115</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">8.2% 仓位</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">4.0% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥901,391</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">91.8% 仓位</div>
+                <div class="metric-value">¥1,932,140</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">96.0% 仓位</div>
             </div>
         </div>
 
@@ -97,71 +97,71 @@
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 
-                <tr>
-                    <td><span class="symbol-name">NVDA</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>131</td>
-                    <td>$192.85</td>
-                    <td>$184.90</td>
-                    <td>¥165,678</td>
-                    <td class="down">¥-7,124 (-4.1%)</td>
-                    <td>67.4%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>131</td>
+        <td>$192.85</td>
+        <td>$177.19</td>
+        <td>¥159,466</td>
+        <td class="down">-14,094 (-8.12%)</td>
+        <td>7.9%</td>
+    </tr>
     
-                <tr>
-                    <td><span class="symbol-name">TSM</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>65</td>
-                    <td>$385.75</td>
-                    <td>$376.86</td>
-                    <td>¥167,552</td>
-                    <td class="down">¥-3,952 (-2.3%)</td>
-                    <td>40.5%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>65</td>
+        <td>$385.75</td>
+        <td>$374.58</td>
+        <td>¥167,269</td>
+        <td class="down">-4,988 (-2.90%)</td>
+        <td>8.3%</td>
+    </tr>
     
-                <tr>
-                    <td><span class="symbol-name">0100.HK</span></td>
-                    <td><span class="badge-hk">港股</span></td>
-                    <td>260</td>
-                    <td>$761.00</td>
-                    <td>$788.50</td>
-                    <td>¥178,359</td>
-                    <td class="up">+¥6,220 (+3.6%)</td>
-                    <td>30.1%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">0100.HK</span></td>
+        <td><span class="badge-hk">港股</span></td>
+        <td>260</td>
+        <td>¥761.00</td>
+        <td>¥788.50</td>
+        <td>¥1,249,706</td>
+        <td class="up">+43,585 (+3.61%)</td>
+        <td>62.1%</td>
+    </tr>
     
-                <tr>
-                    <td><span class="symbol-name">CRWV</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>250</td>
-                    <td>$98.07</td>
-                    <td>$97.78</td>
-                    <td>¥167,204</td>
-                    <td class="down">¥-496 (-0.3%)</td>
-                    <td>22.0%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>250</td>
+        <td>$98.07</td>
+        <td>$79.56</td>
+        <td>¥136,644</td>
+        <td class="down">-31,791 (-18.87%)</td>
+        <td>6.8%</td>
+    </tr>
     
-                <tr>
-                    <td><span class="symbol-name">BABA</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>144</td>
-                    <td>$152.28</td>
-                    <td>$148.05</td>
-                    <td>¥145,823</td>
-                    <td class="down">¥-4,166 (-2.8%)</td>
-                    <td>16.1%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">BABA</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>144</td>
+        <td>$152.28</td>
+        <td>$144.11</td>
+        <td>¥142,565</td>
+        <td class="down">-8,082 (-5.37%)</td>
+        <td>7.1%</td>
+    </tr>
     
-                <tr>
-                    <td><span class="symbol-name">MU</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>27</td>
-                    <td>$428.88</td>
-                    <td>$415.72</td>
-                    <td>¥76,775</td>
-                    <td class="down">¥-2,430 (-3.1%)</td>
-                    <td>7.8%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>27</td>
+        <td>$428.88</td>
+        <td>$412.37</td>
+        <td>¥76,491</td>
+        <td class="down">-3,062 (-3.85%)</td>
+        <td>3.8%</td>
+    </tr>
     
             </table>
         </div>
@@ -201,10 +201,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["2026-02-27", "2026-02-28", "2026-02-28"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-02-28", "2026-02-28"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [981505, 981505.7496, 981505.7496],
+                data: [1000000, 981505, 2012255.3646523347, 981505.7496],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
