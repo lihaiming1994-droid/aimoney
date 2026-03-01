@@ -71,22 +71,22 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,000,000</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>986,423</div>
                     <div class="pnl-tag up-bg">
-                        +¥0 (+0.00%)
+                        +¥4,918 (+0.50%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
-                <div class="metric-value">¥1,000,000</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">100.0% 仓位</div>
+                <div class="metric-value">¥80,115</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">8.1% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥0</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">0.0% 仓位</div>
+                <div class="metric-value">¥906,308</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">91.9% 仓位</div>
             </div>
         </div>
 
@@ -97,6 +97,72 @@
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 
+    <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>131</td>
+        <td>192.85</td>
+        <td>184.90</td>
+        <td>¥166,404</td>
+        <td class="down">¥-7,155 (-4.1%)</td>
+        <td>16.9%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>65</td>
+        <td>385.75</td>
+        <td>376.86</td>
+        <td>¥168,287</td>
+        <td class="down">¥-3,970 (-2.3%)</td>
+        <td>17.1%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">0100.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>260</td>
+        <td>761.00</td>
+        <td>788.50</td>
+        <td>¥180,105</td>
+        <td class="up">+¥6,281 (+3.6%)</td>
+        <td>18.3%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>250</td>
+        <td>98.07</td>
+        <td>97.78</td>
+        <td>¥167,937</td>
+        <td class="down">¥-498 (-0.3%)</td>
+        <td>17.0%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">BABA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>144</td>
+        <td>152.28</td>
+        <td>148.05</td>
+        <td>¥146,463</td>
+        <td class="down">¥-4,185 (-2.8%)</td>
+        <td>14.8%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>27</td>
+        <td>428.88</td>
+        <td>415.72</td>
+        <td>¥77,112</td>
+        <td class="down">¥-2,441 (-3.1%)</td>
+        <td>7.8%</td>
+    </tr>
+    
             </table>
         </div>
 
@@ -135,10 +201,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000],
+                data: [1000000, 981505],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
