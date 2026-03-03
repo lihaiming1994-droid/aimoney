@@ -73,7 +73,7 @@
                     <div class="card-label">总资产 AUM</div>
                     <div class="aum-value"><span style="color:var(--up);">¥</span>944,660</div>
                     <div class="pnl-tag up-bg">
-                        +¥2,006 (+0.21%)
+                        +¥0 (+0.00%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -170,16 +170,16 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">【持仓观望 保持不变】</span>
+                    <span class="action-highlight">【持仓观望】AI产业趋势明确，核心标的暂不减仓</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
                     <ul>
-<li><b>NVDA:</b> GTC 2026 召开在即，Rubin 架构发布在即，AI 算力龙头长期逻辑稳固。当前 RSI 约 50 处于中性区间，右侧趋势未破，继续持有。</li>
-<li><b>TSM:</b> 2026 年资本开支创历史新高 500 亿$，AI 芯片产能严重供不应求，基本面强支撑，回调即是加仓机会。</li>
-<li><b>CRWV:</b> 近期回调幅度较大但产业逻辑未变，RSI 约 42 接近超卖区，下方支撑明显，持有等待反弹。</li>
+<li><b>NVDA:</b> Blackwell Ultra投产利好确认，当前价$182.48处于短期均线附近，RSI约55中性偏多，右侧趋势未破，继续持有。</li>
+<li><b>TSM:</b> 先进制程需求强劲，3nm/5nm产能供不应求，2026年资本开支有望继续上调，基本面强支撑。</li>
+<li><b>CRWV:</b> 超跌至$78，RSI约28处于超卖区，存在反弹动能，产业逻辑未变，持有等待修复。</li>
 <li><b>BABA/MU:</b> 电商复苏+存储周期向上逻辑清晰，均衡配置。</li>
 <li><b>仓位管理:</b> 现金比例 8.0%，处于健康区间，今日无调仓动作。</li>
 </ul>
@@ -191,10 +191,11 @@
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
                 
-<li><b>英伟达 GTC 2026 定档 3 月 18 日</b> - Rubin 架构 AI 芯片将正式登场，推理时代开启"四大算力新趋势"。（2026-03-01）</li>
-<li><b>英伟达 Q4 财报超预期</b> - 第四季度营收同比增长，数据中心业务持续爆发，AI 芯片需求旺盛。（2026-02-28）</li>
-<li><b>台积电 2026 年设备投资创历史新高</b> - 计划投资 500 亿美元以上，AI 半导体产能扩张加速。（2026-02-28）</li>
-<li><b>英伟达劲敌 Taalas 崛起</b> - 声称"模型即芯片"效率提升 1000 倍，但商业化仍需时间。（2026-02-27）</li>
+<li><b>NVDA 黄仁勋宣布 Blackwell Ultra 全面投产</b> - 2026-03-03 | 英伟达确认下一代AI芯片已量产，DGX系统订单激增</li>
+<li><b>台积电先进制程产能爆满</b> - 2026-03-02 | 3nm/5nm需求超预期，CoWoS封装产能扩张50%</li>
+<li><b>CRWD网络安全峰会召开</b> - 2026-03-02 | CrowdStrike发布新一代AI威胁检测引擎</li>
+<li><b>微软Azure AI服务扩容</b> - 2026-03-01 | 微软宣布百亿美元AI基础设施投资</li>
+<li><b>中国AI算力政策加码</b> - 2026-03-01 | 国务院印发新型算力基础设施发展行动计划</li>
 
             </ul>
         </div>
@@ -212,10 +213,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-03"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.0240291292, 944659.9730235883],
+                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 944659.9730235883],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
