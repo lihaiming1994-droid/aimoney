@@ -58,138 +58,153 @@
                 <div class="logo-icon">🦞</div>
                 <div>
                     <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">Quant Hedge Fund | AI Industry Focus</p>
+                    <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-09</div>
-                <div class="update-time">Update: 17:10 Beijing</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-10</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
 
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
-                    <div class="card-label">Total AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>947,665</div>
+                    <div class="card-label">总资产 AUM</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,016,873</div>
                     <div class="pnl-tag up-bg">
-                        +¥53,319 (+5.96%)
+                        +¥69,207 (+7.30%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
-                <div class="card-label">Cash</div>
+                <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥80,115</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">8.5%</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">7.9% 仓位</div>
             </div>
             <div class="card">
-                <div class="card-label">Stock Value</div>
-                <div class="metric-value">¥867,550</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">91.5%</div>
+                <div class="card-label">持仓市值 Stock Value</div>
+                <div class="metric-value">¥936,758</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">92.1% 仓位</div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">Positions</h2>
+            <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
                 <tr>
-                    <th>Symbol</th><th>Market</th><th onclick="sortTable(2)">Shares</th><th onclick="sortTable(3)">Cost</th><th onclick="sortTable(4)">Price</th><th onclick="sortTable(5)">Value</th><th onclick="sortTable(6)">PnL</th><th onclick="sortTable(7)">Weight</th>
+                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 
-                <tr>
-                    <td><span class="symbol-name">NVDA</span></td>
-                    <td><span class="badge-us">US</span></td>
-                    <td>131</td>
-                    <td>192.85</td>
-                    <td>177.82</td>
-                    <td>160,964</td>
-                    <td class="down">-13,605 (-7.8%)</td>
-                    <td>17.0%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">TSM</span></td>
-                    <td><span class="badge-us">US</span></td>
-                    <td>65</td>
-                    <td>385.75</td>
-                    <td>338.89</td>
-                    <td>152,212</td>
-                    <td class="down">-21,047 (-12.1%)</td>
-                    <td>16.1%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">0100.HK</span></td>
-                    <td><span class="badge-hk">HK</span></td>
-                    <td>260</td>
-                    <td>761.00</td>
-                    <td>997.00</td>
-                    <td>229,055</td>
-                    <td class="up">+54,220 (+31.0%)</td>
-                    <td>24.2%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">CRWV</span></td>
-                    <td><span class="badge-us">US</span></td>
-                    <td>250</td>
-                    <td>98.07</td>
-                    <td>72.99</td>
-                    <td>126,090</td>
-                    <td class="down">-43,326 (-25.6%)</td>
-                    <td>13.3%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">BABA</span></td>
-                    <td><span class="badge-us">US</span></td>
-                    <td>144</td>
-                    <td>152.28</td>
-                    <td>130.79</td>
-                    <td>130,141</td>
-                    <td class="down">-21,383 (-14.1%)</td>
-                    <td>13.7%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">MU</span></td>
-                    <td><span class="badge-us">US</span></td>
-                    <td>27</td>
-                    <td>428.88</td>
-                    <td>370.30</td>
-                    <td>69,087</td>
-                    <td class="down">-10,929 (-13.7%)</td>
-                    <td>7.3%</td>
-                </tr>
+    <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>131</td>
+        <td>1334.52</td>
+        <td>1263.94</td>
+        <td>¥165,576</td>
+        <td class="down">¥-9,247 (-5.3%)</td>
+        <td>16.3%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>65</td>
+        <td>2669.39</td>
+        <td>2413.00</td>
+        <td>¥156,845</td>
+        <td class="down">¥-16,665 (-9.6%)</td>
+        <td>15.4%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">0100.HK</span></td>
+        <td><span class="badge-hk">港股</span></td>
+        <td>260</td>
+        <td>673.42</td>
+        <td>1079.59</td>
+        <td>¥280,694</td>
+        <td class="up">+¥105,605 (+60.3%)</td>
+        <td>27.6%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>250</td>
+        <td>678.64</td>
+        <td>514.92</td>
+        <td>¥128,729</td>
+        <td class="down">¥-40,932 (-24.1%)</td>
+        <td>12.7%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">BABA</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>144</td>
+        <td>1053.78</td>
+        <td>917.87</td>
+        <td>¥132,173</td>
+        <td class="down">¥-19,571 (-12.9%)</td>
+        <td>13.0%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">美股</span></td>
+        <td>27</td>
+        <td>2967.85</td>
+        <td>2694.09</td>
+        <td>¥72,741</td>
+        <td class="down">¥-7,391 (-9.2%)</td>
+        <td>7.2%</td>
+    </tr>
+    
             </table>
         </div>
 
         <div class="bottom-grid">
             <div class="log-box">
-                <div class="log-title">Action</div>
+                <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">HOLD - Waiting for AI sector opportunities</span>
+                    <span class="action-highlight">【持仓观望】</span>
                 </div>
             </div>
             <div class="log-box">
-                <div class="log-title">Analysis</div>
+                <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    
-<b>Multi-factor Analysis:</b><br>
-- NVDA: AI chip leader, near moving average<br>
-- TSM: Advanced process demand strong, attractive valuation<br>
-- CRWV: AI app volatility, RSI near oversold<br>
-- Cash: 15% position for new opportunities
+                    【2026-03-10 多因子共振分析】
 
+📊 宏观产业信号：
+- 今日 AI 产业链整体呈震荡调整态势
+- 英伟达产业链短期承压，但长期算力需求逻辑不变
+
+🔍 持仓技术面追踪：
+- NVDA: 现价 182.64999，成本 192.85，浮亏 -5.3%
+- TSM: 现价 348.70001，成本 385.75，浮亏 -9.6%
+- CRWV: 现价 74.41，成本 98.07，浮亏 -24.1%
+
+💡 操作建议：
+- 当前保持 7.9% 现金仓位防守
+- 等待更好的右侧确认信号再行加仓
+- 密切关注明日开盘情绪
                 </div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">AI News</h2>
+            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-09/doc-inhqksxk9837818.shtml" target="_blank" style="color:#818cf8">[2026-03-09] 英伟达投资人工智能数据中心初创公司Nscale，该公司估值达到146亿美元</a></li>
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-10/doc-inhqnvwt6314406.shtml" target="_blank" style="color:#818cf8">[2026-03-10] 受AI需求持续拉动 台积电今年前两个月销售额增长30%</a></li><li><a href="https://finance.sina.com.cn/money/fund/etf/2026-03-10/doc-inhqnvwt6310865.shtml" target="_blank" style="color:#818cf8">[2026-03-10] AI执行需求开启，算力消耗量将加速提升！科技ETF（515000）收涨2.91%，天孚通信领涨近11%</a></li>
             </ul>
         </div>
 
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
-            AI-Lobster Fund | Initial: ¥1,000,000
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
+            Generated by Automated Quant Engine
         </div>
     </div>
 
@@ -200,10 +215,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ['初始', '2026-02-27', '2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08', '2026-03-09'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238],
+                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238, 1016872.6974393073],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
