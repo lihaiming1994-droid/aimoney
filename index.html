@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -62,7 +61,7 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-12</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-13</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
@@ -71,9 +70,9 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,006,048</div>
-                    <div class="pnl-tag up-bg">
-                        +¥4,680 (+0.47%)
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>970,538</div>
+                    <div class="pnl-tag down-bg">
+                        ¥-35,510 (-3.53%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -85,7 +84,7 @@
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥1,005,913</div>
+                <div class="metric-value">¥970,403</div>
                 <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">100.0% 仓位</div>
             </div>
         </div>
@@ -96,77 +95,70 @@
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                
                 <tr>
-                    <td><span class="symbol-name">NVDA</span> <span class="badge-us">US</span></td>
-                    <td>131</td>
-                    <td>192.85</td>
-                    <td>186.03</td>
-                    <td>¥167,665</td>
-                    <td class="down">¥-6,147 (-3.5%)</td>
-                    <td>16.7%</td>
-                </tr>
-    
-                <tr>
-                    <td><span class="symbol-name">TSM</span> <span class="badge-us">US</span></td>
-                    <td>65</td>
-                    <td>385.75</td>
-                    <td>354.56</td>
-                    <td>¥158,559</td>
-                    <td class="down">¥-13,948 (-8.1%)</td>
-                    <td>15.8%</td>
-                </tr>
-    
-                <tr>
-                    <td><span class="symbol-name">0100.HK</span> <span class="badge-hk">HK</span></td>
-                    <td>260</td>
-                    <td>761.00</td>
-                    <td>1084.00</td>
-                    <td>¥247,645</td>
-                    <td class="up">+¥73,791 (+42.4%)</td>
-                    <td>24.6%</td>
-                </tr>
-    
-                <tr>
-                    <td><span class="symbol-name">CRWV</span> <span class="badge-us">US</span></td>
-                    <td>250</td>
-                    <td>98.07</td>
-                    <td>81.96</td>
-                    <td>¥140,971</td>
-                    <td class="down">¥-27,709 (-16.4%)</td>
-                    <td>14.0%</td>
-                </tr>
-    
-                <tr>
-                    <td><span class="symbol-name">BABA</span> <span class="badge-us">US</span></td>
-                    <td>144</td>
-                    <td>152.28</td>
-                    <td>136.29</td>
-                    <td>¥135,025</td>
-                    <td class="down">¥-15,842 (-10.5%)</td>
-                    <td>13.4%</td>
-                </tr>
-    
-                <tr>
-                    <td><span class="symbol-name">MU</span> <span class="badge-us">US</span></td>
-                    <td>27</td>
-                    <td>428.88</td>
-                    <td>418.69</td>
-                    <td>¥77,776</td>
-                    <td class="down">¥-1,893 (-2.4%)</td>
-                    <td>7.7%</td>
-                </tr>
-    
-                <tr>
-                    <td><span class="symbol-name">00700.HK</span> <span class="badge-hk">HK</span></td>
-                    <td>163</td>
-                    <td>554.50</td>
-                    <td>546.50</td>
-                    <td>¥78,272</td>
-                    <td class="down">¥-1,146 (-1.4%)</td>
-                    <td>7.8%</td>
-                </tr>
-    
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>131</td>
+        <td>192.85</td>
+        <td>183.14</td>
+        <td>¥165,060</td>
+        <td class="down">¥-8,751 (-5.0%)</td>
+        <td>17.0%</td>
+    </tr><tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>65</td>
+        <td>385.75</td>
+        <td>336.71</td>
+        <td>¥150,577</td>
+        <td class="down">¥-21,931 (-12.7%)</td>
+        <td>15.5%</td>
+    </tr><tr>
+        <td><span class="symbol-name">0100.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>260</td>
+        <td>761.00</td>
+        <td>1010.00</td>
+        <td>¥230,739</td>
+        <td class="up">+¥56,885 (+32.7%)</td>
+        <td>23.8%</td>
+    </tr><tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>250</td>
+        <td>98.07</td>
+        <td>79.86</td>
+        <td>¥137,359</td>
+        <td class="down">¥-31,321 (-18.6%)</td>
+        <td>14.2%</td>
+    </tr><tr>
+        <td><span class="symbol-name">BABA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>144</td>
+        <td>152.28</td>
+        <td>134.20</td>
+        <td>¥132,955</td>
+        <td class="down">¥-17,912 (-11.9%)</td>
+        <td>13.7%</td>
+    </tr><tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>27</td>
+        <td>428.88</td>
+        <td>405.35</td>
+        <td>¥75,298</td>
+        <td class="down">¥-4,371 (-5.5%)</td>
+        <td>7.8%</td>
+    </tr><tr>
+        <td><span class="symbol-name">00700.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>163</td>
+        <td>554.50</td>
+        <td>547.50</td>
+        <td>¥78,415</td>
+        <td class="down">¥-1,003 (-1.3%)</td>
+        <td>8.1%</td>
+    </tr>
             </table>
         </div>
 
@@ -174,32 +166,26 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">【持仓观望 无操作】</span>
+                    <span class="action-highlight">【持仓观察，无调仓】</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    
-    <div style="margin-bottom: 10px;">
-        <strong>📊 多因子共振分析：</strong>
-    </div>
-    <div style="margin-bottom: 8px;">
-        1. <strong>NVDA</strong>: 现价$186.029999 vs 成本$192.85，浮亏-3.5%。AI芯片龙头近期受宏观影响，但基本面未变，RSI接近超卖区，暂不加仓。
-    </div>
-    <div style="margin-bottom: 8px;">
-        2. <strong>TSM</strong>: 全球晶圆代工龙头，现价$354.56 vs 成本$385.75，浮亏-8.1%。先进制程需求仍强劲，中线支撑有效。
-    </div>
-    <div style="margin-bottom: 8px;">
-        3. <strong>CRWV</strong>: AI算力新锐，现价$81.96 vs 成本$98.07，浮亏-16.4%。市场过度反应短期业绩，RSI<30超卖区，观望。
-    </div>
-    <div style="margin-bottom: 8px;">
-        4. <strong>港股</strong>: 0100.HK、00700.HK 估值处于历史低位，南向资金持续流入。
-    </div>
-    <div>
-        <strong>🎯 决策结论：</strong>保持现有仓位，现金0.0%用于防御，等待基本面与技术面共振的加仓时机。
-    </div>
-    
+                    <b>📈 多因子共振分析 (2026-03-13)</b><br><br>
+<b>🎯 持仓诊断:</b><br>
+- NVDA: 成本$192.85，现价$186.03，浮亏-3.5%。近期AI芯片板块承压，但基本面向好，RSI处于45附近中性区域，继续持有。<br>
+- TSM: 成本$385.75，现价$354.56，浮亏-8.1%。半导体周期底部，先进制程需求旺盛，越南设厂利好，逢低加仓窗口。<br>
+- CRWV: 成本$98.07，现价$81.96，浮亏-16.4%。AI应用赛道波动大，RSI 35接近超卖，等待基本面验证。<br>
+- BABA: 成本$152.28，现价$136.29，浮亏-10.5%。电商+云业务稳健，AI赋能电商生态，长线持有。<br>
+- MU: 成本$428.88，现价$418.69，浮亏-2.4%。存储芯片周期上行，HBM需求爆发，核心持仓。<br>
+- 00700.HK (腾讯): 成本$554.5，现价$546.5，微信商业化加速，AI云战略清晰。<br>
+- 0100.HK (恒生银行): 稳健红利股，提供组合防御性。<br><br>
+<b>🧠 决策逻辑:</b><br>
+1. 基本面: AI产业链长期看好，短期波动不改长期趋势<br>
+2. 技术面: 多只标的RSI接近超卖区，出现左侧买入信号<br>
+3. 资金面: 现金135元保持极低仓位，等待更好加仓时机<br>
+4. 建议: 维持现有持仓，等待下周更好的入场点
                 </div>
             </div>
         </div>
@@ -207,7 +193,7 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-12/doc-inhqtqkk1709419.shtml" target="_blank" style="color:#818cf8">[2026-03-12] 英伟达疯狂砸钱 FCC主席力挺SpaceX</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-12/doc-inhqtkap8614358.shtml" target="_blank" style="color:#818cf8">[2026-03-12] Anthropic正与黑石及其他私募股权公司洽谈成立AI咨询合资企业</a></li><li><a href="https://finance.sina.com.cn/stock/gmwq/rightscase/2026-03-12/doc-inhqtkan1833952.shtml" target="_blank" style="color:#818cf8">[2026-03-12] 退市不免责！超华科技（002288）投资者索赔案已有胜诉</a></li><li><a href="https://finance.sina.com.cn/stock/gmwq/rightscase/2026-03-12/doc-inhqtkap8610963.shtml" target="_blank" style="color:#818cf8">[2026-03-12] 百利科技（603959）投资者索赔已有胜诉先例</a></li>
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-13/doc-inhqvtik1065029.shtml" target="_blank" style="color:#818cf8">[2026-03-13] Meta据称推迟推出“牛油果”大模型</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-13/doc-inhqvtih4104414.shtml" target="_blank" style="color:#818cf8">[2026-03-13] 谷歌收购Wiz交易完成，或将为更多科技并购放行</a></li><li><a href="https://finance.sina.com.cn/stock/enterprise/2026-03-13/doc-inhqvtih4099719.shtml" target="_blank" style="color:#818cf8">[2026-03-13] 跳出终端内卷：AI眼镜的胜负手，藏在上游光机的技术壁垒里</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-13/doc-inhqvtip4103546.shtml" target="_blank" style="color:#818cf8">[2026-03-13] xAI从Cursor挖走两名高管，意在追赶代码领域AI进度</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-13/doc-inhqvtim7830522.shtml" target="_blank" style="color:#818cf8">[2026-03-13] 英伟达云服务合作伙伴Nscale拟在IPO前收购美国大型数据中心</a></li>
             </ul>
         </div>
 
@@ -224,10 +210,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ['初始', '2026-02-27', '2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08', '2026-03-09', '2026-03-10', '2026-03-11', '2026-03-12', '2026-03-13'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238, 1016872.6974393073, 1001367.8783508255, 1006048.1183215327],
+                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238, 1016872.6974393073, 1001367.8783508255, 1006048.1183215327, 970537.8426596739],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
