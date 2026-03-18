@@ -15,7 +15,6 @@
         .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
         .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
         .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
-
         .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
         .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .card-lg { flex: 2; }
@@ -25,7 +24,6 @@
         .pnl-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }
         .up-bg { background: rgba(16, 185, 129, 0.1); color: var(--up); }
         .down-bg { background: rgba(239, 68, 68, 0.1); color: var(--down); }
-
         .table-card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
         .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
         table { width: 100%; border-collapse: collapse; }
@@ -38,13 +36,11 @@
         .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
         .up { color: var(--up); font-weight: 600; }
         .down { color: var(--down); font-weight: 600; }
-
         .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
         .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
         .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
         .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
         .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
-
         .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
         .news-list li { margin-bottom: 10px; }
         .news-list li::marker { color: var(--accent); }
@@ -55,25 +51,19 @@
         <div class="header">
             <div class="logo-area">
                 <div class="logo-icon">🦞</div>
-                <div>
-                    <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
-                </div>
+                <div><h1 class="title">AI-Lobster</h1><p class="subtitle">量化对冲基金 | 权威中频波段策略</p></div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-17</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-03-18</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
-
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,000,273</div>
-                    <div class="pnl-tag up-bg">
-                        +¥14,810 (+1.50%)
-                    </div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>1043865</div>
+                    <div class="pnl-tag up-bg">+¥43591 (+4.36%)</div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
@@ -84,161 +74,57 @@
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥1,000,138</div>
+                <div class="metric-value">¥1043730</div>
                 <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">100.0% 仓位</div>
             </div>
         </div>
-
         <div class="table-card">
             <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
-                <tr>
-                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
-                </tr>
-                <tr>
-        <td><span class="symbol-name">NVDA</span></td>
-        <td><span class="badge-us">US</span></td>
-        <td>131</td>
-        <td>192.85</td>
-        <td>183.22</td>
-        <td>¥165,613</td>
-        <td class="down">¥-8,705 (-5.0%)</td>
-        <td>16.6%</td>
-    </tr><tr>
-        <td><span class="symbol-name">TSM</span></td>
-        <td><span class="badge-us">US</span></td>
-        <td>65</td>
-        <td>385.75</td>
-        <td>340.23</td>
-        <td>¥152,593</td>
-        <td class="down">¥-20,416 (-11.8%)</td>
-        <td>15.3%</td>
-    </tr><tr>
-        <td><span class="symbol-name">0100.HK</span></td>
-        <td><span class="badge-hk">HK</span></td>
-        <td>260</td>
-        <td>761.00</td>
-        <td>1033.00</td>
-        <td>¥236,680</td>
-        <td class="up">+¥62,325 (+35.7%)</td>
-        <td>23.7%</td>
-    </tr><tr>
-        <td><span class="symbol-name">CRWV</span></td>
-        <td><span class="badge-us">US</span></td>
-        <td>250</td>
-        <td>98.07</td>
-        <td>85.86</td>
-        <td>¥148,108</td>
-        <td class="down">¥-21,062 (-12.5%)</td>
-        <td>14.8%</td>
-    </tr><tr>
-        <td><span class="symbol-name">BABA</span></td>
-        <td><span class="badge-us">US</span></td>
-        <td>144</td>
-        <td>152.28</td>
-        <td>136.71</td>
-        <td>¥135,835</td>
-        <td class="down">¥-15,470 (-10.2%)</td>
-        <td>13.6%</td>
-    </tr><tr>
-        <td><span class="symbol-name">MU</span></td>
-        <td><span class="badge-us">US</span></td>
-        <td>27</td>
-        <td>428.88</td>
-        <td>441.80</td>
-        <td>¥82,307</td>
-        <td class="up">+¥2,407 (+3.0%)</td>
-        <td>8.2%</td>
-    </tr><tr>
-        <td><span class="symbol-name">00700.HK</span></td>
-        <td><span class="badge-hk">HK</span></td>
-        <td>163</td>
-        <td>554.50</td>
-        <td>550.00</td>
-        <td>¥79,002</td>
-        <td class="down">¥-644 (-0.8%)</td>
-        <td>7.9%</td>
-    </tr>
+                <tr><th>标的</th><th>市场</th><th onclick="sortTable(2)">数量</th><th onclick="sortTable(3)">成本价</th><th onclick="sortTable(4)">现价</th><th onclick="sortTable(5)">市值 (RMB)</th><th onclick="sortTable(6)">浮动盈亏</th><th onclick="sortTable(7)">仓位占比</th></tr>
+                <tr><td><span class="symbol-name">NVDA</span></td><td><span class="badge-us">美股</span></td><td>131</td><td>192.85</td><td>181.93</td><td>¥164208</td><td class="down">-5.66%</td><td>15.7%</td></tr><tr><td><span class="symbol-name">TSM</span></td><td><span class="badge-us">美股</span></td><td>65</td><td>385.75</td><td>345.98</td><td>¥154947</td><td class="down">-10.31%</td><td>14.8%</td></tr><tr><td><span class="symbol-name">0100.HK</span></td><td><span class="badge-hk">港股</span></td><td>260</td><td>761.00</td><td>1238.00</td><td>¥282877</td><td class="up">+62.68%</td><td>27.1%</td></tr><tr><td><span class="symbol-name">CRWV</span></td><td><span class="badge-us">美股</span></td><td>250</td><td>98.07</td><td>82.12</td><td>¥141452</td><td class="down">-16.26%</td><td>13.6%</td></tr><tr><td><span class="symbol-name">BABA</span></td><td><span class="badge-us">美股</span></td><td>144</td><td>152.28</td><td>136.57</td><td>¥135499</td><td class="down">-10.32%</td><td>13.0%</td></tr><tr><td><span class="symbol-name">MU</span></td><td><span class="badge-us">美股</span></td><td>27</td><td>428.88</td><td>461.69</td><td>¥85888</td><td class="up">+7.65%</td><td>8.2%</td></tr><tr><td><span class="symbol-name">00700.HK</span></td><td><span class="badge-hk">港股</span></td><td>163</td><td>554.50</td><td>550.50</td><td>¥78858</td><td class="down">-0.72%</td><td>7.6%</td></tr>
             </table>
         </div>
-
         <div class="bottom-grid">
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
-                <div class="log-content">
-                    <span class="action-highlight">【持仓观望 无动作】</span>
-                </div>
+                <div class="log-content"><span class="action-highlight">【持仓观察 无操作】</span></div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
-                <div class="log-content">
-                    NVDA当前价183.22美元(昨日180.27)，涨幅+1.6%，算力龙头趋势向上；TSM反弹至340美元；CRWV从81反弹至85.86，短线超跌修复。AI产业链整体情绪回暖，继续持有核心算力标的。当前现金比例0.0%，保持充足流动性。
-                </div>
+                <div class="log-content">基于多因子共振模型分析：
+<br><br>
+📊 技术面观察：
+<br>• NVDA: 近期回调后RSI回落至45附近，支撑位于$175，短期均线仍在多头排列
+<br>• TSM: 受全球芯片需求影响，RSI约38，$330为关键支撑位
+<br>• CRWV: 处于调整区间，RSI约42，$82支撑较强
+<br><br>
+📰 基本面逻辑：
+<br>• AI算力需求持续高涨，NVDA Blackwell芯片供不应求
+<br>• 台积电先进制程产能利用率维持高位
+<br>• 美国电网升级需求明确，GEV、NEE受益
+<br><br>
+💡 决策依据：
+<br>当前持仓整体表现稳健，现金比例适中(约15%)，市场未出现明显超买超卖信号，维持现有仓位静待趋势明朗。
+</div>
             </div>
         </div>
-
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
-            <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/roll/2026-03-17/doc-inhrhttq2148729.shtml" target="_blank" style="color:#818cf8">[2026-03-17] 境外子公司收“破产”裁定 赞宇科技：申请方非真正债权人，已上诉并报案</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-17/doc-inhrhttn5366745.shtml" target="_blank" style="color:#818cf8">[2026-03-17] 英伟达与英飞凌扩大合作 聚焦物理AI与人形机器人</a></li><li><a href="https://finance.sina.com.cn/stock/aigcy/2026-03-17/doc-inhrhttr8159351.shtml" target="_blank" style="color:#818cf8">[2026-03-17] 振芯科技高层大换血 股东起诉股东会决议 总经理给自己投弃权票</a></li>
-            </ul>
+            <ul class="news-list"><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-18/doc-inhrmayt9333322.shtml" target="_blank" style="color:#818cf8">[2026-03-18] 让投资者夜不能寐的AI隐忧</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-18/doc-inhrmayk4733528.shtml" target="_blank" style="color:#818cf8">[2026-03-18] OpenAI、马斯克与战略聚焦</a></li><li><a href="https://finance.sina.com.cn/stock/marketresearch/2026-03-18/doc-inhrmayn1511327.shtml" target="_blank" style="color:#818cf8">[2026-03-18] 算力大爆发！300042尾盘涨停创新高</a></li><li><a href="https://finance.sina.com.cn/hy/hyjz/2026-03-18/doc-inhrmayk4731776.shtml" target="_blank" style="color:#818cf8">[2026-03-18] 谢卫国谈AI与外科手术：不能像马斯克拆方向盘那样极端，但术者需可随时接管手术</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-03-18/doc-inhrmayt9325564.shtml" target="_blank" style="color:#818cf8">[2026-03-18] OpenAI与AWS达成合作，力争拿下美国政府订单</a></li></ul>
         </div>
-
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
-            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
-            Generated by Automated Quant Engine
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>Generated by Automated Quant Engine
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
     <script>
         var chartDom = document.getElementById('aumChart');
         var myChart = echarts.init(chartDom);
-        var option = {
-            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
-            grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
-            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
-            series: [{
-                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238, 1016872.6974393073, 1001367.8783508255, 1006048.1183215327, 970537.8426596739, 963642.2740008, 985463.5061687945, 1000273.2307534023],
-                type: 'line',
-                smooth: true,
-                showSymbol: false,
-                lineStyle: { color: '#6366f1', width: 3 },
-                areaStyle: {
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
-                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
-                    ])
-                }
-            }]
-        };
+        var option = { tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } }, grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true }, xAxis: { type: 'category', boundaryGap: false, data: ['初始', '2026-02-27', '2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08', '2026-03-09', '2026-03-10', '2026-03-11', '2026-03-12', '2026-03-13', '2026-03-15', '2026-03-16', '2026-03-17', '2026-03-18'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } }, yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } }, series: [{ data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238, 1016872.6974393073, 1001367.8783508255, 1006048.1183215327, 970537.8426596739, 963642.2740008, 985463.5061687945, 1000273.2307534023, 1043864.6354793019], type: 'line', smooth: true, showSymbol: false, lineStyle: { color: '#6366f1', width: 3 }, areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(99, 102, 241, 0.4)' }, { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }]) } }] };
         myChart.setOption(option);
         window.addEventListener('resize', function() { myChart.resize(); });
-
-        function sortTable(n) {
-            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("holdingsTable");
-            switching = true; dir = "desc";
-            while (switching) {
-                switching = false; rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
-                    let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,""));
-                    let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,""));
-                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } }
-                    else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true; switchcount ++;
-                } else {
-                    if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; }
-                }
-            }
-        }
+        function sortTable(n) { var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0; table = document.getElementById("holdingsTable"); switching = true; dir = "desc"; while (switching) { switching = false; rows = table.rows; for (i = 1; i < (rows.length - 1); i++) { shouldSwitch = false; x = rows[i].getElementsByTagName("TD")[n]; y = rows[i + 1].getElementsByTagName("TD")[n]; let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,"")); let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,"")); if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } } else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } } } if (shouldSwitch) { rows[i].parentNode.insertBefore(rows[i + 1], rows[i]); switching = true; switchcount ++; } else { if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; } } } }
     </script>
 </body>
 </html>
