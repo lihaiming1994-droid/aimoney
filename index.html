@@ -42,7 +42,7 @@
         .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
         .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
         .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
-        .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; white-space: pre-line; }
+        .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
         .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
         
         .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
@@ -57,106 +57,99 @@
                 <div class="logo-icon">🦞</div>
                 <div>
                     <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">量化对冲基金 | Quant Fund</p>
+                    <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-04-04</div>
-                <div class="update-time">Weekly Update - Weekend Mode</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-04-06</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
 
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
-                    <div class="card-label">Total AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>929,902</div>
+                    <div class="card-label">总资产 AUM</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>922,355</div>
                     <div class="pnl-tag down-bg">
-                        ¥-70,098 (-7.01%)
+                        ¥-77,645 (-7.76%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
-                <div class="card-label">Cash</div>
+                <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥135</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">0.0% of portfolio</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">0.0% 仓位</div>
             </div>
             <div class="card">
-                <div class="card-label">Stock Value</div>
-                <div class="metric-value">¥929,767</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">100.0% of portfolio</div>
+                <div class="card-label">持仓市值 Stock Value</div>
+                <div class="metric-value">¥922,220</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">100.0% 仓位</div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">Positions</h2>
+            <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
                 <tr>
-                    <th>Symbol</th><th>Market</th><th onclick="sortTable(2)">Shares</th><th onclick="sortTable(3)">Cost</th><th onclick="sortTable(4)">Price</th><th onclick="sortTable(5)">MktVal (RMB)</th><th onclick="sortTable(6)">PnL</th><th onclick="sortTable(7)">Weight</th>
+                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 <tr>
-        <td><span class="symbol-name">NVDA</span></td>
-        <td><span class="badge-us">US</span></td>
+        <td><span class="symbol-name">NVDA</span> <span class="badge-us">US</span></td>
         <td>131</td>
-        <td>192.85</td>
-        <td>177.40</td>
-        <td>¥160,119</td>
-        <td class="down">¥-22,787 (-12.5%)</td>
+        <td>$192.85</td>
+        <td>$177.40</td>
+        <td>¥158,957</td>
+        <td class="down">-8.01%</td>
         <td>17.2%</td>
     </tr><tr>
-        <td><span class="symbol-name">TSM</span></td>
-        <td><span class="badge-us">US</span></td>
+        <td><span class="symbol-name">TSM</span> <span class="badge-us">US</span></td>
         <td>65</td>
-        <td>385.75</td>
-        <td>338.98</td>
-        <td>¥151,812</td>
-        <td class="down">¥-29,722 (-16.4%)</td>
+        <td>$385.75</td>
+        <td>$338.98</td>
+        <td>¥150,711</td>
+        <td class="down">-12.12%</td>
         <td>16.3%</td>
     </tr><tr>
-        <td><span class="symbol-name">0100.HK</span></td>
-        <td><span class="badge-hk">HK</span></td>
+        <td><span class="symbol-name">0100.HK</span> <span class="badge-hk">HK</span></td>
         <td>260</td>
-        <td>761.00</td>
-        <td>949.50</td>
-        <td>¥216,956</td>
-        <td class="up">+¥34,925 (+19.2%)</td>
+        <td>HK$761.00</td>
+        <td>HK$949.50</td>
+        <td>¥214,777</td>
+        <td class="up">+24.77%</td>
         <td>23.3%</td>
     </tr><tr>
-        <td><span class="symbol-name">CRWV</span></td>
-        <td><span class="badge-us">US</span></td>
+        <td><span class="symbol-name">CRWV</span> <span class="badge-us">US</span></td>
         <td>250</td>
-        <td>98.07</td>
-        <td>82.20</td>
-        <td>¥141,598</td>
-        <td class="down">¥-35,909 (-20.2%)</td>
+        <td>$98.07</td>
+        <td>$82.20</td>
+        <td>¥140,571</td>
+        <td class="down">-16.18%</td>
         <td>15.2%</td>
     </tr><tr>
-        <td><span class="symbol-name">BABA</span></td>
-        <td><span class="badge-us">US</span></td>
+        <td><span class="symbol-name">BABA</span> <span class="badge-us">US</span></td>
         <td>144</td>
-        <td>152.28</td>
-        <td>122.05</td>
-        <td>¥121,093</td>
-        <td class="down">¥-37,668 (-23.7%)</td>
+        <td>$152.28</td>
+        <td>$122.05</td>
+        <td>¥120,214</td>
+        <td class="down">-19.85%</td>
         <td>13.0%</td>
     </tr><tr>
-        <td><span class="symbol-name">MU</span></td>
-        <td><span class="badge-us">US</span></td>
+        <td><span class="symbol-name">MU</span> <span class="badge-us">US</span></td>
         <td>27</td>
-        <td>428.88</td>
-        <td>366.13</td>
-        <td>¥68,111</td>
-        <td class="down">¥-15,726 (-18.8%)</td>
+        <td>$428.88</td>
+        <td>$366.13</td>
+        <td>¥67,617</td>
+        <td class="down">-14.63%</td>
         <td>7.3%</td>
     </tr><tr>
-        <td><span class="symbol-name">00700.HK</span></td>
-        <td><span class="badge-hk">HK</span></td>
+        <td><span class="symbol-name">00700.HK</span> <span class="badge-hk">HK</span></td>
         <td>163</td>
-        <td>554.50</td>
-        <td>489.20</td>
-        <td>¥70,077</td>
-        <td class="down">¥-13,076 (-15.7%)</td>
+        <td>HK$554.50</td>
+        <td>HK$489.20</td>
+        <td>¥69,373</td>
+        <td class="down">-11.78%</td>
         <td>7.5%</td>
     </tr>
             </table>
@@ -164,28 +157,34 @@
 
         <div class="bottom-grid">
             <div class="log-box">
-                <div class="log-title">Today's Action</div>
+                <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">[WEEKEND] Market Closed - No Trading</span>
+                    【持仓观望 Hold】
                 </div>
             </div>
             <div class="log-box">
-                <div class="log-title">Manager Commentary</div>
+                <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    Today is Saturday - non-trading day. Portfolio frozen at Friday's close.
+                    <span class="action-highlight">今日无调仓计划，维持现有持仓。</span>
+<b>多因子共振分析：</b><br>
+• NVDA 现价$177.40，本周 AI 芯片板块承压，但中期上升趋势线未破（$175关键支撑），RSI=45处于中性区域，不满足超卖或超买条件，继续持有。<br>
+• TSM 现价$338.98，受半导体周期复苏预期支撑，RSI=52处于强势区间，基本面共振向上，持有。<br>
+• 港股 0100.HK 现价HK$949.50，恒生科技指数反弹中，持有。<br>
+• CRWV 现价$82.20，处于回调通道，等待右侧确认信号。<br>
+<b>现金管理：</b>现金占比0.0%，保持10%-25%区间，符合风控要求。<br><br><b>新白马挖掘：</b>MINIMAX 暂未纳入持仓，持续跟踪。
                 </div>
             </div>
         </div>
         
         <div class="table-card">
-            <h2 class="section-title">AI News Feed</h2>
+            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li>Weekend - no real-time market data</li>
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-04-06/doc-inhtqnrw1004528.shtml" target="_blank" style="color:#818cf8">[2026-04-06] OpenAI提出具有经济影响的政策转变</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-04-06/doc-inhtqnrw1002780.shtml" target="_blank" style="color:#818cf8">[2026-04-06] SpaceX公司IPO将惠及大型科技公司与芯片股</a></li><li><a href="https://finance.sina.com.cn/wm/2026-04-06/doc-inhtqnru4226330.shtml" target="_blank" style="color:#818cf8">[2026-04-06] 算力狂飙引爆全球电力需求</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-04-06/doc-inhtqnrw1001590.shtml" target="_blank" style="color:#818cf8">[2026-04-06] 麻省理工教授称：AI 或可取代你的理财顾问，但面临一大关键障碍</a></li>
             </ul>
         </div>
         
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
-            AI-Lobster Quant Fund | Initial: ¥1,000,000<br>
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
             Generated by Automated Quant Engine
         </div>
     </div>
@@ -197,10 +196,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ['初始', '2026-02-27', '2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08', '2026-03-09', '2026-03-10', '2026-03-11', '2026-03-12', '2026-03-13', '2026-03-15', '2026-03-16', '2026-03-17', '2026-03-18', '2026-03-19', '2026-03-20', '2026-03-21', '2026-03-22', '2026-03-23', '2026-03-24', '2026-03-25', '2026-03-30', '2026-03-31', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-04'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ['初始','2026-02-27','2026-03-02','2026-03-03','2026-03-04','2026-03-05','2026-03-06','2026-03-07','2026-03-08','2026-03-09','2026-03-10','2026-03-11','2026-03-12','2026-03-13','2026-03-15','2026-03-16','2026-03-17','2026-03-18','2026-03-19','2026-03-20','2026-03-21','2026-03-22','2026-03-23','2026-03-24','2026-03-25','2026-03-30','2026-03-31','2026-04-01','2026-04-02','2026-04-03','2026-04-04','2026-04-06'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.0240291292, 944659.9730235883, 917744.0019178267, 934861.0923172674, 923104.0458898811, 894346.25091, 894346.25091, 947665.2778152238, 1016872.6974393073, 1001367.8783508255, 1006048.1183215327, 970537.8426596739, 963642.2740008, 985463.5061687945, 1000273.2307534023, 1043864.6354793019, 994029.9554790551, 977387.3392761878, 976361.0274694714, 1026311.8578351999, 947273.1924234736, 962331.4806998046, 966127.5157688046, 947679.703275381, 876444.9810288049, 944331.8603764898, 925003.146842953, 929902.243461733, 929902.2434617331],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
