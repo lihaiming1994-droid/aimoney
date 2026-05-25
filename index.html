@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-05-24</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-05-25</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
@@ -67,9 +67,9 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>451,004</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,049,685</div>
                     <div class="pnl-tag down-bg">
-                        ¥-21,618 (-4.79%)
+                        ¥-1,441 (-0.14%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -77,12 +77,12 @@
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥69,810</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">15.5% 仓位</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">6.7% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥381,194</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">84.5% 仓位</div>
+                <div class="metric-value">¥979,875</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">93.3% 仓位</div>
             </div>
         </div>
 
@@ -92,7 +92,70 @@
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                
+                <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>131</td>
+        <td>192.85</td>
+        <td>215.25</td>
+        <td>¥191,745</td>
+        <td class="up">+19954 (+11.6%)</td>
+        <td>18.3%</td>
+    </tr><tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>65</td>
+        <td>385.75</td>
+        <td>404.34</td>
+        <td>¥178,718</td>
+        <td class="up">+8217 (+4.8%)</td>
+        <td>17.0%</td>
+    </tr><tr>
+        <td><span class="symbol-name">0100.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>260</td>
+        <td>761.00</td>
+        <td>768.50</td>
+        <td>¥173,305</td>
+        <td class="up">+1691 (+1.0%)</td>
+        <td>16.5%</td>
+    </tr><tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>250</td>
+        <td>98.07</td>
+        <td>105.46</td>
+        <td>¥179,282</td>
+        <td class="up">+12563 (+7.5%)</td>
+        <td>17.1%</td>
+    </tr><tr>
+        <td><span class="symbol-name">BABA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>64</td>
+        <td>152.28</td>
+        <td>130.00</td>
+        <td>¥56,576</td>
+        <td class="down">-9696.255999999994 (-14.6%)</td>
+        <td>5.4%</td>
+    </tr><tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>27</td>
+        <td>428.88</td>
+        <td>750.79</td>
+        <td>¥137,845</td>
+        <td class="up">+59103 (+75.1%)</td>
+        <td>13.1%</td>
+    </tr><tr>
+        <td><span class="symbol-name">00700.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>163</td>
+        <td>554.50</td>
+        <td>441.40</td>
+        <td>¥62,404</td>
+        <td class="down">-15989.801020408158 (-20.4%)</td>
+        <td>5.9%</td>
+    </tr>
             </table>
         </div>
 
@@ -100,13 +163,21 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">【周末休市 Market Closed】</span>
+                    <span class="action-highlight">【持仓观望 No Action】</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    今日为非交易日，锁定周五盘面状态。
+                    
+<b>📊 双核驱动多因子研判</b><br>
+• NVDA 现价 $215.25，RSI代理 55.8 ✅健康<br>
+• TSM 现价 $404.34，RSI代理 52.4 ✅健康<br>
+• CRWV 现价 $105.46，RSI代理 53.8<br>
+• MU 现价 $750.79，RSI代理 87.5 🚀强势<br>
+<b>基本面共振：</b>AI算力产业链持续高景气，NVDA数据中心业务强劲；台积电先进制程供不应求；存储芯片周期向上。<br>
+<span style="color:#ef4444">警告：MU 强势明显，RSI偏高，注意获利了结</span>
+
                 </div>
             </div>
         </div>
@@ -114,7 +185,7 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li>周末休市，暂无实时产业资讯。</li>
+                <li><a href="https://finance.sina.com.cn/money/fund/etf/2026-05-25/doc-inhzcati5116970.shtml" target="_blank" style="color:#818cf8">[2026-05-25] 半导体产业链爆发，华宝基金科创增强ETF再涨逾2%，机构：半导体全产业链进入新一轮景气上行周期！</a></li><li><a href="https://finance.sina.com.cn/money/fund/jjpl/2026-05-25/doc-inhzcatk3580373.shtml" target="_blank" style="color:#818cf8">[2026-05-25] 杨德龙：芯片半导体和算力算法是AI时代的“卖铲人” 最先受益于AI大发展</a></li><li><a href="https://finance.sina.com.cn/money/future/roll/2026-05-25/doc-inhzcatp2923155.shtml" target="_blank" style="color:#818cf8">[2026-05-25] CPT Markets:算力用电更受关注</a></li><li><a href="https://finance.sina.com.cn/tech/it/2026-05-25/doc-inhzcati5109260.shtml" target="_blank" style="color:#818cf8">[2026-05-25] 追觅科技官宣C罗为全球代言人</a></li><li><a href="https://finance.sina.com.cn/money/fund/etf/2026-05-25/doc-inhzcati5098980.shtml" target="_blank" style="color:#818cf8">[2026-05-25] 三大指数全线收涨，资金抱团“硬科技”，机构看好三大主线 | 华宝基金3A日报（2026.5.25）</a></li>
             </ul>
         </div>
 
@@ -131,10 +202,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ['初始', '2026-02-27', '2026-03-02', '2026-03-03', '2026-03-04', '2026-03-05', '2026-03-06', '2026-03-07', '2026-03-08', '2026-03-09', '2026-03-10', '2026-03-11', '2026-03-12', '2026-03-13', '2026-03-15', '2026-03-16', '2026-03-17', '2026-03-18', '2026-03-19', '2026-03-20', '2026-03-21', '2026-03-22', '2026-03-23', '2026-03-24', '2026-03-25', '2026-03-30', '2026-03-31', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-04', '2026-04-06', '2026-04-08', '2026-04-09', '2026-04-10', '2026-04-11', '2026-04-12', '2026-04-13', '2026-04-14', '2026-04-16', '2026-04-17', '2026-04-18', '2026-04-19', '2026-04-20', '2026-04-22', '2026-04-24', '2026-04-27', '2026-04-28', '2026-04-29', '2026-04-30', '2026-05-01', '2026-05-02', '2026-05-03', '2026-05-04', '2026-05-05', '2026-05-06', '2026-05-07', '2026-05-08', '2026-05-09', '2026-05-17', '2026-05-18', '2026-05-19', '2026-05-20', '2026-05-22', '2026-05-23', '2026-05-25'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 472999.5910299999, 1067962.0342757998, 939379.1511399999, 69809.976, 1019089.1966912864, 472622.43018450006, 1051125.6313368855],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 472999.5910299999, 1067962.0342757998, 939379.1511399999, 69809.976, 1019089.1966912864, 472622.43018450006, 1051125.6313368855, 1049684.6391851427],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
