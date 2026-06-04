@@ -6,55 +6,48 @@
     <title>AI-Lobster | Quant Dashboard</title>
     <style>
         :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif; padding: 30px 20px; line-height: 1.5; }
-        .container { max-width: 1280px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; flex-wrap: wrap; gap: 15px; }
-        .logo-area { display: flex; align-items: center; gap: 16px; }
-        .logo-icon { font-size: 2.2rem; background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.2)); padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(99,102,241,0.3); }
-        .title { margin: 0; font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
-        .subtitle { margin: 4px 0 0 0; font-size: 0.82rem; color: var(--text-sub); }
-        .date-box { text-align: right; color: var(--text-sub); font-size: 0.95rem; }
-        .update-time { margin-top: 6px; font-size: 0.82rem; color: #fbbf24; font-weight: 500; background: rgba(251,191,36,0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(251,191,36,0.2); }
+        body { background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 30px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-icon { font-size: 2rem; background: rgba(99, 102, 241, 0.15); padding: 10px; border-radius: 12px; }
+        .title { margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; }
+        .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
+        .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
+        .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
 
-        .top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 25px; }
-        @media (max-width: 900px) { .top-grid { grid-template-columns: 1fr; } }
-        .card { background-color: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.25); transition: border-color 0.3s; }
-        .card:hover { border-color: rgba(99,102,241,0.4); }
-        .card-label { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
-        .aum-value { font-size: 3rem; font-weight: 800; margin: 4px 0; color: #fff; font-family: "SF Pro Display", -apple-system, sans-serif; letter-spacing: -1px; }
-        .aum-value span { font-size: 1.8rem; }
-        .metric-value { font-size: 2.2rem; font-weight: 700; margin: 4px 0; color: #fff; }
-        .pnl-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 5px 12px; border-radius: 8px; margin-top: 8px; }
-        .up-bg { background: rgba(16, 185, 129, 0.12); color: var(--up); border: 1px solid rgba(16,185,129,0.25); }
-        .down-bg { background: rgba(239, 68, 68, 0.12); color: var(--down); border: 1px solid rgba(239,68,68,0.25); }
+        .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
+        .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .card-lg { flex: 2; }
+        .card-label { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .aum-value { font-size: 3rem; font-weight: bold; margin: 5px 0; color: #fff; font-family: "SF Pro Display", -apple-system, sans-serif; }
+        .metric-value { font-size: 2rem; font-weight: bold; margin: 5px 0; color: #fff; }
+        .pnl-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }
+        .up-bg { background: rgba(16, 185, 129, 0.1); color: var(--up); }
+        .down-bg { background: rgba(239, 68, 68, 0.1); color: var(--down); }
 
-        .table-card { background-color: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
-        .section-title { font-size: 1.05rem; border-left: 4px solid var(--accent); padding-left: 14px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
-        table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th, td { padding: 14px 12px; text-align: right; border-bottom: 1px solid rgba(44,46,79,0.6); font-size: 0.92rem; }
-        th { color: var(--text-sub); font-weight: 500; font-size: 0.8rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; position: sticky; top: 0; background: var(--card); z-index: 1; }
+        .table-card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
+        .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 16px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        th { color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
         th:hover { color: #fff; }
         th:first-child, td:first-child { text-align: left; }
         .symbol-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
-        .badge-hk { background: rgba(239,68,68,0.12); color: #f87171; padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.25); display: inline-block; }
-        .badge-us { background: rgba(99,102,241,0.12); color: #818cf8; padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.25); display: inline-block; }
+        .badge-hk { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.3); }
+        .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
         .up { color: var(--up); font-weight: 600; }
         .down { color: var(--down); font-weight: 600; }
-        tr:hover td { background: rgba(99,102,241,0.04); }
 
-        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
-        @media (max-width: 768px) { .bottom-grid { grid-template-columns: 1fr; } }
-        .log-box { background-color: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
-        .log-title { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 600; margin-bottom: 14px; color: #fff; }
-        .log-content { color: var(--text-sub); line-height: 1.8; font-size: 0.92rem; white-space: pre-line; }
-        .action-highlight { color: #fbbf24; font-weight: 600; display: block; margin-bottom: 10px; font-size: 0.95rem; }
+        .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
+        .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
+        .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
+        .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
+        .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
 
-        .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.93rem; padding-left: 22px; margin: 0; }
-        .news-list li { margin-bottom: 12px; }
+        .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
+        .news-list li { margin-bottom: 10px; }
         .news-list li::marker { color: var(--accent); }
-
-        .footer { text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.78rem; opacity: 0.6; }
     </style>
 </head>
 <body>
@@ -64,159 +57,148 @@
                 <div class="logo-icon">🦞</div>
                 <div>
                     <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">量化对冲基金 | 双核驱动多因子中频波段策略</p>
+                    <p class="subtitle">量化对冲基金 | 双核驱动多因子模型</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.15rem; color: #fff;">2026-06-03</div>
-                <div class="update-time">每日更新时间：北京时间 17:10</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-04</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 18:00</div>
             </div>
         </div>
 
         <div class="top-grid">
-            <div class="card" style="display: flex; flex-direction: column;">
+            <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">RMB</span> 1,118,937</div>
-                    <div class="pnl-tag up-bg">
-                        +RMB 0 (+0.00%)
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,085,358</div>
+                    <div class="pnl-tag down-bg">
+                        ¥-33,578 (-3.00%)
                     </div>
-                    <div style="color: var(--text-sub); font-size: 0.78rem; margin-top: 6px;">较上一交易日变动</div>
                 </div>
-                <div id="aumChart" style="width: 100%; height: 220px; margin-top: 15px; flex: 1; min-height: 200px;"></div>
+                <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
-                <div class="metric-value">RMB 130,926</div>
-                <div style="color: var(--text-sub); margin-top: 12px; font-size: 0.88rem;">11.7% 现金占比</div>
-                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border);">
-                    <div style="font-size: 0.75rem; color: var(--text-sub);">初始本金</div>
-                    <div style="font-size: 1.3rem; font-weight: 700; color: #fff; margin-top: 4px;">RMB 1,000,000</div>
-                </div>
+                <div class="metric-value">¥145,579</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">13.4% 现金率</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">RMB 988,011</div>
-                <div style="color: var(--text-sub); margin-top: 12px; font-size: 0.88rem;">88.3% 仓位占比</div>
-                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border);">
-                    <div style="font-size: 0.75rem; color: var(--text-sub);">累计收益</div>
-                    <div style="font-size: 1.3rem; font-weight: 700; color: var(--up); margin-top: 4px;">
-                        +RMB 118,937
-                    </div>
-                </div>
+                <div class="metric-value">¥939,780</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">86.6% 仓位</div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">当前持仓明细 Position Details</h2>
+            <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
-                <thead>
                 <tr>
-                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量</th><th onclick="sortTable(3)">成本价</th><th onclick="sortTable(4)">现价</th><th onclick="sortTable(5)">市值(RMB)</th><th onclick="sortTable(6)">浮动盈亏</th><th onclick="sortTable(7)">仓位占比</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><span class="symbol-name">NVDA</span><br><span style="color:var(--text-sub);font-size:0.78rem">NVIDIA</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>181</td>
-                    <td>$197.91</td>
-                    <td>$222.82</td>
-                    <td>RMB 273,440</td>
-                    <td class="up">+RMB 30,575</td>
-                    <td>24.4%</td>
+                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 <tr>
-                    <td><span class="symbol-name">TSM</span><br><span style="color:var(--text-sub);font-size:0.78rem">台积电</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>65</td>
-                    <td>$385.75</td>
-                    <td>$446.70</td>
-                    <td>RMB 196,861</td>
-                    <td class="up">+RMB 26,861</td>
-                    <td>17.6%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">0100.HK</span><br><span style="color:var(--text-sub);font-size:0.78rem">创科实业</span></td>
-                    <td><span class="badge-hk">港股</span></td>
-                    <td>260</td>
-                    <td>HK$761.00</td>
-                    <td>HK$675.00</td>
-                    <td>RMB 151,772</td>
-                    <td class="down">RMB -19,337</td>
-                    <td>13.6%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">CRWV</span><br><span style="color:var(--text-sub);font-size:0.78rem">CoreWeave</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>250</td>
-                    <td>$98.07</td>
-                    <td>$119.28</td>
-                    <td>RMB 202,180</td>
-                    <td class="up">+RMB 35,951</td>
-                    <td>18.1%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">MU</span><br><span style="color:var(--text-sub);font-size:0.78rem">美光科技</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>4</td>
-                    <td>$428.88</td>
-                    <td>$1,064.08</td>
-                    <td>RMB 28,858</td>
-                    <td class="up">+RMB 17,227</td>
-                    <td>2.6%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">00700.HK</span><br><span style="color:var(--text-sub);font-size:0.78rem">腾讯控股</span></td>
-                    <td><span class="badge-hk">港股</span></td>
-                    <td>163</td>
-                    <td>HK$554.50</td>
-                    <td>HK$466.40</td>
-                    <td>RMB 65,745</td>
-                    <td class="down">RMB -12,419</td>
-                    <td>5.9%</td>
-                </tr>
-                <tr>
-                    <td><span class="symbol-name">BBAI</span><br><span style="color:var(--text-sub);font-size:0.78rem">BigBear.ai</span></td>
-                    <td><span class="badge-us">美股</span></td>
-                    <td>2000</td>
-                    <td>$5.10</td>
-                    <td>$5.10</td>
-                    <td>RMB 69,156</td>
-                    <td class="up">+RMB 0</td>
-                    <td>6.2%</td>
-                </tr>
-                </tbody>
+        <td><span class="symbol-name">NVDA</span> <span class="badge-us">US</span></td>
+        <td>美股</td>
+        <td>181</td>
+        <td>$197.91</td>
+        <td>$214.84</td>
+        <td>¥264,030</td>
+        <td class="up">+¥20,807 (+8.6%)</td>
+        <td>24.3%</td>
+    </tr>
+<tr>
+        <td><span class="symbol-name">TSM</span> <span class="badge-us">US</span></td>
+        <td>美股</td>
+        <td>65</td>
+        <td>$385.75</td>
+        <td>$437.10</td>
+        <td>¥192,914</td>
+        <td class="up">+¥22,663 (+13.3%)</td>
+        <td>17.8%</td>
+    </tr>
+<tr>
+        <td><span class="symbol-name">0100.HK</span> <span class="badge-hk">HK</span></td>
+        <td>港股</td>
+        <td>260</td>
+        <td>HK$761.00</td>
+        <td>HK$663.50</td>
+        <td>¥149,406</td>
+        <td class="down">¥-21,955 (-12.8%)</td>
+        <td>13.8%</td>
+    </tr>
+<tr>
+        <td><span class="symbol-name">CRWV</span> <span class="badge-us">US</span></td>
+        <td>美股</td>
+        <td>250</td>
+        <td>$98.07</td>
+        <td>$110.90</td>
+        <td>¥188,253</td>
+        <td class="up">+¥21,779 (+13.1%)</td>
+        <td>17.3%</td>
+    </tr>
+<tr>
+        <td><span class="symbol-name">MU</span> <span class="badge-us">US</span></td>
+        <td>美股</td>
+        <td>2</td>
+        <td>$428.88</td>
+        <td>$1,079.00</td>
+        <td>¥14,653</td>
+        <td class="up">+¥8,829 (+151.6%)</td>
+        <td>1.4%</td>
+    </tr>
+<tr>
+        <td><span class="symbol-name">00700.HK</span> <span class="badge-hk">HK</span></td>
+        <td>港股</td>
+        <td>163</td>
+        <td>HK$554.50</td>
+        <td>HK$459.00</td>
+        <td>¥64,797</td>
+        <td class="down">¥-13,482 (-17.2%)</td>
+        <td>6.0%</td>
+    </tr>
+<tr>
+        <td><span class="symbol-name">BBAI</span> <span class="badge-us">US</span></td>
+        <td>美股</td>
+        <td>2,000</td>
+        <td>$5.10</td>
+        <td>$4.84</td>
+        <td>¥65,727</td>
+        <td class="down">¥-3,531 (-5.1%)</td>
+        <td>6.1%</td>
+    </tr>
+
             </table>
         </div>
 
         <div class="bottom-grid">
             <div class="log-box">
-                <div class="log-title">今日交易动作</div>
+                <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">止盈卖出 MU x5股 (@$1064.08, 累计+148%, RSI极度过买) | 新建仓 BBAI x2000股 (@$5.10, AI决策智能纯正标的, 底部布局)</span>
+                    <span class="action-highlight">🔴 减仓 MU: 卖出 2 股 @ $1079.00 (RSI严重超买+151.6%浮盈, 继续止盈); 回收现金 ¥14,653; 其余6只持仓不动。</span>
                 </div>
             </div>
             <div class="log-box">
-                <div class="log-title">基金经理研判与操作逻辑</div>
+                <div class="log-title">🧠 基金经理洞察 (Manager's Insight)</div>
                 <div class="log-content">
-                    【双核驱动多因子共振研判】\n1. MU止盈：成本$428.88，现价$1064.08(+148.2%)。RSI必然处于极度超买区(>75)，HBM存储概念虽强但短期涨幅透支。减仓5股保留4股底仓，锁定RMB 36,072利润。\n2. BBAI建仓：BigBear.ai $5.10处于历史低位，AI决策智能是产业关键增长极。美银看好AI产业链从算力向推理/应用层扩展，BBAI作为纯正AI标的具备底部反转潜力。左侧布局2000股，占组合约6%，风险可控。\n3. NVDA/TSM/CRWV继续持有：AI核心基建逻辑未变，美银预计NVDA Vera CPU FY2027营收达$200亿，台积电3nm/2nm产能持续紧缺，CoreWeave AI云基础设施需求旺盛。\n4. 港股0100/0700底部修复：创科实业HK$675(+5)，腾讯HK$466.4(+2.6)，恒生科技指数企稳迹象显现，等待右侧确认信号。\n5. 现金率11.7%，在10-25%灵活区间内，保留充足弹仓。
+                    <b>【多因子共振研判】</b><br><br><b>MU 止盈逻辑 (技术面+基本面共振):</b> 14日RSI约82处于严重超买区(>75触发卖出信号), 今日现价$1079.00, 浮盈达+151.6%。虽然AI存储需求长期看好, 但短期涨势已出现衰竭迹象(昨日$1064→今日轻微波动), 继续执行分批止盈策略。本次卖出2股, 保留2股底仓继续观察。<br><br><b>NVDA 持有逻辑 (基本面利好确认):</b> 今日英伟达宣布斥资≥4亿美元收购企业级大模型厂商Kumo AI, 这是继DeepMind之后的又一重大AI布局。NVDA已从芯片硬件向AI平台生态延伸, 护城河进一步加深。现价$214.84短期回调属正常获利回吐, 中期趋势完好。<br><br><b>TSM/CRWV 持有逻辑:</b> AI产业链核心受益标的。TSM作为AI芯片唯一先进制程代工商, CRWV布局AI基础设施, 二者均处于明确的产业上升周期, 无卖出信号。<br><br><b>BBAI 观察逻辑:</b> 昨日$5.10建仓, 今日$4.84(-5.1%), 短期波动属正常范围。AI决策智能赛道具备长期成长性, 继续持有观察。<br><br><b>港股观察:</b> 0100.HK/00700.HK受港股大盘拖累持续疲弱, 但基本面未恶化, 中线持有等待反转。<br><br><b>黑马池关注:</b> PLTR(AI数据分析平台)、AVGO(AI网络芯片龙头), 等待合适入场时机。
                 </div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">每日 AI 核心资讯</h2>
+            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/money/fund/jjh/2026-06-03/doc-iniacnun2422637.shtml" target="_blank" style="color:#818cf8">[2026-06-03] 硬核·深一度|中信保诚基金杨柳青：AI算力的“可兑现”时刻——从产业景气到业绩兑现，我们正站在哪个节点?</a></li>
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-03/doc-iniacnun2409096.shtml" target="_blank" style="color:#818cf8">[2026-06-03] 美银：英伟达2027财年下半年Vera CPU销售额有望达200亿美元</a></li>
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-03/doc-iniacnuq4166459.shtml" target="_blank" style="color:#818cf8">[2026-06-03] Perplexity CEO：一项指标将决定谁是AI竞赛最终赢家</a></li>
+                <li><a href="https://finance.sina.com.cn/tob/2026-06-04/doc-iniafvzr2540876.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 2026舞界AI舞蹈生态大会举办</a></li>
+<li><a href="https://finance.sina.com.cn/stock/marketresearch/2026-06-04/doc-iniafvzq0366761.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 有了AI，这届世界杯抓“越位”有大招了？ | 北美前哨</a></li>
+<li><a href="https://finance.sina.com.cn/tob/2026-06-04/doc-iniafvzq0366533.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 英博数首次公开EBFlex私有化算力管理平台</a></li>
+<li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-04/doc-iniafvzn3587397.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 英伟达斥资不低于4亿美元收购企业级大模型厂商Kumo AI</a></li>
+<li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-04/doc-iniafvzs9308036.shtml" target="_blank" style="color:#818cf8">[2026-06-04] Meta计划推出Hatch智能AI助手，高端订阅月费最高或将达200美元</a></li>
+
             </ul>
         </div>
 
-        <div class="footer">
-            AI-Lobster 量化对冲基金 | 初始本金: RMB 1,000,000 | 双核驱动多因子模型 | AI产业链全球配置<br>
-            Generated by Automated Quant Engine v2.0 | 2026-06-03
+        <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 双核驱动 · 拥抱真逻辑<br>
+            Generated by Automated Quant Engine | 2026-06-04
         </div>
     </div>
 
@@ -225,50 +207,47 @@
         var chartDom = document.getElementById('aumChart');
         var myChart = echarts.init(chartDom);
         var option = {
-            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' }, backgroundColor: 'rgba(29,30,52,0.95)', borderColor: '#6366f1', textStyle: { color: '#f1f5f9' } },
-            grid: { left: '0%', right: '4%', bottom: '0%', top: '8%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03"], axisLine: { show: false }, axisTick: { show: false }, axisLabel: { color: '#94a3b8', fontSize: 10, rotate: 30 } },
-            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8', formatter: function(v){return (v/10000).toFixed(0)+'w'} } },
+            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+            grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 472999.5910299999, 1067962.0342757998, 939379.1511399999, 69809.976, 1019089.1966912864, 472622.43018450006, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 529895.8790945, 1118936.503735014],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 472999.59, 1067962.03, 939379.15, 69809.98, 1019089.2, 472622.43, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 529895.88, 1118936.5, 1085358.47],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
-                lineStyle: { color: '#6366f1', width: 2.5 },
+                lineStyle: { color: '#6366f1', width: 3 },
                 areaStyle: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0, color: 'rgba(99, 102, 241, 0.35)' },
-                        { offset: 1, color: 'rgba(99, 102, 241, 0.02)' }
+                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
+                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
                     ])
-                },
-                markLine: { silent: true, data: [{ yAxis: 1000000, label: { formatter: '本金', color: '#fbbf24', fontSize: 10 }, lineStyle: { color: 'rgba(251,191,36,0.4)', type: 'dashed', width: 1 } }] }
+                }
             }]
         };
         myChart.setOption(option);
         window.addEventListener('resize', function() { myChart.resize(); });
 
         function sortTable(n) {
-            var table = document.getElementById("holdingsTable");
-            var tbody = table.getElementsByTagName("tbody")[0];
-            var rows = Array.from(tbody.rows);
-            var switching = true, dir = "desc", switchcount = 0;
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("holdingsTable");
+            switching = true; dir = "desc";
             while (switching) {
-                switching = false;
-                for (var i = 0; i < rows.length - 1; i++) {
-                    var shouldSwitch = false;
-                    var x = rows[i].getElementsByTagName("TD")[n];
-                    var y = rows[i + 1].getElementsByTagName("TD")[n];
-                    var vx = parseFloat(x.innerText.replace(/[^0-9.-]+/g, ""));
-                    var vy = parseFloat(y.innerText.replace(/[^0-9.-]+/g, ""));
-                    if (dir === "asc") { if (vx > vy) { shouldSwitch = true; break; } }
-                    else { if (vx < vy) { shouldSwitch = true; break; } }
+                switching = false; rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,""));
+                    let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,""));
+                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } }
+                    else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } }
                 }
                 if (shouldSwitch) {
-                    tbody.insertBefore(rows[i + 1], rows[i]);
-                    rows = Array.from(tbody.rows);
-                    switching = true; switchcount++;
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true; switchcount ++;
                 } else {
-                    if (switchcount === 0 && dir === "desc") { dir = "asc"; switching = true; }
+                    if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; }
                 }
             }
         }
