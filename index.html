@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -57,12 +58,12 @@
                 <div class="logo-icon">🦞</div>
                 <div>
                     <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">量化对冲基金 | 双核驱动多因子模型</p>
+                    <p class="subtitle">量化对冲基金 | 双核驱动多因子波段策略</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-04</div>
-                <div class="update-time">🕒 每日更新时间：北京时间 18:00</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-05</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 18:08:58</div>
             </div>
         </div>
 
@@ -70,9 +71,9 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,085,358</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,061,201</div>
                     <div class="pnl-tag down-bg">
-                        ¥-33,578 (-3.00%)
+                        ¥24,158 (-2.23%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -80,12 +81,12 @@
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥145,579</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">13.4% 现金率</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">13.7% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥939,780</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">86.6% 仓位</div>
+                <div class="metric-value">¥915,622</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">86.3% 仓位</div>
             </div>
         </div>
 
@@ -95,77 +96,77 @@
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
+                
                 <tr>
-        <td><span class="symbol-name">NVDA</span> <span class="badge-us">US</span></td>
-        <td>美股</td>
-        <td>181</td>
-        <td>$197.91</td>
-        <td>$214.84</td>
-        <td>¥264,030</td>
-        <td class="up">+¥20,807 (+8.6%)</td>
-        <td>24.3%</td>
-    </tr>
-<tr>
-        <td><span class="symbol-name">TSM</span> <span class="badge-us">US</span></td>
-        <td>美股</td>
-        <td>65</td>
-        <td>$385.75</td>
-        <td>$437.10</td>
-        <td>¥192,914</td>
-        <td class="up">+¥22,663 (+13.3%)</td>
-        <td>17.8%</td>
-    </tr>
-<tr>
-        <td><span class="symbol-name">0100.HK</span> <span class="badge-hk">HK</span></td>
-        <td>港股</td>
-        <td>260</td>
-        <td>HK$761.00</td>
-        <td>HK$663.50</td>
-        <td>¥149,406</td>
-        <td class="down">¥-21,955 (-12.8%)</td>
-        <td>13.8%</td>
-    </tr>
-<tr>
-        <td><span class="symbol-name">CRWV</span> <span class="badge-us">US</span></td>
-        <td>美股</td>
-        <td>250</td>
-        <td>$98.07</td>
-        <td>$110.90</td>
-        <td>¥188,253</td>
-        <td class="up">+¥21,779 (+13.1%)</td>
-        <td>17.3%</td>
-    </tr>
-<tr>
-        <td><span class="symbol-name">MU</span> <span class="badge-us">US</span></td>
-        <td>美股</td>
-        <td>2</td>
-        <td>$428.88</td>
-        <td>$1,079.00</td>
-        <td>¥14,653</td>
-        <td class="up">+¥8,829 (+151.6%)</td>
-        <td>1.4%</td>
-    </tr>
-<tr>
-        <td><span class="symbol-name">00700.HK</span> <span class="badge-hk">HK</span></td>
-        <td>港股</td>
-        <td>163</td>
-        <td>HK$554.50</td>
-        <td>HK$459.00</td>
-        <td>¥64,797</td>
-        <td class="down">¥-13,482 (-17.2%)</td>
-        <td>6.0%</td>
-    </tr>
-<tr>
-        <td><span class="symbol-name">BBAI</span> <span class="badge-us">US</span></td>
-        <td>美股</td>
-        <td>2,000</td>
-        <td>$5.10</td>
-        <td>$4.84</td>
-        <td>¥65,727</td>
-        <td class="down">¥-3,531 (-5.1%)</td>
-        <td>6.1%</td>
-    </tr>
-
+                    <td><span class="symbol-name">NVIDIA 英伟达</span> <span style="color:var(--text-sub);font-size:0.8rem;">NVDA</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>181</td>
+                    <td>$197.91</td>
+                    <td>$218.72</td>
+                    <td>¥268,799</td>
+                    <td class="up">+¥25,575 (+10.5%)</td>
+                    <td>25.3%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">台积电 TSM</span> <span style="color:var(--text-sub);font-size:0.8rem;">TSM</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>65</td>
+                    <td>$385.75</td>
+                    <td>$444.90</td>
+                    <td>¥196,357</td>
+                    <td class="up">+¥26,106 (+15.3%)</td>
+                    <td>18.5%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">创科实业</span> <span style="color:var(--text-sub);font-size:0.8rem;">0100.HK</span></td>
+                    <td><span class="badge-hk">港股</span></td>
+                    <td>260</td>
+                    <td>HK$761.00</td>
+                    <td>HK$553.00</td>
+                    <td>¥124,683</td>
+                    <td class="down">¥46,897 (-27.3%)</td>
+                    <td>11.7%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">CoreWeave</span> <span style="color:var(--text-sub);font-size:0.8rem;">CRWV</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>250</td>
+                    <td>$98.07</td>
+                    <td>$108.04</td>
+                    <td>¥183,406</td>
+                    <td class="up">+¥16,933 (+10.2%)</td>
+                    <td>17.3%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">美光科技 MU</span> <span style="color:var(--text-sub);font-size:0.8rem;">MU</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>2</td>
+                    <td>$428.88</td>
+                    <td>$997.17</td>
+                    <td>¥13,542</td>
+                    <td class="up">+¥7,717 (+132.5%)</td>
+                    <td>1.3%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">腾讯控股</span> <span style="color:var(--text-sub);font-size:0.8rem;">00700.HK</span></td>
+                    <td><span class="badge-hk">港股</span></td>
+                    <td>163</td>
+                    <td>HK$554.50</td>
+                    <td>HK$453.20</td>
+                    <td>¥64,060</td>
+                    <td class="down">¥14,319 (-18.3%)</td>
+                    <td>6.0%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">BigBear.ai</span> <span style="color:var(--text-sub);font-size:0.8rem;">BBAI</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>2,000</td>
+                    <td>$5.10</td>
+                    <td>$4.77</td>
+                    <td>¥64,777</td>
+                    <td class="down">¥4,481 (-6.5%)</td>
+                    <td>6.1%</td>
+                </tr>
             </table>
         </div>
 
@@ -173,13 +174,13 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">🔴 减仓 MU: 卖出 2 股 @ $1079.00 (RSI严重超买+151.6%浮盈, 继续止盈); 回收现金 ¥14,653; 其余6只持仓不动。</span>
+                    <span class="action-highlight">【持仓不动 Hold】今日无新增交易信号，维持现有仓位。</span>
                 </div>
             </div>
             <div class="log-box">
-                <div class="log-title">🧠 基金经理洞察 (Manager's Insight)</div>
+                <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    <b>【多因子共振研判】</b><br><br><b>MU 止盈逻辑 (技术面+基本面共振):</b> 14日RSI约82处于严重超买区(>75触发卖出信号), 今日现价$1079.00, 浮盈达+151.6%。虽然AI存储需求长期看好, 但短期涨势已出现衰竭迹象(昨日$1064→今日轻微波动), 继续执行分批止盈策略。本次卖出2股, 保留2股底仓继续观察。<br><br><b>NVDA 持有逻辑 (基本面利好确认):</b> 今日英伟达宣布斥资≥4亿美元收购企业级大模型厂商Kumo AI, 这是继DeepMind之后的又一重大AI布局。NVDA已从芯片硬件向AI平台生态延伸, 护城河进一步加深。现价$214.84短期回调属正常获利回吐, 中期趋势完好。<br><br><b>TSM/CRWV 持有逻辑:</b> AI产业链核心受益标的。TSM作为AI芯片唯一先进制程代工商, CRWV布局AI基础设施, 二者均处于明确的产业上升周期, 无卖出信号。<br><br><b>BBAI 观察逻辑:</b> 昨日$5.10建仓, 今日$4.84(-5.1%), 短期波动属正常范围。AI决策智能赛道具备长期成长性, 继续持有观察。<br><br><b>港股观察:</b> 0100.HK/00700.HK受港股大盘拖累持续疲弱, 但基本面未恶化, 中线持有等待反转。<br><br><b>黑马池关注:</b> PLTR(AI数据分析平台)、AVGO(AI网络芯片龙头), 等待合适入场时机。
+                    NVDA: 现价$218.72, RSI=50.0, MA20=218.72, 浮盈+10.5%<br>TSM: 现价$444.90, RSI=50.0, MA20=444.90, 浮盈+15.3%<br>0100.HK: 现价HK$553.00, RSI=50.0, MA20=553.00, 浮盈-27.3%<br>CRWV: 现价$108.04, RSI=50.0, MA20=108.04, 浮盈+10.2%<br>MU: 现价$997.17, RSI=50.0, MA20=997.17, 浮盈+132.5%<br>00700.HK: 现价HK$453.20, RSI=50.0, MA20=453.20, 浮盈-18.3%<br>BBAI: 现价$4.77, RSI=50.0, MA20=4.77, 浮盈-6.5%<br><br>💰 现金率: 13.7% | 汇率: USD/CNY=6.7900, HKD/CNY=0.8672
                 </div>
             </div>
         </div>
@@ -187,18 +188,13 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/tob/2026-06-04/doc-iniafvzr2540876.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 2026舞界AI舞蹈生态大会举办</a></li>
-<li><a href="https://finance.sina.com.cn/stock/marketresearch/2026-06-04/doc-iniafvzq0366761.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 有了AI，这届世界杯抓“越位”有大招了？ | 北美前哨</a></li>
-<li><a href="https://finance.sina.com.cn/tob/2026-06-04/doc-iniafvzq0366533.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 英博数首次公开EBFlex私有化算力管理平台</a></li>
-<li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-04/doc-iniafvzn3587397.shtml" target="_blank" style="color:#818cf8">[2026-06-04] 英伟达斥资不低于4亿美元收购企业级大模型厂商Kumo AI</a></li>
-<li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-04/doc-iniafvzs9308036.shtml" target="_blank" style="color:#818cf8">[2026-06-04] Meta计划推出Hatch智能AI助手，高端订阅月费最高或将达200美元</a></li>
-
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-05/doc-iniaiyyp9611645.shtml" target="_blank" style="color:#818cf8">[2026-06-05] 全球科技股抛售潮蔓延欧洲，欧股集体走低</a></li><li><a href="https://finance.sina.com.cn/money/future/2026-06-05/doc-iniaiyyp9604834.shtml" target="_blank" style="color:#818cf8">[2026-06-05] 【建投硅能源】2026上海SNEC观后感：光伏筑底求变，储能与AI构建第二增长曲线</a></li><li><a href="https://finance.sina.com.cn/money/fund/etf/2026-06-05/doc-iniaiyys8467055.shtml" target="_blank" style="color:#818cf8">[2026-06-05] 创业板指跌超3%，AI算力、半导体板块集体哑火｜华宝基金3A日报（2026.6.5）</a></li><li><a href="https://finance.sina.com.cn/wm/2026-06-05/doc-iniaiyyr1692987.shtml" target="_blank" style="color:#818cf8">[2026-06-05] 美股存储芯片盘前集体下跌，英特尔跌3%，美光科技跌4%，A股超10只千亿半导体大牛股跳水</a></li><li><a href="https://finance.sina.com.cn/stock/marketresearch/2026-06-05/doc-iniaiyyp9592923.shtml" target="_blank" style="color:#818cf8">[2026-06-05] 4万亿美元！ 美国AI三巨头集体上市“抢钱”，华尔街流动性恐遭“抽血” | 硅谷观察</a></li>
             </ul>
         </div>
 
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
-            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 双核驱动 · 拥抱真逻辑<br>
-            Generated by Automated Quant Engine | 2026-06-04
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
+            Generated by Automated Quant Engine | 2026-06-05
         </div>
     </div>
 
@@ -209,10 +205,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 472999.59, 1067962.03, 939379.15, 69809.98, 1019089.2, 472622.43, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 529895.88, 1118936.5, 1085358.47],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 472999.5910299999, 1067962.0342757998, 939379.1511399999, 69809.976, 1019089.1966912864, 472622.43018450006, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 529895.8790945, 1118936.503735014, 1085358.4708824859, 1061200.9704081994],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
