@@ -57,60 +57,166 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-18</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-19</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
+
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,005,692</div>
-                    <div class="pnl-tag down-bg">
-                        ¥-5,220 (-0.52%)
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>1,035,773</div>
+                    <div class="pnl-tag up-bg">
+                        +¥30,081 (+2.99%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
-                <div class="metric-value">¥198,414</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">19.7% 仓位</div>
+                <div class="metric-value">¥154,856</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">15.0% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥807,278</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">80.3% 仓位</div>
+                <div class="metric-value">¥880,917</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">85.0% 仓位</div>
             </div>
         </div>
+
         <div class="table-card">
             <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td><span class="badge-us">US</span></td><td>181</td><td>197.91</td><td>204.68</td><td>¥250,806</td><td class="up">+¥8,299 (+3.42%)</td><td>24.9%</td></tr><tr><td><span class="symbol-name">TSM</span></td><td><span class="badge-us">US</span></td><td>65</td><td>385.75</td><td>432.04</td><td>¥190,119</td><td class="up">+¥20,370 (+12.00%)</td><td>18.9%</td></tr><tr><td><span class="symbol-name">CRWV</span></td><td><span class="badge-us">US</span></td><td>250</td><td>98.07</td><td>115.25</td><td>¥195,069</td><td class="up">+¥29,086 (+17.52%)</td><td>19.4%</td></tr><tr><td><span class="symbol-name">MU</span></td><td><span class="badge-us">US</span></td><td>2</td><td>428.88</td><td>1041.56</td><td>¥14,103</td><td class="up">+¥8,296 (+142.86%)</td><td>1.4%</td></tr><tr><td><span class="symbol-name">00700.HK</span></td><td><span class="badge-hk">HK</span></td><td>163</td><td>554.50</td><td>440.20</td><td>¥61,960</td><td class="down">¥-16,088 (-20.61%)</td><td>6.2%</td></tr><tr><td><span class="symbol-name">BBAI</span></td><td><span class="badge-us">US</span></td><td>2000</td><td>5.10</td><td>3.88</td><td>¥52,603</td><td class="down">¥-16,451 (-23.82%)</td><td>5.2%</td></tr><tr><td><span class="symbol-name">GEV</span></td><td><span class="badge-us">US</span></td><td>6</td><td>1049.18</td><td>1049.18</td><td>¥42,618</td><td class="up">+¥0 (+0.00%)</td><td>4.2%</td></tr>
+                
+    <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>181</td>
+        <td>$197.91</td>
+        <td>$210.230</td>
+        <td>¥257,990</td>
+        <td class="up">+¥15,125 (+6.2%)</td>
+        <td>24.9%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>65</td>
+        <td>$385.75</td>
+        <td>$462.220</td>
+        <td>¥203,700</td>
+        <td class="up">+¥33,700 (+19.8%)</td>
+        <td>19.7%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>250</td>
+        <td>$98.07</td>
+        <td>$118.050</td>
+        <td>¥200,095</td>
+        <td class="up">+¥33,866 (+20.4%)</td>
+        <td>19.3%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>2</td>
+        <td>$428.88</td>
+        <td>$1131.910</td>
+        <td>¥15,349</td>
+        <td class="up">+¥9,533 (+163.9%)</td>
+        <td>1.5%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">00700.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>163</td>
+        <td>HK$554.50</td>
+        <td>HK$440.20</td>
+        <td>¥62,051</td>
+        <td class="down">¥-16,112 (-20.6%)</td>
+        <td>6.0%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">BBAI</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>2,000</td>
+        <td>$5.10</td>
+        <td>$3.911</td>
+        <td>¥53,033</td>
+        <td class="down">¥-16,123 (-23.3%)</td>
+        <td>5.1%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">GEV</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>6</td>
+        <td>$1049.18</td>
+        <td>$1109.650</td>
+        <td>¥45,141</td>
+        <td class="up">+¥2,460 (+5.8%)</td>
+        <td>4.4%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">PLTR</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>50</td>
+        <td>$128.49</td>
+        <td>$128.490</td>
+        <td>¥43,558</td>
+        <td class="up">+¥0 (+0.0%)</td>
+        <td>4.2%</td>
+    </tr>
+    
             </table>
         </div>
+
         <div class="bottom-grid">
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
-                <div class="log-content"><span class="action-highlight">【新建仓黑马】GEV 6股 @$1049.18 右侧突破共振</span></div>
+                <div class="log-content">
+                    <span class="action-highlight">🚀 【新建仓黑马 PLTR】+50股 @$128.49, 耗资¥43,558</span>
+                </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
-                <div class="log-content"><b>【双核共振研判 2026-06-18】</b><br>• <b>技术面</b>: CRWV RSI=0.0 强势站上MA5, 右侧突破形态确立; NVDA RSI=0.0 仍处超卖边缘, 左侧布局窗口; MU RSI=0.0 超买预警, 注意止盈节奏。<br>• <b>基本面</b>: AI算力需求长逻辑未变, 短期受美联储6月议息会议预期波动; CRWV(数据中心/AI云)直接受益于Capex扩张, 估值消化空间大。<br>• <b>现金管理</b>: 当前现金率19.8%, 处于10-25%灵活区间上沿, 适度加仓强势标的+捕捉新黑马。<br>• <b>操作</b>: 汰弱留强, CRWV右侧加仓, NVDA左侧轻仓抄底, 同步建仓GEV黑马。</div>
+                <div class="log-content">
+                    
+        <strong>📊 2026-06-19 多因子共振出手</strong><br><br>
+        <strong>🔵 基本面：</strong>AI算力超级周期延续。NVIDIA B200系列出货加速，台积电CoWoS产能利用率超110%。<br><br>
+        <strong>🔴 技术面共振：</strong>
+        PLTR Palantir AI政府合同持续扩张，技术面RSI健康区间，建仓50股<br><br>
+        <strong>🟡 风险控制：</strong>现金率保持15.0%，弹药充足。
+        
+                </div>
             </div>
         </div>
+        
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
-            <ul class="news-list"><li><a href="https://finance.sina.com.cn/roll/2026-06-18/doc-inicvmmp6537683.shtml" target="_blank" style="color:#818cf8">[2026-06-18] 农行董事长谷澍：以AI制衡AI，构建金融业“共生式”大模型治理</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-18/doc-inicvmmt5519546.shtml" target="_blank" style="color:#818cf8">[2026-06-18] 苹果公司据悉准备2027年春季推出第二代iPhone Air</a></li><li><a href="https://finance.sina.com.cn/stock/marketresearch/2026-06-18/doc-inicvmmt5518976.shtml" target="_blank" style="color:#818cf8">[2026-06-18] 12大AI战绩出炉：阶跃星辰为何垫底？回应来了——“我选择押注最不确定的可能性”</a></li></ul>
+            <ul class="news-list">
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-19/doc-inicxusu2804749.shtml" target="_blank" style="color:#818cf8">[2026-06-19] 投资者大举涌入科技板块 美股单周资金流入创历史新高</a></li><li><a href="https://finance.sina.com.cn/roll/2026-06-19/doc-inicxqkx9677923.shtml" target="_blank" style="color:#818cf8">[2026-06-19] 加仓科技股！光模块两大龙头，“吸金”超百亿，最强股票大涨超83%</a></li>
+            </ul>
         </div>
+        
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
             AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
             Generated by Automated Quant Engine
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
     <script>
         var chartDom = document.getElementById('aumChart');
@@ -118,11 +224,13 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ['2026-05-09', '2026-05-17', '2026-05-18', '2026-05-19', '2026-05-20', '2026-05-22', '2026-05-23', '2026-05-25', '2026-05-26', '2026-05-27', '2026-05-28', '2026-06-01', '2026-06-02', '2026-06-03', '2026-06-04', '2026-06-05', '2026-06-06', '2026-06-07', '2026-06-08', '2026-06-09', '2026-06-10', '2026-06-11', '2026-06-12', '2026-06-13', '2026-06-14', '2026-06-15', '2026-06-16', '2026-06-17', '2026-06-18', '2026-06-19'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 1081627.07, 1067962.0342757998, 939379.1511399999, 979234.17, 1019089.1966912864, 1035107.41, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9],
-                type: 'line', smooth: true, showSymbol: false,
+                data: [1081627.0, 1067962.0, 939379.0, 979234.0, 1019089.0, 1035107.0, 1051126.0, 1049685.0, 1049759.0, 1097514.0, 1091757.0, 1096051.0, 1107494.0, 1118937.0, 1085358.0, 1061201.0, 1061206.0, 1061201.0, 997746.0, 1003977.0, 991564.0, 965399.0, 976107.0, 976109.0, 976109.0, 981440.0, 1008666.0, 1010911.0, 1005692.0, 1035773.0],
+                type: 'line',
+                smooth: true,
+                showSymbol: false,
                 lineStyle: { color: '#6366f1', width: 3 },
                 areaStyle: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -134,10 +242,11 @@
         };
         myChart.setOption(option);
         window.addEventListener('resize', function() { myChart.resize(); });
+
         function sortTable(n) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("holdingsTable");
-            switching = true; dir = "desc";
+            switching = true; dir = "desc"; 
             while (switching) {
                 switching = false; rows = table.rows;
                 for (i = 1; i < (rows.length - 1); i++) {
@@ -146,12 +255,12 @@
                     y = rows[i + 1].getElementsByTagName("TD")[n];
                     let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,""));
                     let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,""));
-                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } }
+                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } } 
                     else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } }
                 }
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true; switchcount ++;
+                    switching = true; switchcount ++;      
                 } else {
                     if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; }
                 }
