@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -62,7 +61,7 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-26</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-06-27</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
@@ -71,9 +70,9 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--down);">¥</span>968,551</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>968,550</div>
                     <div class="pnl-tag down-bg">
-                        ¥-15,334 (-1.56%)
+                        ¥-2 (-0.00%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -85,7 +84,7 @@
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥751,827</div>
+                <div class="metric-value">¥751,826</div>
                 <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">77.6% 仓位</div>
             </div>
         </div>
@@ -96,7 +95,84 @@
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td><span class="badge-us">US</span></td><td>181</td><td>$$197.91</td><td class="down">$$195.74</td><td>¥241,271</td><td class="down">¥-2,669</td><td>52.7%</td></tr><tr><td><span class="symbol-name">TSM</span></td><td><span class="badge-us">US</span></td><td>65</td><td>$$385.75</td><td class="up">$$435.25</td><td>¥192,663</td><td class="up">+¥21,911</td><td>29.6%</td></tr><tr><td><span class="symbol-name">CRWV</span></td><td><span class="badge-us">US</span></td><td>200</td><td>$$98.07</td><td class="up">$$98.76</td><td>¥134,511</td><td class="up">+¥940</td><td>17.1%</td></tr><tr><td><span class="symbol-name">MU</span></td><td><span class="badge-us">US</span></td><td>2</td><td>$$428.88</td><td class="up">$$1213.52</td><td>¥16,528</td><td class="up">+¥10,687</td><td>2.1%</td></tr><tr><td><span class="symbol-name">00700.HK</span></td><td><span class="badge-hk">HK</span></td><td>163</td><td>HK$$554.5</td><td class="down">HK$$411.8</td><td>¥58,305</td><td class="down">¥-20,204</td><td>6.8%</td></tr><tr><td><span class="symbol-name">BBAI</span></td><td><span class="badge-us">US</span></td><td>2000</td><td>$$5.10</td><td class="down">$$3.40</td><td>¥46,376</td><td class="down">¥-23,086</td><td>5.1%</td></tr><tr><td><span class="symbol-name">SMCI</span></td><td><span class="badge-us">US</span></td><td>288</td><td>$$30.66</td><td class="up">$$31.70</td><td>¥62,173</td><td class="up">+¥2,040</td><td>6.4%</td></tr>
+                
+    <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>181</td>
+        <td>197.91</td>
+        <td>195.74</td>
+        <td>¥241,271</td>
+        <td class="down">¥-2,669</td>
+        <td>24.9%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>65</td>
+        <td>385.75</td>
+        <td>435.25</td>
+        <td>¥192,663</td>
+        <td class="up">+¥21,911</td>
+        <td>19.9%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">CRWV</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>200</td>
+        <td>98.07</td>
+        <td>98.76</td>
+        <td>¥134,511</td>
+        <td class="up">+¥940</td>
+        <td>13.9%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">MU</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>2</td>
+        <td>428.88</td>
+        <td>1213.52</td>
+        <td>¥16,528</td>
+        <td class="up">+¥10,687</td>
+        <td>1.7%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">00700.HK</span></td>
+        <td><span class="badge-hk">HK</span></td>
+        <td>163</td>
+        <td>554.50</td>
+        <td>411.80</td>
+        <td>¥58,303</td>
+        <td class="down">¥-20,204</td>
+        <td>6.0%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">BBAI</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>2000</td>
+        <td>5.10</td>
+        <td>3.40</td>
+        <td>¥46,376</td>
+        <td class="down">¥-23,086</td>
+        <td>4.8%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">SMCI</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>288</td>
+        <td>30.66</td>
+        <td>31.70</td>
+        <td>¥62,173</td>
+        <td class="up">+¥2,040</td>
+        <td>6.4%</td>
+    </tr>
+    
             </table>
         </div>
 
@@ -104,13 +180,13 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">⚠️ 止损清仓 PLTR 50股 @$$107.31 (跌破$110止损线), 回收¥36,539</span>
+                    <span class="action-highlight">【周末休市 Market Closed】</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    【基本面+技术面共振研判 0626周五】<br>⚠️ AUM连续2日低于初始¥100万,进入绝对防御模式!<br><br><b>🔴 PLTR 紧急监控</b>: 现价$$107.31,距$110止损线仅-2.5%! RSI≈30超卖区,跌势凶猛。基本面:Palantir AI政府合同扩张逻辑未变,但市场对高估值AI股进行剧烈重定价。 如跌破$110,下周一必须止损清仓!<br><br><b>🟡 NVDA 均线支撑</b>: 现价$$195.74,$200均线附近挣扎。 基本面:AI芯片需求未见拐点,但短期估值分歧加大。若跌破$195考虑减仓。<br><br><b>🟡 BBAI 深亏预警</b>: 亏损-30%,RSI≈30超卖但无反弹信号。下周评估是否斩仓释放¥48k现金。<br><br><b>🟢 TSM/MU 基本面未变</b>: 从超买回调后中性区域,核心逻辑(AI代工/HBM需求)完好,持有。<br><br><b>🟢 SMCI 新仓回踩</b>: $32附近中性偏弱,AI服务器需求逻辑仍在,观察右侧确认。<br><br><b>策略</b>: 严禁新建仓! 仅做止损/减仓防御。现金率18%为减仓缓冲。
+                    今日为非交易日，锁定周五盘面状态。
                 </div>
             </div>
         </div>
@@ -118,7 +194,7 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/gmwq/rightscase/2026-06-26/doc-inietspp7275694.shtml" target="_blank" style="color:#818cf8">[2026-06-26] 恒久退（原恒久科技）财务造假被正式处罚！股民可索赔</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-06-26/doc-inietspp7266459.shtml" target="_blank" style="color:#818cf8">[2026-06-26] 美银：美国股市录得3月以来首次资金净流出 科技基金外流规模创纪录</a></li><li><a href="https://finance.sina.com.cn/money/fund/jjpl/2026-06-26/doc-inietspn0482808.shtml" target="_blank" style="color:#818cf8">[2026-06-26] 前海开源基金评市场：短期行情可能阶段整理休整 再回到中长期科技主线</a></li>
+                <li>周末休市，暂无实时产业资讯。</li>
             </ul>
         </div>
         
@@ -135,10 +211,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 1081627.07, 1067962.03, 939379.15, 979234.17, 1019089.2, 1035107.41, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 1107493.89, 1118936.5, 1085358.47, 1061200.97, 1061205.86, 1061200.97, 997746.25, 1003976.58, 991563.71, 965399.44, 976107.05, 976109.21, 976109.21, 981440.44, 1008666.01, 1010911.5, 1005691.9, 1035773.13, 1035773.43, 1035773.43, 1036056.0, 1030713.26, 994133.89, 983885.67, 968551.35],
+                data: [1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9, 1035773.13, 1035773.43, 1035773.4251754, 1036055.9985668429, 1030713.2591114427, 994133.8863876511, 983885.67128532, 968551.3466236368, 968549.8397718],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
