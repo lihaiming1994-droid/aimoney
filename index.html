@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -16,7 +15,6 @@
         .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
         .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
         .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
-
         .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
         .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .card-lg { flex: 2; }
@@ -26,7 +24,6 @@
         .pnl-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }
         .up-bg { background: rgba(16, 185, 129, 0.1); color: var(--up); }
         .down-bg { background: rgba(239, 68, 68, 0.1); color: var(--down); }
-
         .table-card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
         .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
         table { width: 100%; border-collapse: collapse; }
@@ -39,20 +36,14 @@
         .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
         .up { color: var(--up); font-weight: 600; }
         .down { color: var(--down); font-weight: 600; }
-
         .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
         .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
         .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
         .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
         .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
-
         .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
         .news-list li { margin-bottom: 10px; }
         .news-list li::marker { color: var(--accent); }
-
-        .weekend-banner { background: rgba(251, 191, 36, 0.08); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: 12px; padding: 20px; margin-bottom: 25px; text-align: center; }
-        .weekend-banner h2 { margin: 0 0 8px 0; color: #fbbf24; font-size: 1.2rem; }
-        .weekend-banner p { margin: 0; color: var(--text-sub); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -66,23 +57,18 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-07-05</div>
-                <div class="update-time">🕒 周末休市 | 锁定周五盘面</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-07-06</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
-        </div>
-
-        <div class="weekend-banner">
-            <h2>⚠️ 周末休市 Market Closed</h2>
-            <p>今日为非交易日(Sunday)，所有价格锁定为周五(07/03)收盘价，无交易动作</p>
         </div>
 
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--down);">¥</span>939,277</div>
-                    <div class="pnl-tag up-bg">
-                        +¥0 (+0.00%)
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>941,268</div>
+                    <div class="pnl-tag down-bg">
+                        ¥58,732 (5.87%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -90,12 +76,12 @@
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥293,907</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">31.3% 仓位</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">31.2% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥645,370</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">68.7% 仓位</div>
+                <div class="metric-value">¥647,361</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">68.8% 仓位</div>
             </div>
         </div>
 
@@ -105,61 +91,12 @@
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                <tr>
-            <td><span class="symbol-name">NVDA 🔴破$195</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>181</td>
-            <td>$197.91</td>
-            <td class="down">$194.62</td>
-            <td>¥239,538</td>
-            <td class="down">¥-4,043 (-1.7%)</td>
-            <td>81.5%</td>
-        </tr><tr>
-            <td><span class="symbol-name">TSM</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>65</td>
-            <td>$385.75</td>
-            <td class="up">$434.47</td>
-            <td>¥192,036</td>
-            <td class="up">+¥21,534 (+12.6%)</td>
-            <td>36.0%</td>
-        </tr><tr>
-            <td><span class="symbol-name">MU 🏆纪念仓</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>1</td>
-            <td>$428.88</td>
-            <td class="up">$976.21</td>
-            <td>¥6,638</td>
-            <td class="up">+¥3,722 (+127.6%)</td>
-            <td>0.9%</td>
-        </tr><tr>
-            <td><span class="symbol-name">00700.HK</span></td>
-            <td><span class="badge-hk">港股</span></td>
-            <td>163</td>
-            <td>HK$554.5</td>
-            <td class="down">HK$431.2</td>
-            <td>¥60,959</td>
-            <td class="down">¥-17,431 (-22.2%)</td>
-            <td>8.3%</td>
-        </tr><tr>
-            <td><span class="symbol-name">BBAI 🔴深亏</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>2000</td>
-            <td>$5.10</td>
-            <td class="down">$3.52</td>
-            <td>¥47,872</td>
-            <td class="down">¥-21,488 (-31.0%)</td>
-            <td>6.0%</td>
-        </tr><tr>
-            <td><span class="symbol-name">GEV 🟡新仓</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>13</td>
-            <td>$1134.72</td>
-            <td class="down">$1112.30</td>
-            <td>¥98,327</td>
-            <td class="down">¥-1,982 (-2.0%)</td>
-            <td>11.7%</td>
-        </tr>
+                <tr><td><span class="symbol-name">NVDA</span></td><td><span class="badge-us">美股</span></td><td>181</td><td>$197.91</td><td>$194.62</td><td>¥239,186</td><td class="down">¥-4,038 (-1.7%)</td><td>44.9%</td></tr>
+<tr><td><span class="symbol-name">TSM</span></td><td><span class="badge-us">美股</span></td><td>65</td><td>$385.75</td><td>$434.47</td><td>¥191,753</td><td class="up">+¥21,503 (+12.6%)</td><td>26.5%</td></tr>
+<tr><td><span class="symbol-name">MU</span></td><td><span class="badge-us">美股</span></td><td>1</td><td>$428.88</td><td>$976.21</td><td>¥6,628</td><td class="up">+¥3,716 (+127.6%)</td><td>0.9%</td></tr>
+<tr><td><span class="symbol-name">00700.HK</span></td><td><span class="badge-hk">港股</span></td><td>163</td><td>HK$554.50</td><td>HK$452.00</td><td>¥63,809</td><td class="down">¥-14,470 (-18.5%)</td><td>8.0%</td></tr>
+<tr><td><span class="symbol-name">BBAI</span></td><td><span class="badge-us">美股</span></td><td>2000</td><td>$5.10</td><td>$3.52</td><td>¥47,802</td><td class="down">¥-21,456 (-31.0%)</td><td>5.7%</td></tr>
+<tr><td><span class="symbol-name">GEV</span></td><td><span class="badge-us">美股</span></td><td>13</td><td>$1134.72</td><td>$1112.30</td><td>¥98,183</td><td class="down">¥-1,979 (-2.0%)</td><td>10.4%</td></tr>
             </table>
         </div>
 
@@ -167,26 +104,13 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">【周末休市 Market Closed】</span>
+                    <span class="action-highlight">观望持有 — 无止损触发, 无明确加仓信号 (周一美股盘前锁定周五收盘价)</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    <span class="action-highlight">🦞 今日为非交易日，锁定周五盘面状态。</span><br><br>
-<strong>🔴 关键风险监控：</strong><br>
-• NVDA 3连阴跌破$195 → 周一若失守$190将触发止损清仓<br>
-• BBAI 深亏-31%，RSI=32超卖 → $3.30止损线岌岌可危<br>
-• 现金率31.3%远超10-25%标准 → 下周必须择机加仓降至25%以内<br><br>
-<strong>🟢 周一重点关注：</strong><br>
-• NVDA能否收复$195或守住$190支撑位<br>
-• TSM从$477回调至$434，RSI=56中性 → 若回稳$440+可适度补仓<br>
-• GEV新仓磨合期(电力+AI基础设施)，RSI待观察<br>
-• 00700.HK微弹+0.2%但仍亏-22.4%，等待企稳信号<br><br>
-<strong>💡 下周策略方向：</strong><br>
-• 现金弹药¥29.4万充足，择机在NVDA/TSM右侧确认后加仓<br>
-• BBAI若跌破$3.30果断止损，释放资金转向更优标的<br>
-• 持续关注GEV电力AI龙头表现及新黑马挖掘
+                    NVDA在$190-$195危险区间! RSI=41.3偏弱, 基本面AI芯片需求逻辑未变但需等待右侧确认收复$195。严守$190止损线! 周一18点为美股盘前, 锁定周五收盘价待周二更新。 | TSM $434.47 RSI=52.6中性, 从$477回调属健康洗盘, 若站稳$440可适度加仓。 | BBAI $3.52贴近$3.30止损线! RSI=31.1超卖, 深亏-31%, AI国防合同逻辑尚存但缺乏短期催化剂, 严守$3.30止损。 | 00700.HK HK$452.00, 腾讯AI业务有支撑, 港股情绪偏弱导致持续亏损-22.4%, 持有等待反弹。 | GEV $1112.30新仓磨合, 电网+AI数据中心供电(Vernova)逻辑清晰, 中长期看好。 | MU $976.21纪念仓+127.7%, HBM内存AI需求旺盛, 长期持有不卖。 | 现金率31.2%远超10-25%目标, 需周二获取美股周一收盘后择机加仓降现金率至25%以内。 | NEE $88.34 RSI=61.9 (电力+AI基础设施黑马观察中)
                 </div>
             </div>
         </div>
@@ -194,13 +118,13 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li>周末休市，暂无实时产业资讯。</li>
+                <li><a href="https://finance.sina.com.cn/stock/observe/2026-07-06/doc-inifwfpu1955380.shtml" target="_blank" style="color:#818cf8">[2026-07-06] 联泰科技港股IPO：股权高度分散创始人因内斗被逼走并另起炉灶 毛利率远低于同行净利率不足0.5%</a></li><li><a href="https://finance.sina.com.cn/stock/roll/2026-07-06/doc-inifwfpv8728613.shtml" target="_blank" style="color:#818cf8">[2026-07-06] 长城基金汪立：关注科技、制造、传统修复等板块</a></li><li><a href="https://finance.sina.com.cn/money/fund/etf/2026-07-06/doc-inifwfpv8719104.shtml" target="_blank" style="color:#818cf8">[2026-07-06] 低估值+3连阳！港股互联网ETF（513770）基金经理：WorkBuddy正在修复互联网板块的AI逻辑</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-06/doc-inifwfpv8717634.shtml" target="_blank" style="color:#818cf8">[2026-07-06] 摩根士丹利威尔逊：股市上涨行情将扩散至芯片板块以外领域</a></li>
             </ul>
         </div>
 
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
             AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
-            Generated by Automated Quant Engine | Weekend Lock Mode
+            Generated by Automated Quant Engine
         </div>
     </div>
 
@@ -211,10 +135,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 1081627.07, 1067962.0342757998, 939379.1511399999, 979234.17, 1019089.1966912864, 1035107.41, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9, 1035773.13, 1035773.43, 1035773.4251754, 1036055.9985668429, 1030713.2591114427, 994133.8863876511, 983885.67128532, 968551.3466236368, 968549.8397718, 956909.0531280756, 968047.2775298713, 992316.6567778713, 951897.8398662795, 939280.2529093, 939276.9537892999, 939276.9537892999],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 1081627.07, 1067962.03, 939379.15, 979234.17, 1019089.2, 1035107.41, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 1107493.89, 1118936.5, 1085358.47, 1061200.97, 1061205.86, 1061200.97, 997746.25, 1003976.58, 991563.71, 965399.44, 976107.05, 976109.21, 976109.21, 981440.44, 1008666.01, 1010911.5, 1005691.9, 1035773.13, 1035773.43, 1035773.43, 1036056.0, 1030713.26, 994133.89, 983885.67, 968551.35, 968549.84, 956909.05, 968047.28, 992316.66, 951897.84, 939280.25, 939276.95, 939276.95, 941267.5],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
