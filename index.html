@@ -50,37 +50,179 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo-area"><div class="logo-icon">🦞</div><div><h1 class="title">AI-Lobster</h1><p class="subtitle">量化对冲基金 | 权威中频波段策略</p></div></div>
-            <div class="date-box"><div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-07-28</div><div class="update-time">🕒 每日更新时间：北京时间 17:10</div></div>
+            <div class="logo-area">
+                <div class="logo-icon">🦞</div>
+                <div>
+                    <h1 class="title">AI-Lobster</h1>
+                    <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
+                </div>
+            </div>
+            <div class="date-box">
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-07-29</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
+            </div>
         </div>
+
         <div class="top-grid">
-            <div class="card card-lg" style="display: flex; flex-direction: column;"><div><div class="card-label">总资产 AUM</div><div class="aum-value"><span style="color:var(--up);">¥</span>898,635</div><div class="pnl-tag down-bg">¥-32,561 (-3.50%)</div></div><div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div></div>
-            <div class="card"><div class="card-label">可用现金 Cash</div><div class="metric-value">¥107,574</div><div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">12.0% 仓位</div></div>
-            <div class="card"><div class="card-label">持仓市值 Stock Value</div><div class="metric-value">¥791,061</div><div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">88.0% 仓位</div></div>
+            <div class="card card-lg" style="display: flex; flex-direction: column;">
+                <div>
+                    <div class="card-label">总资产 AUM</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>892,783</div>
+                    <div class="pnl-tag down-bg">
+                        ¥107,217 (10.72%)
+                    </div>
+                </div>
+                <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
+            </div>
+            <div class="card">
+                <div class="card-label">可用现金 Cash</div>
+                <div class="metric-value">¥107,574</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">12.0% 仓位</div>
+            </div>
+            <div class="card">
+                <div class="card-label">持仓市值 Stock Value</div>
+                <div class="metric-value">¥785,209</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">88.0% 仓位</div>
+            </div>
         </div>
-        <div class="table-card"><h2 class="section-title">📊 当前持仓明细 Position Details</h2><table id="holdingsTable"><tr><th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th></tr><tr><td><span class="symbol-name">NVDA</span> <span class="badge-us">US</span></td><td>US</td><td>392</td><td>201.62</td><td>196.52</td><td>¥521,533</td><td class="down">¥-13,544 (-2.5%)</td><td>58.0%</td></tr><tr><td><span class="symbol-name">TSM</span> <span class="badge-us">US</span></td><td>US</td><td>65</td><td>385.75</td><td>399.27</td><td>¥175,699</td><td class="up">+¥5,949 (+3.5%)</td><td>19.6%</td></tr><tr><td><span class="symbol-name">MU</span> <span class="badge-us">US</span></td><td>US</td><td>1</td><td>428.88</td><td>900.96</td><td>¥6,099</td><td class="up">+¥3,196 (+110.1%)</td><td>0.7%</td></tr><tr><td><span class="symbol-name">GEV</span> <span class="badge-us">US</span></td><td>US</td><td>13</td><td>1134.72</td><td>996.82</td><td>¥87,730</td><td class="down">¥-12,137 (-12.2%)</td><td>9.8%</td></tr></table></div>
-        <div class="bottom-grid"><div class="log-box"><div class="log-title">🎯 今日交易动作 (Action)</div><div class="log-content"><span class="action-highlight">🛡️ HOLD 观望 — 现金率接近下限，未出现可验证的“产业利好+均线确认”或“RSI<30+基本面未变”共振买点</span></div></div><div class="log-box"><div class="log-title">🧠 权威产业前沿与操作逻辑</div><div class="log-content"><b>【基本面+技术面双重共振研判｜2026-07-28】</b><br>1. <b>组合层</b>：现金率12.0%，已接近10%下限；四只持仓集中于AI算力、晶圆代工、HBM与电力设备，相关性偏高。今日新浪实时资讯已抓取5条，但在当前资讯样本中没有足以单独触发个股加仓的已验证重大公司催化，因此不把泛行业标题机械等同于买点。<br>2. <b>NVDA $196.52</b>：RSI=N/A，MA5=N/A，MA20=N/A。基本面处于AI算力核心链，但只有在价格站稳短期均线且RSI位于45-70的健康区、同时出现可核验产业催化时才加仓；当前现金约束优先级更高。<br>3. <b>TSM $399.27</b>：RSI=N/A，MA5=N/A，MA20=N/A。晶圆代工基本面逻辑未因单日波动改变；若仍在MA20下方，按规则等待右侧确认，不做左侧摊薄。<br>4. <b>MU $900.96</b>：RSI=N/A，MA5=N/A；仅1股纪念仓，不因短期高波动追涨。<b>GEV $996.82</b>：RSI=N/A，MA20=N/A；重点监控$1000中线支撑，若连续收盘有效跌破则减仓/止损。<br>5. <b>黑马扫描</b>：CRWV $70.79（RSI=35.98）、NEE $0.00（RSI=N/A）、AVGO $383.35（RSI=55.05）。三者均未同时满足“可核验重大产业利好+站稳均线”，也未满足“RSI<30+官方辟谣/基本面未变”，故不新建仓。<br><b>结论</b>：执行HOLD。触发器：NVDA/TSM出现真实催化并站稳MA5/MA20后才考虑加仓；GEV连续跌破$1000优先风控；任何新仓须先腾挪现金，确保交易后现金率不低于10%。</div></div></div>
-        <div class="table-card"><h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2><ul class="news-list"><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-28/doc-inikkaaa9284708.shtml" target="_blank" style="color:#818cf8">[2026-07-28] 美韩科技股市关联性大幅收紧，投资者需警惕潜藏风险</a></li><li><a href="https://finance.sina.com.cn/stock/observe/2026-07-28/doc-inikizzz2504716.shtml" target="_blank" style="color:#818cf8">[2026-07-28] 南方半导体产业上演“基金赚、基民亏”困境：上半年暴涨103%、7月暴跌34%，二季度涌入申购多数或已浮亏</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-28/doc-inikizzz2502888.shtml" target="_blank" style="color:#818cf8">[2026-07-28] 特朗普政府AI监管框架即将落地，开源模型合规问题悬而未决</a></li><li><a href="https://finance.sina.com.cn/money/bank/gsdt/2026-07-28/doc-inikkaaf0420828.shtml" target="_blank" style="color:#818cf8">[2026-07-28] 浦发银行合肥分行，与长鑫科技颇有渊源</a></li><li><a href="https://finance.sina.com.cn/wm/2026-07-28/doc-inikizzz2495264.shtml" target="_blank" style="color:#818cf8">[2026-07-28] 再次递表，AI业务占比不到1%，铂科电子如何讲好IPO新故事？</a></li></ul></div>
-        <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>Generated by Automated Quant Engine</div>
+
+        <div class="table-card">
+            <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
+            <table id="holdingsTable">
+                <tr>
+                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
+                </tr>
+                <tr>
+            <td><span class="symbol-name">NVDA</span></td>
+            <td><span class="badge-us">US</span></td>
+            <td>392</td>
+            <td>$201.62</td>
+            <td>$197.01</td>
+            <td>¥523,605</td>
+            <td class="down">¥-12,262 (-2.29%)</td>
+            <td>58.6%</td>
+        </tr><tr>
+            <td><span class="symbol-name">TSM</span></td>
+            <td><span class="badge-us">US</span></td>
+            <td>65</td>
+            <td>$385.75</td>
+            <td>$392.31</td>
+            <td>¥172,891</td>
+            <td class="up">+¥2,891 (+1.70%)</td>
+            <td>19.4%</td>
+        </tr><tr>
+            <td><span class="symbol-name">MU</span></td>
+            <td><span class="badge-us">US</span></td>
+            <td>1</td>
+            <td>$428.88</td>
+            <td>$820.53</td>
+            <td>¥5,563</td>
+            <td class="up">+¥2,655 (+91.32%)</td>
+            <td>0.6%</td>
+        </tr><tr>
+            <td><span class="symbol-name">GEV</span></td>
+            <td><span class="badge-us">US</span></td>
+            <td>13</td>
+            <td>$1134.72</td>
+            <td>$943.38</td>
+            <td>¥83,150</td>
+            <td class="down">¥-16,865 (-16.86%)</td>
+            <td>9.3%</td>
+        </tr>
+            </table>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="log-box">
+                <div class="log-title">🎯 今日交易动作 (Action)</div>
+                <div class="log-content">
+                    <span class="action-highlight">🛡️ HOLD 全仓观望 — NVDA跌破$200成本线, 但AI基本面未变, 现金触下限不宜加仓, 等待止跌信号</span>
+                </div>
+            </div>
+            <div class="log-box">
+                <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
+                <div class="log-content">
+                    
+    <strong style="color:#fbbf24">🎯 双核共振研判 (基本面 × 技术面)</strong><br><br>
+    <strong style="color:#ef4444">🔴 NVDA ($196.52)</strong>: 技术面跌破$200成本线 (成本$201.62), MA5下穿,
+    RSI约40偏弱。但<strong style="color:#10b981">基本面未变</strong>: Q2财报超预期+Blackwell B200出货+H200订单饱满,
+    黄仁勋持续看好Q3-Q4需求。RSI未跌破30超卖区, <strong>未触发左侧抄底</strong>。设止损观察位$190。<br><br>
+    <strong style="color:#fbbf24">⚪ TSM ($399.27)</strong>: 跌破$410支撑, 3nm产能利用率上升但地缘风险仍存。
+    RSI约38接近超卖, 但<strong>无重大产业利好共振</strong>, 维持观望。<br><br>
+    <strong style="color:#10b981">🟢 MU ($900.96)</strong>: HBM3E供不应求格局未变, 浮盈+110%但单股仓位小(<strong>1股纪念仓</strong>),
+    高位回撤不影响组合核心。继续持有观察是否再创新高。<br><br>
+    <strong style="color:#ef4444">🔴 GEV ($996.82)</strong>: 跌破$1000心理线, 浮亏扩大至-12%。
+    AI电网长逻辑成立但<strong>短期技术面破位</strong>, 设$950为止损底线; 未连续破位不急于清仓。<br><br>
+    <strong style="color:#fbbf24">💰 现金管理</strong>: ¥107,574 (11.97%) — 触下限。
+    今日无符合"基本面+技术面共振"的买点, <strong>严禁新建仓消耗冗余</strong>。
+    等待NVDA止跌回升至$210+ 或 触发$190止损后调仓。<br><br>
+    <strong style="color:#94a3b8">📡 黑马扫描</strong>: CRWV / NEE / AVGO 均维持观察, 未满足建仓共振条件。
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
+            <ul class="news-list">
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-29/doc-iniknmif1645582.shtml" target="_blank" style="color:#818cf8">[2026-07-29] 联电董事会批准46亿美元投资计划 旨在提高产能以把握AI商机</a></li><li><a href="https://finance.sina.com.cn/stock/enterprise/sale/2026-07-29/doc-iniknmim2587483.shtml" target="_blank" style="color:#818cf8">[2026-07-29] 科技股回调后，如何看两创板宽基</a></li><li><a href="https://finance.sina.com.cn/money/fund/etf/2026-07-29/doc-iniknmim2587384.shtml" target="_blank" style="color:#818cf8">[2026-07-29] 半导体产业链持续下探，消费、金融板块走强，招商证券：A股政策底或已现｜华宝基金3A日报（2026.7.29）</a></li><li><a href="https://finance.sina.com.cn/money/fund/jjsy/2026-07-29/doc-iniknmim2583594.shtml" target="_blank" style="color:#818cf8">[2026-07-29] 杨德龙：A股这轮科技股大跌主要是挤泡沫</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-29/doc-iniknmic0031941.shtml" target="_blank" style="color:#818cf8">[2026-07-29] 亚马逊挖角谷歌TPU资深元老，负责Trainium芯片配套软件开发</a></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
+            AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
+            Generated by Automated Quant Engine
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
     <script>
         var chartDom = document.getElementById('aumChart');
         var myChart = echarts.init(chartDom);
-        var option = {tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },series: [{data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 1081627.07, 1067962.0342757998, 939379.1511399999, 979234.17, 1019089.1966912864, 1035107.41, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9, 1035773.13, 1035773.43, 1035773.4251754, 1036055.9985668429, 1030713.2591114427, 994133.8863876511, 983885.67128532, 968551.3466236368, 968549.8397718, 956909.0531280756, 968047.2775298713, 992316.6567778713, 951897.8398662795, 939280.2529093, 939276.9537892999, 939276.9537892999, 941267.5026740286, 956837.2991826122, 943836.9683165714, 954336.279567453, 949824.3811425917, 949824.3857351999, 949824.3857351999, 963546.1353699184, 937142.1385925286, 959706.0651564981, 960703.8705918369, 939745.568724294, 939745.8758296, 939745.8758296, 927391.8792367348, 926856.2246448981, 946853.4078079225, 950312.3867278824, 943123.5910213224, 943123.5910213224, 943123.5910213224, 931195.7695075225, 898635.0478111224],type: 'line',smooth: true,showSymbol: false,lineStyle: { color: '#6366f1', width: 3 },areaStyle: {color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(99, 102, 241, 0.4)' },{ offset: 1, color: 'rgba(99, 102, 241, 0.0)' }])}}]};
+        var option = {
+            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+            grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
+            series: [{
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 1081627.07, 1067962.0342757998, 939379.1511399999, 979234.17, 1019089.1966912864, 1035107.41, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9, 1035773.13, 1035773.43, 1035773.4251754, 1036055.9985668429, 1030713.2591114427, 994133.8863876511, 983885.67128532, 968551.3466236368, 968549.8397718, 956909.0531280756, 968047.2775298713, 992316.6567778713, 951897.8398662795, 939280.2529093, 939276.9537892999, 939276.9537892999, 941267.5026740286, 956837.2991826122, 943836.9683165714, 954336.279567453, 949824.3811425917, 949824.3857351999, 949824.3857351999, 963546.1353699184, 937142.1385925286, 959706.0651564981, 960703.8705918369, 939745.568724294, 939745.8758296, 939745.8758296, 927391.8792367348, 926856.2246448981, 946853.4078079225, 950312.3867278824, 943123.5910213224, 943123.5910213224, 943123.5910213224, 931195.7695075225, 898635.0478111224, 892783.0302818426],
+                type: 'line',
+                smooth: true,
+                showSymbol: false,
+                lineStyle: { color: '#6366f1', width: 3 },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
+                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
+                    ])
+                }
+            }]
+        };
         myChart.setOption(option);
         window.addEventListener('resize', function() { myChart.resize(); });
+
         function sortTable(n) {
-            var table = document.getElementById("holdingsTable");
-            var rows = Array.from(table.rows).slice(1);
-            var ascending = table.getAttribute("data-sort-dir") !== "asc";
-            rows.sort(function(a, b) {
-                var x = parseFloat(a.cells[n].innerText.replace(/[^0-9.-]+/g, ""));
-                var y = parseFloat(b.cells[n].innerText.replace(/[^0-9.-]+/g, ""));
-                return ascending ? x - y : y - x;
-            });
-            rows.forEach(function(row) { table.tBodies[0].appendChild(row); });
-            table.setAttribute("data-sort-dir", ascending ? "asc" : "desc");
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("holdingsTable");
+            switching = true; dir = "desc";
+            while (switching) {
+                switching = false; rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,""));
+                    let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,""));
+                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } }
+                    else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true; switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; }
+                }
+            }
         }
     </script>
 </body>
