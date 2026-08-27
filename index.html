@@ -5,49 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Lobster | Quant Dashboard</title>
     <style>
-        :root {{ --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; }}
-        body {{ background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 30px 20px; }}
-        .container {{ max-width: 1200px; margin: 0 auto; }}
-        .header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }}
-        .logo-area {{ display: flex; align-items: center; gap: 15px; }}
-        .logo-icon {{ font-size: 2rem; background: rgba(99, 102, 241, 0.15); padding: 10px; border-radius: 12px; }}
-        .title {{ margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; }}
-        .subtitle {{ margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }}
-        .date-box {{ text-align: right; color: var(--text-sub); font-size: 0.9rem; }}
-        .update-time {{ margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }}
+        :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; }
+        body { background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 30px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-icon { font-size: 2rem; background: rgba(99, 102, 241, 0.15); padding: 10px; border-radius: 12px; }
+        .title { margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; }
+        .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
+        .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
+        .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
 
-        .top-grid {{ display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }}
-        .card {{ background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }}
-        .card-lg {{ flex: 2; }}
-        .card-label {{ font-size: 0.85rem; color: var(--text-sub); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }}
-        .aum-value {{ font-size: 3rem; font-weight: bold; margin: 5px 0; color: #fff; font-family: "SF Pro Display", -apple-system, sans-serif; }}
-        .metric-value {{ font-size: 2rem; font-weight: bold; margin: 5px 0; color: #fff; }}
-        .pnl-tag {{ display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }}
-        .up-bg {{ background: rgba(16, 185, 129, 0.1); color: var(--up); }}
-        .down-bg {{ background: rgba(239, 68, 68, 0.1); color: var(--down); }}
+        .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
+        .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .card-lg { flex: 2; }
+        .card-label { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .aum-value { font-size: 3rem; font-weight: bold; margin: 5px 0; color: #fff; font-family: "SF Pro Display", -apple-system, sans-serif; }
+        .metric-value { font-size: 2rem; font-weight: bold; margin: 5px 0; color: #fff; }
+        .pnl-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }
+        .up-bg { background: rgba(16, 185, 129, 0.1); color: var(--up); }
+        .down-bg { background: rgba(239, 68, 68, 0.1); color: var(--down); }
 
-        .table-card {{ background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }}
-        .section-title {{ font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }}
-        table {{ width: 100%; border-collapse: collapse; }}
-        th, td {{ padding: 16px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.95rem; }}
-        th {{ color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }}
-        th:hover {{ color: #fff; }}
-        th:first-child, td:first-child {{ text-align: left; }}
-        .symbol-name {{ font-weight: 700; color: #fff; font-size: 1.05rem; }}
-        .badge-hk {{ background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.3); }}
-        .badge-us {{ background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }}
-        .up {{ color: var(--up); font-weight: 600; }}
-        .down {{ color: var(--down); font-weight: 600; }}
+        .table-card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
+        .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 16px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        th { color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
+        th:hover { color: #fff; }
+        th:first-child, td:first-child { text-align: left; }
+        .symbol-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
+        .badge-hk { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.3); }
+        .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
+        .up { color: var(--up); font-weight: 600; }
+        .down { color: var(--down); font-weight: 600; }
 
-        .bottom-grid {{ display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }}
-        .log-box {{ flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }}
-        .log-title {{ display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }}
-        .log-content {{ color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }}
-        .action-highlight {{ color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }}
+        .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
+        .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
+        .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
+        .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
+        .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
 
-        .news-list {{ color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }}
-        .news-list li {{ margin-bottom: 10px; }}
-        .news-list li::marker {{ color: var(--accent); }}
+        .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
+        .news-list li { margin-bottom: 10px; }
+        .news-list li::marker { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -158,51 +158,51 @@
     <script>
         var chartDom = document.getElementById('aumChart');
         var myChart = echarts.init(chartDom);
-        var option = {{
-            tooltip: {{ trigger: 'axis', axisPointer: {{ type: 'cross' }} }},
-            grid: {{ left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true }},
-            xAxis: {{ type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27"], axisLine: {{ show: false }}, axisLabel: {{ color: '#94a3b8' }} }},
-            yAxis: {{ type: 'value', scale: true, splitLine: {{ lineStyle: {{ color: '#2c2e4f', type: 'dashed' }} }}, axisLabel: {{ color: '#94a3b8' }} }},
-            series: [{{
+        var option = {
+            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+            grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
+            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
+            series: [{
                 data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 1081627.07, 1067962.03, 939379.15, 979234.17, 1019089.2, 1035107.41, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 1107493.89, 1118936.5, 1085358.47, 1061200.97, 1061205.86, 1061200.97, 997746.25, 1003976.58, 991563.71, 965399.44, 976107.05, 976109.21, 976109.21, 981440.44, 1008666.01, 1010911.5, 1005691.9, 1035773.13, 1035773.43, 1035773.43, 1036056.0, 1030713.26, 994133.89, 983885.67, 968551.35, 968549.84, 956909.05, 968047.28, 992316.66, 951897.84, 939280.25, 939276.95, 939276.95, 941267.5, 956837.3, 943836.97, 954336.28, 949824.38, 949824.39, 949824.39, 963546.14, 937142.14, 959706.07, 960703.87, 939745.57, 939745.88, 939745.88, 927391.88, 926856.22, 946853.41, 950312.39, 943123.59, 943123.59, 943123.59, 931195.77, 898635.05, 892783.03, 861093.63, 888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
-                lineStyle: {{ color: '#6366f1', width: 3 }},
-                areaStyle: {{
+                lineStyle: { color: '#6366f1', width: 3 },
+                areaStyle: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        {{ offset: 0, color: 'rgba(99, 102, 241, 0.4)' }},
-                        {{ offset: 1, color: 'rgba(99, 102, 241, 0.0)' }}
+                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
+                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
                     ])
-                }}
-            }}]
-        }};
+                }
+            }]
+        };
         myChart.setOption(option);
-        window.addEventListener('resize', function() {{ myChart.resize(); }});
+        window.addEventListener('resize', function() { myChart.resize(); });
 
-        function sortTable(n) {{
+        function sortTable(n) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("holdingsTable");
             switching = true; dir = "desc";
-            while (switching) {{
+            while (switching) {
                 switching = false; rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {{
+                for (i = 1; i < (rows.length - 1); i++) {
                     shouldSwitch = false;
                     x = rows[i].getElementsByTagName("TD")[n];
                     y = rows[i + 1].getElementsByTagName("TD")[n];
                     let valX = parseFloat(x.innerText.replace(/[^0-9.-]+/g,""));
                     let valY = parseFloat(y.innerText.replace(/[^0-9.-]+/g,""));
-                    if (dir == "asc") {{ if (valX > valY) {{ shouldSwitch = true; break; }} }}
-                    else if (dir == "desc") {{ if (valX < valY) {{ shouldSwitch = true; break; }} }}
-                }}
-                if (shouldSwitch) {{
+                    if (dir == "asc") { if (valX > valY) { shouldSwitch = true; break; } }
+                    else if (dir == "desc") { if (valX < valY) { shouldSwitch = true; break; } }
+                }
+                if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true; switchcount ++;
-                }} else {{
-                    if (switchcount == 0 && dir == "desc") {{ dir = "asc"; switching = true; }}
-                }}
-            }}
-        }}
+                } else {
+                    if (switchcount == 0 && dir == "desc") { dir = "asc"; switching = true; }
+                }
+            }
+        }
     </script>
 </body>
 </html>
