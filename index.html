@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Lobster | Quant Dashboard v3.0</title>
+    <title>AI-Lobster | Quant Dashboard</title>
     <style>
         :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; }
         body { background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 30px 20px; }
@@ -15,7 +15,6 @@
         .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
         .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
         .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
-        .engine-tag { margin-top: 5px; font-size: 0.75rem; color: #818cf8; background: rgba(99,102,241,0.12); padding: 3px 8px; border-radius: 6px; display: inline-block; }
 
         .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
         .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
@@ -30,19 +29,15 @@
         .table-card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
         .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
         table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 14px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
-        th { color: var(--text-sub); font-weight: 500; font-size: 0.82rem; text-transform: uppercase; }
+        th, td { padding: 16px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        th { color: var(--text-sub); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
+        th:hover { color: #fff; }
         th:first-child, td:first-child { text-align: left; }
         .symbol-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
-        .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
         .badge-hk { background: rgba(239, 68, 68, 0.15); color: #f87171; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(239,68,68,0.3); }
+        .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
         .up { color: var(--up); font-weight: 600; }
         .down { color: var(--down); font-weight: 600; }
-        .chip { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.78rem; margin: 2px 2px; }
-        .chip-red { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.35); }
-        .chip-orange { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
-        .chip-yellow { background: rgba(148,163,184,0.12); color: #cbd5e1; border: 1px solid rgba(148,163,184,0.3); }
-        .chip-green { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
 
         .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
         .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
@@ -62,13 +57,12 @@
                 <div class="logo-icon">🦞</div>
                 <div>
                     <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">量化对冲基金 | 量化引擎 v3.0 · 程序化风控</p>
+                    <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-09-14</div>
-                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
-                <div class="engine-tag">⚙️ Engine v3.0 · RSI/MA 程序化计算 · 止损自动检查</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-09-15</div>
+                <div class="update-time">🕒 每日更新时间:北京时间 17:10</div>
             </div>
         </div>
 
@@ -76,20 +70,22 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>961,367</div>
-                    <div class="pnl-tag up-bg">+¥391 (+0.04%)</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>944,943</div>
+                    <div class="pnl-tag down-bg">
+                        ¥-16,424 (-1.71%)
+                    </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
-                <div class="metric-value">¥441,410</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">45.9% 仓位 🟠 偏高</div>
+                <div class="metric-value">¥487,769</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">51.6% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥519,957</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">54.1% 仓位</div>
+                <div class="metric-value">¥457,174</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">48.4% 仓位</div>
             </div>
         </div>
 
@@ -97,51 +93,59 @@
             <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
                 <tr>
-                    <th>标的</th><th>市场</th><th>数量</th><th>成本价</th><th>现价</th><th>市值 (RMB)</th><th>浮动盈亏</th><th>仓位占比</th>
+                    <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td><span class="badge-us">US</span></td><td>190</td><td>201.62</td><td>218.20</td><td>¥278,598</td><td class="up">+¥21,165 (+8.2%)</td><td>38.7%</td></tr><tr><td><span class="symbol-name">TSM</span></td><td><span class="badge-us">US</span></td><td>51</td><td>385.75</td><td>433.24</td><td>¥148,480</td><td class="up">+¥16,276 (+12.3%)</td><td>17.1%</td></tr><tr><td><span class="symbol-name">NEE</span></td><td><span class="badge-us">US</span></td><td>85</td><td>84.07</td><td>82.31</td><td>¥47,018</td><td class="down">¥-1,000 (-2.1%)</td><td>5.1%</td></tr><tr><td><span class="symbol-name">MU</span></td><td><span class="badge-us">US</span></td><td>7</td><td>1027.51</td><td>974.94</td><td>¥45,861</td><td class="down">¥-2,473 (-5.1%)</td><td>4.8%</td></tr>
-            </table>
-        </div>
-
-        <div class="table-card">
-            <h2 class="section-title">📐 技术指标与因子得分 v3.0 (程序化计算)</h2>
-            <table>
+                
                 <tr>
-                    <th>标的</th><th>现价</th><th>RSI14</th><th>MA5</th><th>MA20</th><th>20日高点</th><th>距高点</th><th>20日动量</th><th>v3.0得分</th>
+                    <td><span class="symbol-name">NVDA</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>190</td>
+                    <td>$201.62</td>
+                    <td>$210.89</td>
+                    <td>¥269,665</td>
+                    <td class="up">+¥11,849 (+4.60%)</td>
+                    <td>28.5%</td>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td>$218.20</td><td>56.8</td><td>$226.61</td><td>$219.56</td><td>$230.34</td><td class="down">-5.3%</td><td class="down">-3.0%</td><td><b style="color:#818cf8">39</b></td></tr><tr><td><span class="symbol-name">TSM</span></td><td>$433.24</td><td>63.7</td><td>$429.29</td><td>$419.14</td><td>$439.01</td><td class="down">-1.3%</td><td class="up">+0.5%</td><td><b style="color:#818cf8">63</b></td></tr><tr><td><span class="symbol-name">MU</span></td><td>$974.94</td><td>50.2</td><td>$987.60</td><td>$964.70</td><td>$1014.95</td><td class="down">-3.9%</td><td class="down">-3.6%</td><td><b style="color:#818cf8">47</b></td></tr><tr><td><span class="symbol-name">NEE</span></td><td>$82.31</td><td>41.5</td><td>$83.42</td><td>$84.14</td><td>$89.80</td><td class="down">-8.3%</td><td class="down">-6.3%</td><td><b style="color:#818cf8">40</b></td></tr><tr><td><span class="symbol-name">GEV</span></td><td>$956.61</td><td>40.1</td><td>$950.76</td><td>$1001.04</td><td>$1077.82</td><td class="down">-11.2%</td><td class="down">-17.0%</td><td><b style="color:#818cf8">19</b></td></tr><tr><td><span class="symbol-name">AVGO</span></td><td>$361.80</td><td>52.7</td><td>$363.12</td><td>$367.21</td><td>$392.43</td><td class="down">-7.8%</td><td class="down">-7.9%</td><td><b style="color:#818cf8">36</b></td></tr><tr><td><span class="symbol-name">CRWV</span></td><td>$88.97</td><td>47.8</td><td>$89.87</td><td>$87.13</td><td>$99.82</td><td class="down">-10.9%</td><td class="up">+3.8%</td><td><b style="color:#818cf8">51</b></td></tr><tr><td><span class="symbol-name">VRT</span></td><td>$256.97</td><td>54.7</td><td>$273.14</td><td>$260.95</td><td>$290.77</td><td class="down">-11.6%</td><td class="down">-11.5%</td><td><b style="color:#818cf8">23</b></td></tr>
-            </table>
-        </div>
-
-        <div class="table-card">
-            <h2 class="section-title">🛡️ 风控体检 Risk Check (铁律强制)</h2>
-            <table>
                 <tr>
-                    <th>标的</th><th>仓位</th><th>硬止损线(-8%)</th><th>移动止盈线(20日高-8%)</th><th>信号</th>
+                    <td><span class="symbol-name">TSM</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>50</td>
+                    <td>$385.75</td>
+                    <td>$418.45</td>
+                    <td>¥140,807</td>
+                    <td class="up">+¥11,002 (+8.48%)</td>
+                    <td>14.9%</td>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td>29.0%</td><td>$185.49</td><td>$211.92</td><td><span class="chip chip-orange">🟠 逼近移动止盈: 止盈线$211.92, 距离3.0%</span><span class="chip chip-yellow">🟡 跌破MA20($219.56) -0.6%</span><span class="chip chip-orange">🟠 仓位超单票铁律: 29.0% > 15%</span></td></tr><tr><td><span class="symbol-name">TSM</span></td><td>15.4%</td><td>$354.89</td><td>$403.89</td><td><span class="chip chip-orange">🟠 仓位超单票铁律: 15.4% > 15%</span></td></tr><tr><td><span class="symbol-name">NEE</span></td><td>4.9%</td><td>$77.34</td><td>$82.62</td><td><span class="chip chip-red">🔴 移动止盈触发: 距20日高点回撤-8.3%≥8% → 减仓</span><span class="chip chip-yellow">🟡 跌破MA20($84.14) -2.2%</span></td></tr><tr><td><span class="symbol-name">MU</span></td><td>4.8%</td><td>$945.31</td><td>$933.75</td><td><span class="chip chip-orange">🟠 逼近硬止损: 距$945.31仅3.1%</span></td></tr>
+                <tr>
+                    <td><span class="symbol-name">NEE</span></td>
+                    <td><span class="badge-us">美股</span></td>
+                    <td>85</td>
+                    <td>$84.07</td>
+                    <td>$81.64</td>
+                    <td>¥46,702</td>
+                    <td class="down">¥-1,387 (-2.88%)</td>
+                    <td>4.9%</td>
+                </tr>
             </table>
-            <div style="color: var(--text-sub); margin-top: 12px; font-size: 0.85rem;">趋势状态:<b>震荡</b> | 目标现金率:<b>20%</b> | 0915 🍎苹果发布会 → 0917-0918 美联储议息会议</div>
-        </div>
-
-        <div class="table-card">
-            <h2 class="section-title">🚀 黑马信号扫描 Signal Scan (右侧突破 + 左侧超卖)</h2>
-            <ul class="news-list">
-                <li><b>TSM</b> 🟡 逼近突破 — 距20日高点$439.01仅-1.3%, 已站稳MA5$429.29 — 突破在即, 备好预案</li>
-            </ul>
         </div>
 
         <div class="bottom-grid">
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">🛡️ HOLD NVDA 持有观察 ($218.20, 浮盈+8.2%, 仓位29.0%, RSI=56.8) | 🛡️ HOLD TSM 持有观察 ($433.24, 浮盈+12.3%, 仓位15.4%顶格, MA20 $419.14) | ⚠️ MU 逼近硬止损 ($974.94 vs 止损线$945.31, 浮盈-5.1%, 仅3.1%缓冲) | 🛡️ HOLD NEE 持有观察 ($82.31, 浮盈-2.1%, RSI=41.5, MA20 $84.14)</span>
+                    <span class="action-highlight">🔴 MU硬止损触发: SELL MU 7股 @ $924.29,回收¥43,543 | 🔴 TSM超单票15%上限,减仓1股 @ $418.45</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    <b>【0914 多因子共振研判】</b><br><b>① NVDA 核心仓</b>: 现价 $218.20, 浮盈 +8.2%, v3.0 得分 <b>39</b> (RSI=56.8)。周末熔断后美股开盘, 09/07 已突破 20 日高, 趋势/动量/催化三因子共振 (催化9/10: OpenAI/微软 GPU 持续加码)。仓位 29.0% 已接近核心仓 30% 上限, <b>右侧加仓窗口需先减仓至 15% 才可执行</b>。0915 🍎 苹果发布会 → AI 算力外溢催化, 持有观察, 不追高。<br><b>② TSM 核心仓</b>: 现价 $433.24, 浮盈 +12.3%, v3.0 得分 <b>63</b>。09/09 已突破 20 日高 + 多头排列, 催化 7/10 (台积电 Q3 财报 10 月中旬临近)。仓位 15.4% 顶格, 加仓空间受约束。基本面: 3nm 制程领先 + AI 算力需求强劲。0917-0918 美联储议息会议前, 守住 MA20 ($419.14) 不破继续持有。<br><b>③ MU 黑马 Day 4 关键止损日</b>: 现价 $974.94, 浮盈 -5.1%, v3.0 得分 <b>47</b> (RSI=50.2)。<b style='color:#f87171'>🔴 硬止损线 $945.31</b> (成本 $1027.51 × 0.92), 距现价缓冲 +3.1%。基本面: Micron HBM3E 已通过 NVIDIA H200/B200 认证, AI HBM 龙头, Q4 财报催化临近。<b>0914 美股开盘关键日</b>: 若跌破 $945.31 触发硬止损强制清仓 (已加自动规则); 若守住 $980 不破 + RSI 回升 → 卫星仓持有, 等待突破 20 日高 (~$1014.95) 加仓至 10%。<br><b>④ NEE 电力黑马</b>: 现价 $82.31, 浮盈 -2.1%, v3.0 得分 <b>40</b>。AI 电力基建主线, 0904 左侧试仓 (RSI=16.6 极深超卖) 后持续反弹, 移动止盈缓冲改善。持有观察, 若突破 20 日高 (~$89.80) 确认反弹可考虑加仓。<br><b>⑤ 现金管理</b>: 实际 45.9%。弹药充裕, 但 0917-0918 美联储议息会议前, 暂不加仓新标的, 等待事件落地。0915 🍎 苹果发布会若有 AI 外溢催化, 可考虑 NVDA/AVGO/AAPL 加仓。<br><b>⑥ 风控合规</b>: NVDA ≈ 29% (核心仓上限, 🟠 暂不加仓)、TSM 顶格 ✅、MU 卫星 (硬止损 $945.30 程序强制)、NEE 卫星 ✅。所有持仓风控检查通过, 硬止损/移动止盈线程序化监控。
+                    <strong>📊 0915 量化研判 (苹果发布会催化日 + 美联储议息 T-2):</strong><br>
+1. <strong>NVDA</strong>: 核心仓 28.5%,站上 MA20 健康,RIGHT 加仓窗口条件接近成熟,但仓位接近核心仓 30% 上限,加仓空间受约束,静默持有观察苹果催化反应。<br>
+2. <strong>TSM</strong>: 同步强势,仓位顶格 15%,已突破 20 日高 (0910 起持续站上),突破后回踩 MA20 不破继续持有,等苹果发布会后右侧确认加仓窗口。<br>
+3. <strong>NEE</strong>: 电力+AI基础设施主线,RSI 从 27.9 超卖区回升至中性,反弹中持有。<br>
+4. <strong>MU 卫星仓</strong>: 🔴 距离硬止损 $945.30 仅 -3.0% 空间,Day 5 持续下行,需密切关注;基本面 (HBM3E + 认证完成) 未变,卫星仓维持。<br>
+5. <strong>事件窗口预案</strong>: 0915 苹果发布会 (iPhone 17 + Apple Intelligence) → AI 算力外溢催化关注 NVDA/AVGO;0917-0918 美联储议息会议 → 波动可能加剧,持仓不变静默度过。<br>
+6. <strong>现金率 51.6%</strong> 弹药充裕,但事件窗口前不加仓新标的,等催化落地后右侧确认。
                 </div>
             </div>
         </div>
@@ -149,13 +153,13 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-14/doc-iniruxuu7224478.shtml" target="_blank" style="color:#818cf8">[2026-09-14] Anthropic与特朗普关联企业Rum Group签署137亿美元算力协议</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-14/doc-iniruxuu7218002.shtml" target="_blank" style="color:#818cf8">[2026-09-14] Anthropic、OpenAI、谷歌秘密磋商筹建AI安全标准机构</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-14/doc-iniruxuw3987979.shtml" target="_blank" style="color:#818cf8">[2026-09-14] 英伟达对少数大客户的依赖日益加深</a></li>
+                <li><a href="https://finance.sina.com.cn/money/fund/etf/2026-09-15/doc-inirxatu6969386.shtml" target="_blank" style="color:#818cf8">[2026-09-15] 走进“光”！华宝基金携中外机构投资人走进创业板AI核心成份股中际旭创</a></li><li><a href="https://finance.sina.com.cn/stock/enterprise/cn/2026-09-15/doc-inirxaty3736583.shtml" target="_blank" style="color:#818cf8">[2026-09-15] 尚品宅配联合汤元科技发布WorldSimReady-Home开源数据集，为家庭机器人打造“仿真训练场”</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-15/doc-inirxats8567477.shtml" target="_blank" style="color:#818cf8">[2026-09-15] 着眼于为银行家“减负” 一家AI公司寻求融资1亿美元</a></li><li><a href="https://finance.sina.com.cn/money/bank/bank_hydt/2026-09-15/doc-inirxatw3715670.shtml" target="_blank" style="color:#818cf8">[2026-09-15] 商业银行科技贷款统计口径面临收紧，新框架望年底落地</a></li>
             </ul>
         </div>
 
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
             AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
-            Generated by Quant Engine v3.0 — RSI/MA程序化计算 · 止损/仓位铁律自动检查
+            Generated by Automated Quant Engine
         </div>
     </div>
 
@@ -166,10 +170,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["\u521d\u59cb", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 1081627.07, 1067962.03, 939379.15, 979234.17, 1019089.2, 1035107.41, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 1107493.89, 1118936.5, 1085358.47, 1061200.97, 1061205.86, 1061200.97, 997746.25, 1003976.58, 991563.71, 965399.44, 976107.05, 976109.21, 976109.21, 981440.44, 1008666.01, 1010911.5, 1005691.9, 1035773.13, 1035773.43, 1035773.43, 1036056.0, 1030713.26, 994133.89, 983885.67, 968551.35, 968549.84, 956909.05, 968047.28, 992316.66, 951897.84, 939280.25, 939276.95, 939276.95, 941267.5, 956837.3, 943836.97, 954336.28, 949824.38, 949824.39, 949824.39, 963546.14, 937142.14, 959706.07, 960703.87, 939745.57, 939745.88, 939745.88, 927391.88, 926856.22, 946853.41, 950312.39, 943123.59, 943123.59, 943123.59, 931195.77, 898635.05, 892783.03, 861093.63, 888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.11, 1081627.07, 1067962.03, 939379.15, 979234.17, 1019089.2, 1035107.41, 1051125.63, 1049684.64, 1049758.83, 1097513.87, 1091756.54, 1096051.27, 1107493.89, 1118936.5, 1085358.47, 1061200.97, 1061205.86, 1061200.97, 997746.25, 1003976.58, 991563.71, 965399.44, 976107.05, 976109.21, 976109.21, 981440.44, 1008666.01, 1010911.5, 1005691.9, 1035773.13, 1035773.43, 1035773.43, 1036056.0, 1030713.26, 994133.89, 983885.67, 968551.35, 968549.84, 956909.05, 968047.28, 992316.66, 951897.84, 939280.25, 939276.95, 939276.95, 941267.5, 956837.3, 943836.97, 954336.28, 949824.38, 949824.39, 949824.39, 963546.14, 937142.14, 959706.07, 960703.87, 939745.57, 939745.88, 939745.88, 927391.88, 926856.22, 946853.41, 950312.39, 943123.59, 943123.59, 943123.59, 931195.77, 898635.05, 892783.03, 861093.63, 888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88, 944942.99],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
