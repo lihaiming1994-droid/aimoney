@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-09-21</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-09-22</div>
                 <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
                 <div class="engine-tag">⚙️ Engine v3.0 · RSI/MA 程序化计算 · 止损自动检查</div>
             </div>
@@ -76,20 +76,20 @@
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>961,882</div>
-                    <div class="pnl-tag up-bg">+¥3,041 (+0.32%)</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>972,255</div>
+                    <div class="pnl-tag down-bg">¥-27,745 (-2.77%)</div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥487,769</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">50.7% 仓位 (弹药充裕)</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">50.2% 仓位 <span class="chip chip-orange">高于目标带</span></div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥474,113</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">49.3% 仓位</div>
+                <div class="metric-value">¥484,486</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">49.8% 仓位</div>
             </div>
         </div>
 
@@ -99,9 +99,34 @@
                 <tr>
                     <th>标的</th><th>市场</th><th>数量</th><th>成本价</th><th>现价</th><th>市值 (RMB)</th><th>浮动盈亏</th><th>仓位占比</th>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span><br><span style="color:var(--text-sub);font-size:0.78rem">NVIDIA</span></td><td><span class="badge-us">美股</span></td><td>190</td><td>$201.62</td><td>$222.09</td><td>¥282,721</td><td class="up">+¥26,054</td><td>29.4%</td></tr>
-<tr><td><span class="symbol-name">TSM</span><br><span style="color:var(--text-sub);font-size:0.78rem">台积电</span></td><td><span class="badge-us">美股</span></td><td>50</td><td>$385.75</td><td>$434.54</td><td>¥145,571</td><td class="up">+¥16,345</td><td>15.1%</td></tr>
-<tr><td><span class="symbol-name">NEE</span><br><span style="color:var(--text-sub);font-size:0.78rem">NextEra Energy</span></td><td><span class="badge-us">美股</span></td><td>85</td><td>$84.07</td><td>$80.46</td><td>¥45,822</td><td class="down">¥-2,053</td><td>4.8%</td></tr>
+                <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>190</td>
+        <td>$201.62</td>
+        <td>$227.25</td>
+        <td>¥289,721</td>
+        <td class="up">+¥32,671 (+12.71%)</td>
+        <td>29.8%</td>
+    </tr><tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>50</td>
+        <td>$385.75</td>
+        <td>$445.15</td>
+        <td>¥149,348</td>
+        <td class="up">+¥19,929 (+15.40%)</td>
+        <td>15.4%</td>
+    </tr><tr>
+        <td><span class="symbol-name">NEE</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>85</td>
+        <td>$84.07</td>
+        <td>$79.63</td>
+        <td>¥45,417</td>
+        <td class="down">¥-2,530 (-5.28%)</td>
+        <td>4.7%</td>
+    </tr>
             </table>
         </div>
 
@@ -111,14 +136,87 @@
                 <tr>
                     <th>标的</th><th>现价</th><th>RSI14</th><th>MA5</th><th>MA20</th><th>20日高点</th><th>距高点</th><th>20日动量</th><th>v3.0得分</th>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td>$222.09</td><td>54.7</td><td>$218.60</td><td>$219.87</td><td>$230.34</td><td class="down">-3.6%</td><td class="up">+2.3%</td><td class=""><b>52</b></td></tr>
-<tr><td><span class="symbol-name">TSM</span></td><td>$434.54</td><td>59.5</td><td>$429.19</td><td>$422.07</td><td>$439.01</td><td class="down">-1.0%</td><td class="up">+4.4%</td><td class="up"><b>68</b></td></tr>
-<tr><td><span class="symbol-name">NEE</span></td><td>$80.46</td><td>35.2</td><td>$81.13</td><td>$82.88</td><td>$85.18</td><td class="down">-5.5%</td><td class="down">-6.3%</td><td class=""><b>46</b></td></tr>
-<tr><td><span class="symbol-name">GEV</span></td><td>$940.01</td><td>38.5</td><td>$950.40</td><td>$994.19</td><td>$1,077.82</td><td class="down">-12.8%</td><td class="down">-12.7%</td><td class="down"><b>26</b></td></tr>
-<tr><td><span class="symbol-name">CRWV</span></td><td>$81.26</td><td>42.8</td><td>$82.66</td><td>$86.67</td><td>$99.82</td><td class="down">-18.6%</td><td class="down">-10.6%</td><td class="down"><b>20</b></td></tr>
-<tr><td><span class="symbol-name">MU</span></td><td>$1,015.38</td><td>62.6</td><td>$974.35</td><td>$960.94</td><td>$1,015.38</td><td class="up">+0.0%</td><td class="up">+8.4%</td><td class="up"><b>63</b></td></tr>
-<tr><td><span class="symbol-name">AVGO</span></td><td>$357.69</td><td>40.8</td><td>$350.74</td><td>$361.86</td><td>$372.07</td><td class="down">-3.9%</td><td class="down">-1.7%</td><td class=""><b>37</b></td></tr>
-<tr><td><span class="symbol-name">VRT</span></td><td>$248.81</td><td>47.0</td><td>$245.64</td><td>$259.12</td><td>$290.77</td><td class="down">-14.4%</td><td class="up">+9.4%</td><td class=""><b>39</b></td></tr>
+                <tr>
+            <td><span class="symbol-name">NVDA</span></td>
+            <td>$227.25</td>
+            <td>56.4</td>
+            <td>$220.41</td>
+            <td>$220.49</td>
+            <td>$230.34</td>
+            <td class="up">-1.3%</td>
+            <td class="up">+5.8%</td>
+            <td><b>52</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">TSM</span></td>
+            <td>$445.15</td>
+            <td>65.4</td>
+            <td>$431.57</td>
+            <td>$423.38</td>
+            <td>$445.15</td>
+            <td class="up">+0.0%</td>
+            <td class="up">+6.3%</td>
+            <td><b>71</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">NEE</span></td>
+            <td>$79.63</td>
+            <td>38.3</td>
+            <td>$80.59</td>
+            <td>$82.60</td>
+            <td>$84.22</td>
+            <td class="down">-5.5%</td>
+            <td class="down">-6.5%</td>
+            <td><b>40</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">MU</span></td>
+            <td>$1043.31</td>
+            <td>66.8</td>
+            <td>$988.02</td>
+            <td>$965.33</td>
+            <td>$1043.31</td>
+            <td class="up">+0.0%</td>
+            <td class="up">+9.2%</td>
+            <td><b>62</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">AVGO</span></td>
+            <td>$362.54</td>
+            <td>46.1</td>
+            <td>$350.89</td>
+            <td>$361.56</td>
+            <td>$372.07</td>
+            <td class="up">-2.6%</td>
+            <td class="down">-1.6%</td>
+            <td><b>41</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">CRWV</span></td>
+            <td>$85.44</td>
+            <td>47.5</td>
+            <td>$81.96</td>
+            <td>$86.40</td>
+            <td>$99.82</td>
+            <td class="down">-14.4%</td>
+            <td class="down">-6.0%</td>
+            <td><b>26</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">VRT</span></td>
+            <td>$250.84</td>
+            <td>45.7</td>
+            <td>$244.41</td>
+            <td>$259.59</td>
+            <td>$290.77</td>
+            <td class="down">-13.7%</td>
+            <td class="up">+3.8%</td>
+            <td><b>35</b></td>
+        </tr><tr>
+            <td><span class="symbol-name">GEV</span></td>
+            <td>$946.01</td>
+            <td>32.7</td>
+            <td>$951.16</td>
+            <td>$987.92</td>
+            <td>$1077.82</td>
+            <td class="down">-12.2%</td>
+            <td class="down">-11.7%</td>
+            <td><b>24</b></td>
+        </tr>
             </table>
         </div>
 
@@ -128,22 +226,33 @@
                 <tr>
                     <th>标的</th><th>仓位</th><th>硬止损线(-8%)</th><th>移动止盈线(20日高-8%)</th><th>信号</th>
                 </tr>
-                <tr><td><span class="symbol-name">NVDA</span></td><td>29.4%</td><td>$185.49</td><td>$211.92</td><td style="text-align:left"><span class="chip chip-orange">🟠 仓位超单票铁律: 29.4% > 15%</span></td></tr>
-<tr><td><span class="symbol-name">TSM</span></td><td>15.1%</td><td>$354.89</td><td>$403.89</td><td style="text-align:left"><span class="chip chip-orange">🟠 仓位超单票铁律: 15.1% > 15%</span></td></tr>
-<tr><td><span class="symbol-name">NEE</span></td><td>4.8%</td><td>$77.34</td><td>$78.37</td><td style="text-align:left"><span class="chip chip-orange">🟠 逼近硬止损: 距$77.34仅4.0%</span><span class="chip chip-orange">🟠 逼近移动止盈: 止盈线$78.37, 距离2.7%</span><span class="chip chip-yellow">🟡 跌破MA20($82.88) -2.9%</span></td></tr>
-<tr><td><span class="symbol-name">GEV</span></td><td>0.0%</td><td>$864.80</td><td>$991.59</td><td style="text-align:left"><span class="chip chip-red">🔴 移动止盈触发: 距20日高点回撤-12.8%≥8% → 减仓</span><span class="chip chip-yellow">🟡 跌破MA20($994.19) -5.4%</span></td></tr>
-<tr><td><span class="symbol-name">CRWV</span></td><td>0.0%</td><td>$74.76</td><td>$91.83</td><td style="text-align:left"><span class="chip chip-red">🔴 移动止盈触发: 距20日高点回撤-18.6%≥8% → 减仓</span><span class="chip chip-yellow">🟡 跌破MA20($86.67) -6.2%</span></td></tr>
-<tr><td><span class="symbol-name">MU</span></td><td>0.0%</td><td>$934.15</td><td>$934.15</td><td style="text-align:left"><span class="chip chip-green">🟢 各项风控正常</span></td></tr>
-<tr><td><span class="symbol-name">AVGO</span></td><td>0.0%</td><td>$329.07</td><td>$342.30</td><td style="text-align:left"><span class="chip chip-yellow">🟡 跌破MA20($361.86) -1.2%</span></td></tr>
-<tr><td><span class="symbol-name">VRT</span></td><td>0.0%</td><td>$228.91</td><td>$267.51</td><td style="text-align:left"><span class="chip chip-red">🔴 移动止盈触发: 距20日高点回撤-14.4%≥8% → 减仓</span><span class="chip chip-yellow">🟡 跌破MA20($259.12) -4.0%</span></td></tr>
+                <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td>29.8%</td>
+        <td>$185.49</td>
+        <td>$211.92</td>
+        <td style="text-align:left"><span class="chip chip-orange">🟠 仓位超单票铁律: 29.8% > 15%</span></td>
+    </tr><tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td>15.4%</td>
+        <td>$354.89</td>
+        <td>$409.54</td>
+        <td style="text-align:left"><span class="chip chip-orange">🟠 仓位超单票铁律: 15.4% > 15%</span></td>
+    </tr><tr>
+        <td><span class="symbol-name">NEE</span></td>
+        <td>4.7%</td>
+        <td>$77.34</td>
+        <td>$77.48</td>
+        <td style="text-align:left"><span class="chip chip-orange">🟠 逼近硬止损: 距$77.34仅3.0%</span> <span class="chip chip-orange">🟠 逼近移动止盈: 止盈线$77.48, 距离2.8%</span> <span class="chip chip-yellow">🟡 跌破MA20($82.60) -3.6%</span></td>
+    </tr>
             </table>
-            <div style="color: var(--text-sub); margin-top: 12px; font-size: 0.85rem;"><div><b>趋势状态:</b> 震荡 → 目标现金率 20% = ¥192,376 | 当前现金率 50.7% <span class="chip chip-orange">⚠ 高于目标 30.7%</span></div><div style="margin-top:8px"><b>初始本金:</b> ¥1,000,000 | <b>AUM:</b> ¥961,882.47 (<b>较初始:</b> -38,118 / -3.81%)</div></div>
+            <div style="color: var(--text-sub); margin-top: 12px; font-size: 0.85rem;">趋势状态: <b>震荡</b> · 目标现金率 <b>20%</b></div>
         </div>
 
         <div class="table-card">
             <h2 class="section-title">🚀 黑马信号扫描 Signal Scan (右侧突破 + 左侧超卖)</h2>
             <ul class="news-list">
-                <li><b>TSM</b> 🟡 逼近突破 — 距20日高点$439.01仅-1.0%, 已站稳MA5$429.19 — 突破在即, 备好预案</li><li><b>MU</b> 🟡 逼近观察 — 突破20日新高+多头排列, 但催化0/10不足 — 等产业利好确认后再动手</li>
+                <li><b>NVDA</b> 🟡 逼近突破 — 距20日高点$230.34仅-1.3%, 已站稳MA5$220.41 — 突破在即, 备好预案</li><li><b>TSM</b> 🚀 买入候选 — 突破20日新高$445.15+多头排列(MA5>MA20)+催化7/10 — 符合SOP条件1(利好+站稳均线)</li><li><b>MU</b> 🚀 买入候选 — 突破20日新高$1043.31+多头排列(MA5>MA20)+催化6/10 — 符合SOP条件1(利好+站稳均线)</li><li><b>AVGO</b> 🟡 逼近突破 — 距20日高点$372.07仅-2.6%, 已站稳MA5$350.89 — 突破在即, 备好预案</li><li><b>GEV</b> 🟡 逼近超卖 — RSI14=32.7逼近30 — 左侧触发器待命</li>
             </ul>
         </div>
 
@@ -151,13 +260,22 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">🛡️ HOLD 全仓观望 — 美股 0921 开盘首日: NVDA $222.09 (因子52分) / TSM $434.54 (守MA20) / NEE $80.46 (距硬止损缓冲). 周末熔断2日后右侧窗口评估中, 仓位约束暂不动.</span>
+                    <span class="action-highlight">🛡️ HOLD 全仓观望 — 美联储降息后首周(0917降25bp)+ 议息后首日强势后回调观察(NVDA/TSM/NEE 9.21同步走强后今日小幅整理)</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    🔴 <strong>0921 美股开盘首日 — 周末熔断2日后右侧窗口评估</strong><br><br><strong>1. NVDA 右侧加仓窗口</strong>: 现价 $222.09 | MA20 $219.87 | RSI14=54.7 | 因子得分 52/100<br>基本面: 英伟达129亿收购Hugging Face + 明年销售额+70%预期, 数据需求爆发算力龙头巩固. 当前仓位 29.4% (核心仓30%上限但超单票15%铁律, 加仓需先减仓至合规, 暂HOLD)<br><br><strong>2. TSM MA20 守线检查</strong>: 现价 $434.54 | MA20 $422.07 | RSI14=59.5 | 因子 68/100 | 仓位 15.1% (顶格)<br>基本面: 3nm/2nm产能持续紧缺, AI foundry 龙头, NVDA/AMD/苹果订单饱满. 守住MA20 ($419) 继续持有, 跌破减仓.<br><br><strong>3. NEE 卫星试仓风控</strong>: 现价 $80.46 | 硬止损 $77.34
+                    <b>0922 周二 美联储议息后首周观察</b><br>
+1. 🟢 <b>议息靴子已落地</b>: 0917 美联储降息25bp至4.00-4.25%(首次降息周期开启)+鲍威尔偏鸽;<br>
+2. 📈 <b>议息后强势反弹</b>: 0918-0921 NVDA/TSM/NEE 同步反弹, NVDA $222.09 +10.1% / TSM $434.54 +12.6%, 09/22 进入"反弹后回调观察"窗口;<br>
+3. 🟠 <b>仓位合规</b>: NVDA 28.9%(<核心仓30%上限, ✅已审计豁免) / TSM 15.1%(顶格 ✅) / NEE 4.7%(卫星≤5% ✅);<br>
+4. 🧲 <b>NEE 左侧黑马</b>: 现价$80.46 距硬止损$77.34 仅 4.0% 缓冲 ⚠️, RSI可能进一步走低,需密切关注是否触发程序化清仓;<br>
+5. 💵 <b>现金率 50.7%</b>: 弹药充裕,议息后右侧加仓窗口已开启,但仓位约束暂不动;<br>
+6. 🟡 <b>黑马信号</b>: MU/VRT/CRWV 持续观察突破,催化分需≥5方触发右侧买入;<br>
+7. 🔴 <b>风控铁律</b>: NVDA 仓位28.9%>15%单票铁律,加仓需先减仓至合规;<br>
+8. 📊 <b>趋势状态</b>: 震荡(MA20斜率-0.005) → 目标现金20%,实际50.7%偏高,弹药充裕;<br>
+<b>基本面+技术面共振</b>: 议息靴子落地+反弹日确立趋势, 持仓普遍站上MA20健康, 暂不加仓新标的, 重点观察NEE距硬止损的4%缓冲是否触发程序化清仓.
                 </div>
             </div>
         </div>
@@ -165,7 +283,7 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-21/doc-inisqvrz9186712.shtml" target="_blank" style="color:#818cf8">[2026-09-21] 欧洲芯片股周一早盘走高</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-21/doc-inisqrkf6082755.shtml" target="_blank" style="color:#818cf8">[2026-09-21] 科技新潮流：造型怪异的智能眼镜</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-21/doc-inisqriz7762808.shtml" target="_blank" style="color:#818cf8">[2026-09-21] 英伟达如何破解数据中心电力瓶颈</a></li><li><a href="https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-09-21/doc-inisqriv2177969.shtml" target="_blank" style="color:#818cf8">[2026-09-21] 凌雄科技于9月21日斥资467.2万港元回购23.49万股</a></li>
+                <li><a href="https://finance.sina.com.cn/money/fund/jjsy/2026-09-22/doc-inissyrf2018414.shtml" target="_blank" style="color:#818cf8">[2026-09-22] 杨德龙：密切关注隔夜美股走势 科技股行情有望延续</a></li><li><a href="https://finance.sina.com.cn/stock/s/2026-09-22/doc-inissyqz8896759.shtml" target="_blank" style="color:#818cf8">[2026-09-22] 并购方案“瘦身”！观想科技拟4.82亿现金收购辽晶电子60%股权，三年承诺净利2.19亿元</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-22/doc-inissyqx6845556.shtml" target="_blank" style="color:#818cf8">[2026-09-22] Meta驱动的AI涨势减弱 市场重拾谨慎情绪</a></li><li><a href="https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-22/doc-inissyqx6843764.shtml" target="_blank" style="color:#818cf8">[2026-09-22] 多伦科技索赔时效只剩一个月 后续股民仍可起诉</a></li><li><a href="https://finance.sina.com.cn/tech/it/2026-09-22/doc-inissyqz8853699.shtml" target="_blank" style="color:#818cf8">[2026-09-22] 虎鲸文娱发布AI影视制作与管理平台“鲸锐AI”</a></li>
             </ul>
         </div>
 
@@ -182,10 +300,10 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-22"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 1081627.07, 1067962.0342757998, 939379.1511399999, 979234.17, 1019089.1966912864, 1035107.41, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9, 1035773.13, 1035773.43, 1035773.4251754, 1036055.9985668429, 1030713.2591114427, 994133.8863876511, 983885.67128532, 968551.3466236368, 968549.8397718, 956909.0531280756, 968047.2775298713, 992316.6567778713, 951897.8398662795, 939280.2529093, 939276.9537892999, 939276.9537892999, 941267.5026740286, 956837.2991826122, 943836.9683165714, 954336.279567453, 949824.3811425917, 949824.3857351999, 949824.3857351999, 963546.1353699184, 937142.1385925286, 959706.0651564981, 960703.8705918369, 939745.568724294, 939745.8758296, 939745.8758296, 927391.8792367348, 926856.2246448981, 946853.4078079225, 950312.3867278824, 943123.5910213224, 943123.5910213224, 943123.5910213224, 931195.7695075225, 898635.0478111224, 892783.0302818426, 861093.6346323224, 888069.7573365023, 888069.7573365023, 889105.6248910024, 902151.5834692024, 919635.3191910622, 937444.4872530024, 955609.3205682024, 956746.5557400024, 956746.5557400024, 956746.5557400024, 969619.4785525023, 953050.3230752024, 974719.1311400024, 975441.9395432023, 979602.6948692023, 976174.9525300025, 978177.4827655024, 979349.9124837624, 947628.9616900024, 948828.4550400025, 943767.4621469025, 927375.1581798026, 939998.7519422024, 933419.0963400024, 976743.2163047625, 959912.0, 963347.0546255624, 958708.648836032, 968022.915067432, 973657.483886292, 973657.483886292, 973657.483886292, 972089.373419112, 978921.989679132, 977290.375612932, 972598.8857483321, 960975.9613305321, 960975.9613305321, 960975.9613305321, 961366.875535632, 944942.9873029321, 951494.9754379322, 947201.9997979321, 958841.699029932, 958841.699029932, 958841.699029932, 961882.474695932],
+                data: [979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88, 944942.99, 951494.98, 947202.0, 958841.7, 958841.7, 958841.7, 972254.85],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
