@@ -1,21 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Lobster | Quant Dashboard</title>
+    <title>AI-Lobster | Quant Dashboard (Weekend Freeze)</title>
     <style>
-        :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; }
+        :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #ef4444; --down: #10b981; --accent: #6366f1; --border: #2c2e4f; --warn: #fbbf24; }
         body { background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 30px 20px; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .logo-area { display: flex; align-items: center; gap: 15px; }
         .logo-icon { font-size: 2rem; background: rgba(99, 102, 241, 0.15); padding: 10px; border-radius: 12px; }
         .title { margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; }
         .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
         .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
-        .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
+        .update-time { margin-top: 5px; font-size: 0.85rem; color: var(--warn); font-weight: 600; background: rgba(251, 191, 36, 0.15); padding: 6px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(251, 191, 36, 0.3); }
+
+        /* 周末熔断横幅 */
+        .freeze-banner { background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%); border: 2px solid rgba(251, 191, 36, 0.4); border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; color: var(--warn); }
+        .freeze-title { font-size: 1.05rem; font-weight: 700; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px; }
+        .freeze-content { font-size: 0.9rem; line-height: 1.6; color: var(--text-main); }
+        .freeze-content strong { color: var(--warn); }
+
+        /* 下周展望 */
+        .outlook-card { background-color: var(--card); border-radius: 16px; padding: 22px; border: 1px solid var(--border); margin-bottom: 25px; }
+        .outlook-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 12px; color: #fff; border-left: 4px solid var(--warn); padding-left: 12px; }
+        .outlook-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+        .outlook-item { background: rgba(251, 191, 36, 0.06); border: 1px solid rgba(251, 191, 36, 0.2); border-radius: 10px; padding: 14px; }
+        .outlook-date { font-size: 0.85rem; color: var(--warn); font-weight: 600; margin-bottom: 6px; }
+        .outlook-text { font-size: 0.85rem; color: var(--text-main); line-height: 1.5; }
+
+        /* 主仪表盘 */
         .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
         .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .card-lg { flex: 2; }
@@ -23,8 +38,10 @@
         .aum-value { font-size: 3rem; font-weight: bold; margin: 5px 0; color: #fff; font-family: "SF Pro Display", -apple-system, sans-serif; }
         .metric-value { font-size: 2rem; font-weight: bold; margin: 5px 0; color: #fff; }
         .pnl-tag { display: inline-block; font-size: 0.9rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }
-        .up-bg { background: rgba(16, 185, 129, 0.1); color: var(--up); }
-        .down-bg { background: rgba(239, 68, 68, 0.1); color: var(--down); }
+        .up-bg { background: rgba(239, 68, 68, 0.1); color: var(--up); }
+        .down-bg { background: rgba(16, 185, 129, 0.1); color: var(--down); }
+        .freeze-tag { background: rgba(251, 191, 36, 0.15); color: var(--warn); display: inline-block; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 8px; margin-top: 5px; }
+
         .table-card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 25px; overflow-x: auto; }
         .section-title { font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 12px; margin-top: 0; margin-bottom: 20px; font-weight: 600; color: #fff; }
         table { width: 100%; border-collapse: collapse; }
@@ -37,40 +54,55 @@
         .badge-us { background: rgba(99, 102, 241, 0.15); color: #818cf8; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; border: 1px solid rgba(99,102,241,0.3); }
         .up { color: var(--up); font-weight: 600; }
         .down { color: var(--down); font-weight: 600; }
+
         .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
         .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
         .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
         .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
         .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
+
         .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
         .news-list li { margin-bottom: 10px; }
-        .news-list li::marker { color: var(--accent); }
+        .news-list li::marker { color: var(--warn); }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- 顶部 Header -->
         <div class="header">
             <div class="logo-area">
                 <div class="logo-icon">🦞</div>
                 <div>
                     <h1 class="title">AI-Lobster</h1>
-                    <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
+                    <p class="subtitle">量化对冲基金 | 权威中频波段策略 | 🛡️ Weekend Freeze Mode</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-09-25</div>
-                <div class="update-time">🕒 每日更新时间:北京时间 17:10</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-09-26 (周六)</div>
+                <div class="update-time">🔒 数据冻结于 0925 收盘 · 下次刷新 0929 周一</div>
             </div>
         </div>
 
+        <!-- 周末熔断横幅 -->
+        <div class="freeze-banner">
+            <div class="freeze-title">🔒 Weekend Freeze Mode — 已激活</div>
+            <div class="freeze-content">
+                <strong>⚠️ 周末休市熔断</strong>:今日(0926 周六)为非交易日,严禁调用任何行情 / 汇率 / 新闻 API。<br>
+                所有价格、汇率、AUM 完全沿用 <strong>0925 周五</strong> 收盘状态。<br>
+                下次刷新时间:<strong>0929 周一 18:00</strong>(北京时间)
+            </div>
+        </div>
+
+        <!-- 主指标 -->
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
-                    <div class="card-label">总资产 AUM</div>
+                    <div class="card-label">总资产 AUM <span style="color:var(--warn);font-size:0.75rem">(冻结于 0925)</span></div>
                     <div class="aum-value"><span style="color:var(--up);">¥</span>970,014</div>
-                    <div class="pnl-tag up-bg">
-                        +¥230 (+0.02%)
+                    <div class="pnl-tag down-bg">
+                        较初始 ¥29,986 (-3.00%)
                     </div>
+                    <div class="freeze-tag" style="margin-left: 8px;">🔒 0925 收盘价</div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
             </div>
@@ -86,76 +118,108 @@
             </div>
         </div>
 
+        <!-- 下周展望 -->
+        <div class="outlook-card">
+            <div class="outlook-title">📅 下周关键事件与策略 (0929-0930)</div>
+            <div class="outlook-grid">
+                <div class="outlook-item">
+                    <div class="outlook-date">📌 0929 周一</div>
+                    <div class="outlook-text">美股开盘首日,检验 NVDA 是否守稳 MA20 ($220) · TSM 是否守住 MA5 ($438)。现金率 54.83% 弹药充裕,可关注新建仓窗口。</div>
+                </div>
+                <div class="outlook-item">
+                    <div class="outlook-date">📌 0930 周二</div>
+                    <div class="outlook-text">Q3 季末调仓窗口。NVDA 仓位 30.0% 顶格,加仓需先减仓;TSM 仓位 15.4% 顶格。</div>
+                </div>
+                <div class="outlook-item">
+                    <div class="outlook-date">🎯 因子得分</div>
+                    <div class="outlook-text">TSM 76 / NVDA 72 / MU 67(黑马) / AVGO 35 / NEE 已清仓 / VRT 20 / GEV 25</div>
+                </div>
+                <div class="outlook-item">
+                    <div class="outlook-date">🛡️ 风控纪律</div>
+                    <div class="outlook-text">单票 ≤15% (卫星) / 核心仓 ≤30% / 硬止损 -8% 程序强制 / 移动止盈 20日高-8% 程序强制</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 持仓明细 -->
         <div class="table-card">
-            <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
+            <h2 class="section-title">📊 当前持仓明细 (冻结 0925 收盘)</h2>
             <table id="holdingsTable">
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
                 
-        <tr>
-            <td><div class="symbol-name">NVDA</div></td>
-            <td><span class="badge-us">US</span></td>
-            <td>190</td>
-            <td>201.62</td>
-            <td>224.54</td>
-            <td>¥286,693</td>
-            <td class="up">+¥29,260 (+11.37%)</td>
-            <td class="up">35.0%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">NVDA</span></td>
+                    <td><span class="badge-us">US</span></td>
+                    <td>190</td>
+                    <td>$201.62</td>
+                    <td class="up">$224.54</td>
+                    <td>¥286,693</td>
+                    <td class="up">+11.37%<br><span style="font-size:0.8rem">+¥29,260</span></td>
+                    <td>29.6%</td>
+                </tr>
     
-        <tr>
-            <td><div class="symbol-name">TSM</div></td>
-            <td><span class="badge-us">US</span></td>
-            <td>50</td>
-            <td>385.75</td>
-            <td>451.05</td>
-            <td>¥151,553</td>
-            <td class="up">+¥21,941 (+16.93%)</td>
-            <td class="up">15.6%</td>
-        </tr>
+                <tr>
+                    <td><span class="symbol-name">TSM</span></td>
+                    <td><span class="badge-us">US</span></td>
+                    <td>50</td>
+                    <td>$385.75</td>
+                    <td class="up">$451.05</td>
+                    <td>¥151,553</td>
+                    <td class="up">+16.93%<br><span style="font-size:0.8rem">+¥21,941</span></td>
+                    <td>15.6%</td>
+                </tr>
     
             </table>
         </div>
 
+        <!-- 今日交易动作 + 操作逻辑 -->
         <div class="bottom-grid">
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">🛡️ HOLD 全仓观望 — 0925 周五,议息后首周末前获利了结观察日。NVDA $224.54 (-0.43%) / TSM $451.05 (+0.98%)。</span>
+                    <span class="action-highlight">🛡️ 【周末休市 Market Closed】锁定 0925 周五盘面状态</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
                     
-        <strong style="color:#fff">📊 0925 周五核心交易节奏</strong><br>
-        <strong style="color:#fbbf24">1. 仓位结构审视</strong> — 当前 2 只核心仓 (NVDA 30.0% / TSM 15.4%),NEE 已硬止损清仓释放 ¥441k 子弹,现金率 54.8% <strong style="color:#10b981">弹药充裕</strong>。<br>
-        <strong style="color:#fbbf24">2. 多因子共振 (v3.0 评分)</strong><br>
-        &nbsp;&nbsp;• <strong>TSM 71</strong> (T30+M20+V14+C7) — 突破 20 日新高延续,催化 7 分顶格;<br>
-        &nbsp;&nbsp;• <strong>NVDA 68</strong> (T30+M20+V10+C8) — 站上 MA20,催化满,仓位约束;<br>
-        &nbsp;&nbsp;• <strong>MU 67</strong> (T30+M25+V6+C6) — HBM 龙头黑马突破延续;<br>
-        &nbsp;&nbsp;• AVGO 35 / CRWV 36 / VRT 20 / GEV 25 (低位震荡)。<br>
-        <strong style="color:#fbbf24">3. 关键技术面</strong> — NVDA $224.54 (-0.43%) RSI=58.7 健康,MA20=$220.49;TSM $451.05 (+0.98%) 浮盈 +15.79% 顶格。<br>
-        <strong style="color:#10b981">4. 风控铁律合规</strong> — 单票合规 ✅、硬止损触发后已清仓 NEE ✅、现金率 54.8% 充裕 ✅。<br>
-        <strong style="color:#ef4444">5. 0925 决策 HOLD 逻辑</strong>:<br>
-        &nbsp;&nbsp;① 周五获利了结压力,NVDA/TSM 暂不加仓<br>
-        &nbsp;&nbsp;② NVDA 仓位 30% 已顶格(核心仓上限),加仓需先减仓<br>
-        &nbsp;&nbsp;③ 保留子弹等待 0928-0930 右侧建仓窗口 (MU 黑马试仓 5%)<br>
-        &nbsp;&nbsp;④ 监控:NVDA 是否守稳 MA20($220) · TSM 是否守住 MA5($438)
-    
+<strong style="color:#fbbf24">⚠️ Weekend Freeze Mode (Day 1) — 0926 周六</strong><br><br>
+<strong>📌 周末熔断说明</strong>:今日为非交易日,严禁调用任何行情 / 汇率 / 新闻 API。
+所有价格、汇率、AUM 完全沿用 <strong>0925 周五</strong> 收盘状态。<br><br>
+<strong>📊 当前继承状态 (0925 收盘)</strong>:
+<ul>
+  <li>NVDA 190股 成本 $201.62 / 现价 $224.54 / 浮盈 +11.36%</li>
+  <li>TSM 50股 成本 $385.75 / 现价 $451.05 / 浮盈 +16.90%</li>
+  <li>现金 ¥531,768.57 / AUM ¥970,014.03 / 现金率 54.83%</li>
+</ul>
+<strong>📅 下周关键事件 (0929-0930)</strong>:
+<ul>
+  <li><strong>0929 周一</strong>:美股开盘首日,检验 NVDA/TSM 是否持续走强,评估新建仓窗口 (MU 黑马试仓)</li>
+  <li><strong>0930 周二</strong>:聚焦 Q3 季末调仓窗口, 现金率 54.83% 弹药充裕可新建仓 5% 卫星试仓</li>
+  <li><strong>风控监控</strong>:NVDA 仓位 30.0%(核心仓上限,加仓需先减仓) · TSM 仓位 15.4%(顶格)</li>
+  <li><strong>因子扫描</strong>:TSM 76 分突破窗口 / NVDA 72 分站上 MA20 / MU 67 分黑马候选 / AVGO 35 分观察</li>
+  <li><strong>规则提示</strong>:NEE 已于 0924 硬止损清仓,后续禁止再建仓该标的直至基本面明确修复</li>
+</ul>
+<strong>🎯 下周开局策略</strong>:静默观察 NVDA/TSM 是否守住 MA5 / MA20。
+现金率 54.83% 弹药充裕,如有黑马突破信号(右侧:突破20日高+催化≥5)可小仓位 (5%) 试仓。
+
                 </div>
             </div>
         </div>
-        
+
+        <!-- 资讯模块 -->
         <div class="table-card">
-            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
+            <h2 class="section-title">📰 每日 AI 核心资讯 (周末休市)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-25/doc-iniszvzv7639565.shtml" target="_blank" style="color:#818cf8">[2026-09-25] 咨询业高管称：企业尚未看到AI带来投资回报</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-25/doc-iniszrtx7766741.shtml" target="_blank" style="color:#818cf8">[2026-09-25] OpenAI前数据中心负责人现已入职英伟达</a></li><li><a href="https://finance.sina.com.cn/stock/t/2026-09-25/doc-iniszrtv4381251.shtml" target="_blank" style="color:#818cf8">[2026-09-25] Meta Muse用户规模十天冲上70万 但已出现算力不足导致的故障</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-09-25/doc-iniszrua9530239.shtml" target="_blank" style="color:#818cf8">[2026-09-25] Meta的AI高光时刻难以持久</a></li><li><span style="color:#fbbf24">【新闻状态】实时抓取成功,共 4 条 AI 核心资讯</span></li>
+                <li>周末休市,暂无实时产业资讯。下周一(0929)美股开盘后恢复实时抓取。</li>
             </ul>
         </div>
-        
+
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
+            🛡️ Weekend Freeze Mode · Day 1 · 数据冻结于 0925 收盘 · 下次刷新 0929 周一<br>
             AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
             Generated by Automated Quant Engine
         </div>
@@ -168,18 +232,18 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["初始", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-06", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-22", "2026-05-23", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [926856.22, 946853.41, 950312.39, 943123.59, 943123.59, 943123.59, 931195.77, 898635.05, 892783.03, 861093.63, 888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88, 944942.99, 951494.98, 947202.0, 958841.7, 958841.7, 958841.7, 972254.85, 976375.97, 969784.2, 970014.03],
+                data: [1000000, 981505, 942654.02, 944659.97, 917744.0, 934861.09, 923104.05, 894346.25, 894346.25, 947665.28, 1016872.7, 1001367.88, 1006048.12, 970537.84, 963642.27, 985463.51, 1000273.23, 1043864.64, 994029.96, 977387.34, 976361.03, 1026311.86, 947273.19, 962331.48, 966127.52, 947679.7, 876444.98, 944331.86, 925003.15, 929902.24, 929902.24, 922355.16, 986391.11, 975490.83, 988036.16, 985376.36, 988036.16, 986239.38, 1013279.78, 1037115.26, 1026663.6, 1025228.84, 1030000.0, 1040718.22, 1034258.54, 1013115.89, 1012832.66, 1020509.78, 996036.83, 1010215.72, 997310.16, 997310.16, 996377.91, 1035060.33, 1050579.91, 1063939.53, 1096427.56, 1095292.1142900405, 1081627.07, 1067962.0342757998, 939379.1511399999, 979234.17, 1019089.1966912864, 1035107.41, 1051125.6313368855, 1049684.6391851427, 1049758.8315770421, 1097513.865608653, 1091756.5439858723, 1096051.2693862796, 1107493.89, 1118936.503735014, 1085358.4708824859, 1061200.9704081994, 1061205.8627047, 1061200.9704081994, 997746.2530850323, 1003976.5800871858, 991563.7149498144, 965399.4393498144, 976107.0478433714, 976109.2068844214, 976109.2068844214, 981440.4401876406, 1008666.014608321, 1010911.4977662988, 1005691.9, 1035773.13, 1035773.43, 1035773.4251754, 1036055.9985668429, 1030713.2591114427, 994133.8863876511, 983885.67128532, 968551.3466236368, 968549.8397718, 956909.0531280756, 968047.2775298713, 992316.6567778713, 951897.8398662795, 939280.2529093, 939276.9537892999, 939276.9537892999, 941267.5026740286, 956837.2991826122, 943836.9683165714, 954336.279567453, 949824.3811425917, 949824.3857351999, 949824.3857351999, 963546.1353699184, 937142.1385925286, 959706.0651564981, 960703.8705918369, 939745.568724294, 939745.8758296, 939745.8758296, 927391.8792367348, 926856.2246448981, 946853.4078079225, 950312.3867278824, 943123.5910213224, 943123.5910213224, 943123.5910213224, 931195.7695075225, 898635.0478111224, 892783.0302818426, 861093.6346323224, 888069.7573365023, 888069.7573365023, 889105.6248910024, 902151.5834692024, 919635.3191910622, 937444.4872530024, 955609.3205682024, 956746.5557400024, 956746.5557400024, 956746.5557400024, 969619.4785525023, 953050.3230752024, 974719.1311400024, 975441.9395432023, 979602.6948692023, 976174.9525300025, 978177.4827655024, 979349.9124837624, 947628.9616900024, 948828.4550400025, 943767.4621469025, 927375.1581798026, 939998.7519422024, 933419.0963400024, 976743.2163047625, 959912.0, 963347.0546255624, 958708.648836032, 968022.915067432, 973657.483886292, 973657.483886292, 973657.483886292, 972089.373419112, 978921.989679132, 977290.375612932, 972598.8857483321, 960975.9613305321, 960975.9613305321, 960975.9613305321, 961366.875535632, 944942.9873029321, 951494.9754379322, 947201.9997979321, 958841.699029932, 958841.699029932, 958841.699029932, 972254.8535829321, 976375.9671619321, 969784.203738732, 970014.0270667321, 970014.0270667321],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
-                lineStyle: { color: '#6366f1', width: 3 },
+                lineStyle: { color: '#fbbf24', width: 3 },
                 areaStyle: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
-                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
+                        { offset: 0, color: 'rgba(251, 191, 36, 0.4)' },
+                        { offset: 1, color: 'rgba(251, 191, 36, 0.0)' }
                     ])
                 }
             }]
