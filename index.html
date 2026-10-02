@@ -40,7 +40,7 @@
         .down { color: var(--down); font-weight: 600; }
 
         .bottom-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
-        .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 300px; }
+        .log-box { flex: 1; background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); min-width: 200px; }
         .log-title { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
         .log-content { color: var(--text-sub); line-height: 1.7; font-size: 0.95rem; }
         .action-highlight { color: var(--text-main); font-weight: 600; display: block; margin-bottom: 10px; }
@@ -48,9 +48,6 @@
         .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
         .news-list li { margin-bottom: 10px; }
         .news-list li::marker { color: var(--accent); }
-
-        .banner { background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 12px; padding: 15px 20px; margin-bottom: 25px; color: #fbbf24; font-size: 0.95rem; }
-        .banner strong { color: #fff; }
     </style>
 </head>
 <body>
@@ -64,22 +61,18 @@
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-10-01</div>
-                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-10-02</div>
+                <div class="update-time">🕒 每日更新时间: 北京时间 17:10</div>
             </div>
-        </div>
-
-        <div class="banner">
-            🇨🇳 <strong>Q3 季末调仓窗口</strong> · 国庆假期美股正常开盘 · 议息后第二周趋势确认 · 现金率 54%+ 弹药充裕
         </div>
 
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
                     <div class="card-label">总资产 AUM</div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>976,559</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>980,154</div>
                     <div class="pnl-tag up-bg">
-                        +¥1,157 (+0.12%)
+                        +¥3,594 (+0.37%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -87,12 +80,12 @@
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥531,769</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">54.5% 仓位</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">54.3% 仓位</div>
             </div>
             <div class="card">
                 <div class="card-label">持仓市值 Stock Value</div>
-                <div class="metric-value">¥444,791</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">45.5% 仓位</div>
+                <div class="metric-value">¥448,385</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">45.7% 仓位</div>
             </div>
         </div>
 
@@ -102,25 +95,29 @@
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
-                <tr>
-            <td><span class="symbol-name">NVDA</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>190</td>
-            <td>$201.62</td>
-            <td>$228.29</td>
-            <td>¥291,481</td>
-            <td class="up">+13.23%</td>
-            <td>29.8%</td>
-        </tr><tr>
-            <td><span class="symbol-name">TSM</span></td>
-            <td><span class="badge-us">美股</span></td>
-            <td>50</td>
-            <td>$385.75</td>
-            <td>$456.28</td>
-            <td>¥153,310</td>
-            <td class="up">+18.28%</td>
-            <td>15.7%</td>
-        </tr>
+                
+    <tr>
+        <td><span class="symbol-name">NVDA</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>190</td>
+        <td>$201.62</td>
+        <td>$230.86</td>
+        <td>¥294,323</td>
+        <td class="up">+¥37,274 (+14.50%)</td>
+        <td>30.0%</td>
+    </tr>
+    
+    <tr>
+        <td><span class="symbol-name">TSM</span></td>
+        <td><span class="badge-us">US</span></td>
+        <td>50</td>
+        <td>$385.75</td>
+        <td>$459.20</td>
+        <td>¥154,062</td>
+        <td class="up">+¥24,642 (+19.04%)</td>
+        <td>15.7%</td>
+    </tr>
+    
             </table>
         </div>
 
@@ -128,13 +125,32 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">🛡️ HOLD NVDA/TSM — Q3 季末调仓窗口 + 议息后第二周趋势确认 + 国庆假期美股正常开盘观察日</span>
+                    <span class="action-highlight">🛡️ HOLD NVDA/TSM — 国庆假期(美股正常开盘) + Q3 季末调仓窗口 + 周五节前获利了结压力测试</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    <strong>【基本面+技术面双重共振研判】</strong><br>• <strong>NVDA $227.21</strong>: 浮盈+12.68% (成本$201.62), 站上MA20健康, RSI中性偏强, 催化满格(8/10). Q3季末+议息后第二周趋势确认, 持仓29.4%=核心仓上限, 加仓需先减仓, 暂不动.<br>• <strong>TSM $456.94</strong>: 浮盈+18.46% (成本$385.75), 突破20日高延续, MA5守住($442), 催化7/10. 仓位15.7%顶格, 持续观察能否进一步突破前高.<br>• <strong>MU $1065.08</strong>: 黑马突破候选(HBM龙头 + 突破20日高 + 多头排列 + 催化7/10), 因子得分67, 现金率54%+弹药充裕, 卫星试仓5%机会评估中.<br><strong>【风控铁律执行】</strong><br>• NVDA 29.4% (=核心仓30%上限, ✅已审计豁免)<br>• TSM 15.7% (顶格 ✅)<br>• 现金率 54.52% (高于目标20%, 弹药充裕)<br>• 硬止损 -8% / 移动止盈 20日高-8% 程序强制<br><strong>【Q3季末调仓窗口评估】</strong><br>• Q3季末 (0930-1001) 是机构调仓窗口, 重点关注: 1) NVDA能否突破$230触发右侧加仓 (需先减仓至15%); 2) MU卫星试仓5%评估; 3) TSM能否守住MA5 ($442).
+                    
+<strong>📊 持仓核心逻辑 (1002 周五 · 国庆假期第2天 · 美股正常开盘):</strong><br>
+• <strong>NVDA (190股, ~30%仓位)</strong>: 站上 MA20 健康, 财报催化持续 + Hugging Face 收购外溢, 核心仓顶格<br>
+• <strong>TSM (50股, ~15%仓位)</strong>: 突破20日高后强势延续 + 催化7/10, 顶格持有<br>
+<strong>🧠 决策逻辑 — 基本面+技术面共振 (1002 Q3 季末):</strong><br>
+• 美联储议息靴子落地 (0917 降息25bp) 后第三周趋势确认, NVDA/TSM 同步走强, 趋势健康<br>
+• Q3 季末调仓窗口已开: 现金率 <strong style="color:var(--up)">54.3%</strong> 弹药充裕<br>
+• 周五节前获利了结压力测试: 节前 24 小时机构调仓,警惕 NVDA/TSM 短期回踩<br>
+• NVDA 仓位 ~30% = 核心仓上限 (已审计豁免), 加仓需先减仓, 暂不动<br>
+• TSM 仓位 ~15% 顶格, 移动止盈/硬止损程序化规则运行良好<br>
+<strong>🎯 黑马候选 (1002 复盘):</strong><br>
+• <strong style="color:var(--up)">MU (HBM龙头, 67分)</strong>: 卫星试仓5% (~¥48K) 机会窗口, 但价格已在历史高位附近<br>
+• AVGO/CRWV/VRT/GEV 持续观察, 等待 RSI<30 或突破20日高信号<br>
+• 节前新建仓风险: 若波动放大易触发硬止损,建议下周 (1008 周三 国内开盘后) 再评估<br>
+<strong>⚠️ 关键监控点 (1002 → 1005):</strong><br>
+• NVDA 仓位 30% = 核心仓上限 (已审计豁免), 加仓需先减仓至 15%<br>
+• TSM 仓位 15% 顶格, 移动止盈/硬止损程序化规则运行良好<br>
+• 趋势状态: 震荡 (MA20斜率 ≈ 0) → 目标现金率 20%, 实际 54% 弹药过剩<br>
+• 下一步 (1005 周一): MU 评估卫星试仓 / NVDA 减仓腾空间加仓 / TSM 守住 MA5 / 国内假期倒数第3日
+
                 </div>
             </div>
         </div>
@@ -142,7 +158,7 @@
         <div class="table-card">
             <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-01/doc-inittkrz5201225.shtml" target="_blank" style="color:#818cf8">[2026-10-01] 华尔街与硅谷对AI估值产生分歧</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-01/doc-inittksc1972389.shtml" target="_blank" style="color:#818cf8">[2026-10-01] 举债扩张的AI数据中心热潮显现裂痕</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-01/doc-inittkrz5192865.shtml" target="_blank" style="color:#818cf8">[2026-10-01] 为何DoorDash必须打造自研AI助手</a></li><li><a href="https://finance.sina.com.cn/tech/mobile/n/c/2026-10-01/doc-inittkrz5186980.shtml" target="_blank" style="color:#818cf8">[2026-10-01] 12年从蛰伏到突围 一颗芯片与Mate的求索之路</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-01/doc-inittkrz1095489.shtml" target="_blank" style="color:#818cf8">[2026-10-01] AI存储芯片厂商美光营收增至原先五倍，美光赚得盆满钵满，却让其他各方承压</a></li>
+                <li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-02/doc-initvpqz4631882.shtml" target="_blank" style="color:#818cf8">[2026-10-02] 为何编码 AI 代理选择 Vercel 的频率已经堪比人类开发者</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-02/doc-initvpri7343927.shtml" target="_blank" style="color:#818cf8">[2026-10-02] OpenAI 解雇三名安全研究员</a></li><li><a href="https://finance.sina.com.cn/roll/2026-10-02/doc-initvpri7305299.shtml" target="_blank" style="color:#818cf8">[2026-10-02] 亚马逊探索“表外”融资：拟将80亿美元英伟达芯片剥离至SPV再租回</a></li><li><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-02/doc-initvpri7301184.shtml" target="_blank" style="color:#818cf8">[2026-10-02] 马斯克称SpaceX星智AI卫星的供电能力将超过国际空间站</a></li><li><a href="https://finance.sina.com.cn/stock/2026-10-02/doc-initvpqz4551685.shtml" target="_blank" style="color:#818cf8">[2026-10-02] 恒生科技指数连跌一年，累计跌幅近40%</a></li>
             </ul>
         </div>
 
@@ -157,24 +173,24 @@
         var chartDom = document.getElementById('aumChart');
         var myChart = echarts.init(chartDom);
         var option = {
-            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
-            grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ["2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
-            yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
-            series: [{
-                data: [963347.0546255624, 958708.648836032, 968022.915067432, 973657.483886292, 973657.483886292, 973657.483886292, 972089.373419112, 978921.989679132, 977290.375612932, 972598.8857483321, 960975.9613305321, 960975.9613305321, 960975.9613305321, 961366.875535632, 944942.9873029321, 951494.9754379322, 947201.9997979321, 958841.699029932, 958841.699029932, 958841.699029932, 972254.8535829321, 976375.9671619321, 969784.203738732, 970014.0270667321, 970014.0270667321, 970014.0270667321, 970545.5950603321, 976144.6998667321, 975402.1526347321, 976559.311098732],
-                type: 'line',
-                smooth: true,
-                showSymbol: false,
-                lineStyle: { color: '#6366f1', width: 3 },
-                areaStyle: {
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
-                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
-                    ])
-                }
-            }]
-        };
+                tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+                grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
+                xAxis: { type: 'category', boundaryGap: false, data: ["2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+                yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
+                series: [{
+                    data: [898635.05, 892783.03, 861093.63, 888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88, 944942.99, 951494.98, 947202.0, 958841.7, 958841.7, 958841.7, 972254.85, 976375.97, 969784.2, 970014.03, 970014.03, 970014.03, 970545.6, 976144.7, 975402.15, 976559.31, 980153.59],
+                    type: 'line',
+                    smooth: true,
+                    showSymbol: false,
+                    lineStyle: { color: '#6366f1', width: 3 },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
+                            { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
+                        ])
+                    }
+                }]
+            };
         myChart.setOption(option);
         window.addEventListener('resize', function() { myChart.resize(); });
 
