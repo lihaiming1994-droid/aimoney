@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Lobster | Quant Dashboard</title>
     <style>
-        :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; --warn: #fbbf24; }
+        :root { --bg: #121321; --card: #1d1e34; --text-main: #f1f5f9; --text-sub: #94a3b8; --up: #10b981; --down: #ef4444; --accent: #6366f1; --border: #2c2e4f; }
         body { background-color: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 30px 20px; }
         .container { max-width: 1200px; margin: 0 auto; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
@@ -14,37 +14,7 @@
         .title { margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; }
         .subtitle { margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-sub); }
         .date-box { text-align: right; color: var(--text-sub); font-size: 0.9rem; }
-        .update-time { margin-top: 5px; font-size: 0.85rem; color: var(--warn); font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
-
-        .freeze-banner {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.05));
-            border: 1px solid rgba(251, 191, 36, 0.4);
-            border-left: 4px solid var(--warn);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin-bottom: 25px;
-            color: var(--warn);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .freeze-banner .freeze-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--warn);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .freeze-banner .freeze-detail {
-            color: var(--text-main);
-            font-size: 0.92rem;
-            line-height: 1.8;
-        }
-        .freeze-banner .freeze-detail strong {
-            color: var(--warn);
-            font-weight: 600;
-        }
+        .update-time { margin-top: 5px; font-size: 0.85rem; color: #fbbf24; font-weight: 500; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; }
 
         .top-grid { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
         .card { background-color: var(--card); border-radius: 16px; padding: 25px; border: 1px solid var(--border); flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
@@ -78,8 +48,6 @@
         .news-list { color: var(--text-sub); line-height: 1.8; font-size: 0.95rem; padding-left: 20px; margin: 0; }
         .news-list li { margin-bottom: 10px; }
         .news-list li::marker { color: var(--accent); }
-
-        .weekend-tag { display: inline-block; padding: 3px 8px; background: rgba(251, 191, 36, 0.15); color: var(--warn); border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(251, 191, 36, 0.3); }
     </style>
 </head>
 <body>
@@ -88,34 +56,23 @@
             <div class="logo-area">
                 <div class="logo-icon">🦞</div>
                 <div>
-                    <h1 class="title">AI-Lobster <span class="weekend-tag">🛡️ Weekend Freeze</span></h1>
+                    <h1 class="title">AI-Lobster</h1>
                     <p class="subtitle">量化对冲基金 | 权威中频波段策略</p>
                 </div>
             </div>
             <div class="date-box">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-10-04 <span style="color:var(--warn);">(周日 · Day 2/2)</span></div>
-                <div class="update-time">🕒 数据冻结于 1002 周五收盘 · 下次刷新 1006 周一 18:00</div>
-            </div>
-        </div>
-
-        <div class="freeze-banner">
-            <div class="freeze-title">🛡️ Weekend Freeze Mode · Day 2 / 2 · Weekend Circuit Breaker Active</div>
-            <div class="freeze-detail">
-                <strong>🇨🇳 国庆假期第4天</strong> (国内放假, 美股正常开盘, 系统自动冻结 1002 数据)<br>
-                <strong>📊 冻结状态:</strong> NVDA $230.86 (+14.49%) · TSM $459.20 (+19.02%) · 现金 ¥531,769 (54.25%) · AUM ¥980,154<br>
-                <strong>🚫 严禁事项:</strong> 调用任何 API / 抓取新闻 / 价格更新 / 调仓决策<br>
-                <strong>⏰ 下次刷新:</strong> 1006 周一 18:00 (国庆假期倒数第 2 天, 美股开盘首日)<br>
-                <strong>🔑 下周关键事件:</strong> 1006 周一美股开盘验证 NVDA 站稳 $230 · 1007 周二 MU 黑马试仓评估 · 1008 周三国庆假期结束 A股补涨
+                <div style="font-weight: bold; font-size: 1.1rem; color: #fff;">2026-10-05</div>
+                <div class="update-time">🕒 每日更新时间：北京时间 17:10</div>
             </div>
         </div>
 
         <div class="top-grid">
             <div class="card card-lg" style="display: flex; flex-direction: column;">
                 <div>
-                    <div class="card-label">总资产 AUM <span style="color:var(--warn); font-size:0.7rem;">🔒 冻结 1002</span></div>
-                    <div class="aum-value"><span style="color:var(--up);">¥</span>980,154</div>
-                    <div class="pnl-tag down-bg">
-                        ¥-19,846 (-1.98%) vs 初始本金
+                    <div class="card-label">总资产 AUM</div>
+                    <div class="aum-value"><span style="color:var(--up);">¥</span>988,744</div>
+                    <div class="pnl-tag up-bg">
+                        +¥8,590 (+0.88%)
                     </div>
                 </div>
                 <div id="aumChart" style="width: 100%; height: 200px; margin-top: 20px;"></div>
@@ -123,40 +80,42 @@
             <div class="card">
                 <div class="card-label">可用现金 Cash</div>
                 <div class="metric-value">¥531,769</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">54.3% 仓位</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">53.8% 仓位</div>
             </div>
             <div class="card">
-                <div class="card-label">持仓市值 Stock Value <span style="color:var(--warn); font-size:0.7rem;">🔒</span></div>
-                <div class="metric-value">¥448,385</div>
-                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">6.8% 仓位</div>
+                <div class="card-label">持仓市值 Stock Value</div>
+                <div class="metric-value">¥456,975</div>
+                <div style="color: var(--text-sub); margin-top: 10px; font-size: 0.9rem;">46.2% 仓位</div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">📊 当前持仓明细 (冻结 1002 收盘) 🔒</h2>
+            <h2 class="section-title">📊 当前持仓明细 Position Details</h2>
             <table id="holdingsTable">
                 <tr>
                     <th>标的</th><th>市场</th><th onclick="sortTable(2)">数量 ↕</th><th onclick="sortTable(3)">成本价 ↕</th><th onclick="sortTable(4)">现价 ↕</th><th onclick="sortTable(5)">市值 (RMB) ↕</th><th onclick="sortTable(6)">浮动盈亏 ↕</th><th onclick="sortTable(7)">仓位占比 ↕</th>
                 </tr>
+                
                 <tr>
-            <td><span class='symbol-name'>NVDA</span> <span style='color:#fbbf24; font-size:0.8rem;'>🔒 1002</span></td>
-            <td><span class='badge-us'>US</span></td>
-            <td>190</td>
-            <td>$201.62</td>
-            <td>$230.86</td>
-            <td>¥294,323</td>
-            <td class='up'>+14.50% (¥+37,274)</td>
-            <td>30.0%</td>
-        </tr><tr>
-            <td><span class='symbol-name'>TSM</span> <span style='color:#fbbf24; font-size:0.8rem;'>🔒 1002</span></td>
-            <td><span class='badge-us'>US</span></td>
-            <td>50</td>
-            <td>$385.75</td>
-            <td>$459.20</td>
-            <td>¥154,062</td>
-            <td class='up'>+19.04% (¥+24,642)</td>
-            <td>15.7%</td>
-        </tr>
+                    <td><span class="symbol-name">NVDA</span></td>
+                    <td><span class="badge-us">US</span></td>
+                    <td>190</td>
+                    <td>$201.62</td>
+                    <td>$233.99</td>
+                    <td>¥298,314</td>
+                    <td class="up">+16.05% (¥+41,264)</td>
+                    <td>30.2%</td>
+                </tr>
+                <tr>
+                    <td><span class="symbol-name">TSM</span></td>
+                    <td><span class="badge-us">US</span></td>
+                    <td>50</td>
+                    <td>$385.75</td>
+                    <td>$472.91</td>
+                    <td>¥158,661</td>
+                    <td class="up">+22.59% (¥+29,242)</td>
+                    <td>16.0%</td>
+                </tr>
             </table>
         </div>
 
@@ -164,41 +123,34 @@
             <div class="log-box">
                 <div class="log-title">🎯 今日交易动作 (Action)</div>
                 <div class="log-content">
-                    <span class="action-highlight">🛡️【周末休市 Market Closed】锁定 1002 周五盘面状态 (Day 2 / 2)</span>
-                    <span style="color:var(--text-sub);">🇨🇳 国庆假期美股正常开盘观察日, 系统自动冻结 1002 数据。<br>📊 持仓: NVDA 190股 / TSM 50股 (顶格合规)<br>💰 现金率 54.25% 弹药充裕</span>
+                    <span class="action-highlight">🛡️ HOLD 全仓观望 — NVDA突破$230右侧加仓窗口已开, 但仓位约束; TSM突破$470持续走强; 现金率54%+弹药充裕, 节后A股开盘前不建议新建仓</span>
                 </div>
             </div>
             <div class="log-box">
                 <div class="log-title">🧠 权威产业前沿与操作逻辑</div>
                 <div class="log-content">
-                    
-<strong>🛡️ Weekend Freeze Mode (Day 2 / 2)</strong> — 1004 周日严格沿用 1002 周五收盘价<br>
-<strong>🇨🇳 国庆假期第4天:</strong> 国内放假, 美股正常开盘, 系统自动冻结 1002 数据<br>
-<strong>📊 数据冻结:</strong> NVDA $230.86 (+14.49%) · TSM $459.20 (+19.02%) · 现金率 54.25%<br>
-<strong>🎯 因子得分 v3.0:</strong> TSM 71 / MU 67 / NVDA 63 / AVGO 40 / VRT 40 / GEV 40 / CRWV 25<br>
-<strong>⏰ 下次刷新:</strong> 1006 周一 18:00 (国庆假期倒数第 2 天)<br>
-<strong>🔑 下周关键事件 (1006-1008):</strong><br>
-&nbsp;&nbsp;• <strong>1006 周一</strong>: 美股开盘, 验证 NVDA 能否站稳 $230 → 触发右侧加仓窗口 (但需先减仓至 15%)<br>
-&nbsp;&nbsp;• <strong>1007 周二</strong>: 国庆假期倒数第 1 天 (国内放假, 美股正常开盘), TSM 能否守住 $450 · MU 黑马卫星试仓 5% 评估<br>
-&nbsp;&nbsp;• <strong>1008 周三</strong>: 🇺🇳 国庆假期结束, 国内开盘, A股补涨溢出效应 → H股/美股传导窗口<br>
-<strong>💰 现金率 54.25%</strong> 弹药充裕, Q3 季末可评估新建仓窗口 (MU 67 分黑马试仓 5%)<br>
-<strong>⚖️ 风控纪律:</strong> 单票 ≤15% / 核心仓 ≤30% / 硬止损 -8% / 移动止盈 20日高-8%
-    
+                    <b>📊 因子共振研判 (基本面+技术面):</b><br>
+    • <b>NVDA $233.99 (+1.36%)</b>: 突破$230关键阻力, 右侧加仓窗口条件①触发 (得分68, T30+M20+V10+C8), 仓位29.5%已顶格核心仓上限, 加仓需先减仓, 暂不动<br>
+    • <b>TSM $472.91 (+2.98%)</b>: 强势突破$460-$470阻力, 接近$476历史高, 持续走强 (得分71, T30+M20+V14+C7), 仓位15.7%已顶格, 关注移动止盈<br>
+    • <b>MU $1074.27 (-2.11%)</b>: 高位回吐但仍在多头排列, 黑马池持续观察<br>
+    • <b>AVGO/VRT/GEV/AMD</b>: 同步走强, AVGO突破迹象 (得分50)<br>
+    • <b>🇨🇳 国庆假期第5天</b>: 国内资金面持续宽松, 节前A股-H股-美股传导窗口暂未开启<br>
+    • <b>Q4开局观察</b>: 议息靴子已落地, NVDA/TSM双双突破阻力, 趋势已确认; 但仓位约束+假期不确定性, 节后(1008)A股开盘后再评估新建仓<br>
+    • <b>风控合规</b>: NVDA 29.5% (=核心仓上限 ✅审计豁免) / TSM 15.7% (顶格 ✅) / 现金率54%+ (弹药充裕) / 移动止盈20日高-8%程序强制
                 </div>
             </div>
         </div>
 
         <div class="table-card">
-            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News) <span style="color:var(--warn); font-size:0.85rem;">🔒 周末休市</span></h2>
+            <h2 class="section-title">📰 每日 AI 核心资讯 (Latest AI News)</h2>
             <ul class="news-list">
-                <li>🛡️ 周末休市 (Day 2 / 2), 暂无实时产业资讯, 数据冻结于 1002 周五收盘</li>
+                <li><a href="https://finance.sina.com.cn/stock/roll/2026-10-05/doc-iniuemac4351009.shtml" target="_blank" style="color:#818cf8">[2026-10-05] AI算力硬件，全线爆发！PCB板块领涨</a></li><li><a href="https://finance.sina.com.cn/stock/roll/2026-10-05/doc-iniueeuf4458717.shtml" target="_blank" style="color:#818cf8">[2026-10-05] 海外科技再度大涨，节后紧盯这两个板块！</a></li>
             </ul>
         </div>
 
         <div style="text-align: center; color: var(--text-sub); margin-top: 30px; font-size: 0.8rem;">
             AI-Lobster 量化基金 | 初始本金: ¥1,000,000 | 拥抱真逻辑<br>
-            🛡️ Weekend Freeze Mode · Day 2 / 2 · 数据冻结于 1002 收盘 · 下次刷新 1006 周一 18:00<br>
-            Generated by Automated Quant Engine · Weekend Circuit Breaker Active
+            Generated by Automated Quant Engine
         </div>
     </div>
 
@@ -209,18 +161,18 @@
         var option = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
             grid: { left: '0%', right: '0%', bottom: '0%', top: '10%', containLabel: true },
-            xAxis: { type: 'category', boundaryGap: false, data: ['2026-07-30', '2026-07-31', '2026-08-01', '2026-08-02', '2026-08-03', '2026-08-04', '2026-08-05', '2026-08-06', '2026-08-07', '2026-08-08', '2026-08-09', '2026-08-10', '2026-08-11', '2026-08-12', '2026-08-13', '2026-08-14', '2026-08-17', '2026-08-18', '2026-08-19', '2026-08-20', '2026-08-21', '2026-08-24', '2026-08-25', '2026-08-26', '2026-08-27', '2026-08-28', '2026-08-31', '2026-09-01', '2026-09-02', '2026-09-03', '2026-09-04', '2026-09-05', '2026-09-06', '2026-09-07', '2026-09-08', '2026-09-09', '2026-09-10', '2026-09-11', '2026-09-12', '2026-09-13', '2026-09-14', '2026-09-15', '2026-09-16', '2026-09-17', '2026-09-18', '2026-09-19', '2026-09-20', '2026-09-22', '2026-09-23', '2026-09-24', '2026-09-25', '2026-09-26', '2026-09-27', '2026-09-28', '2026-09-29', '2026-09-30', '2026-10-01', '2026-10-02', '2026-10-03', '2026-10-04'], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
+            xAxis: { type: 'category', boundaryGap: false, data: ["2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05"], axisLine: { show: false }, axisLabel: { color: '#94a3b8' } },
             yAxis: { type: 'value', scale: true, splitLine: { lineStyle: { color: '#2c2e4f', type: 'dashed' } }, axisLabel: { color: '#94a3b8' } },
             series: [{
-                data: [861093.63, 888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88, 944942.99, 951494.98, 947202.0, 958841.7, 958841.7, 958841.7, 972254.85, 976375.97, 969784.2, 970014.03, 970014.03, 970014.03, 970545.6, 976144.7, 975402.15, 976559.31, 980153.59, 980153.59, 980153.59],
+                data: [888069.76, 888069.76, 889105.62, 902151.58, 919635.32, 937444.49, 955609.32, 956746.56, 956746.56, 956746.56, 969619.48, 953050.32, 974719.13, 975441.94, 979602.69, 976174.95, 978177.48, 979349.91, 947628.96, 948828.46, 943767.46, 927375.16, 939998.75, 933419.1, 976743.22, 959912.0, 963347.05, 958708.65, 968022.92, 973657.48, 973657.48, 973657.48, 972089.37, 978921.99, 977290.38, 972598.89, 960975.96, 960975.96, 960975.96, 961366.88, 944942.99, 951494.98, 947202.0, 958841.7, 958841.7, 958841.7, 972254.85, 976375.97, 969784.2, 970014.03, 970014.03, 970014.03, 970545.6, 976144.7, 975402.15, 976559.31, 980153.59, 980153.59, 980153.59, 988743.74],
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
-                lineStyle: { color: '#fbbf24', width: 3 },
+                lineStyle: { color: '#6366f1', width: 3 },
                 areaStyle: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0, color: 'rgba(251, 191, 36, 0.4)' },
-                        { offset: 1, color: 'rgba(251, 191, 36, 0.0)' }
+                        { offset: 0, color: 'rgba(99, 102, 241, 0.4)' },
+                        { offset: 1, color: 'rgba(99, 102, 241, 0.0)' }
                     ])
                 }
             }]
